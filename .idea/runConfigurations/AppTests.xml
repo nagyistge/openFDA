@@ -20,6 +20,10 @@
     <patterns />
     <RunnerSettings RunnerId="Run" />
     <ConfigurationWrapper RunnerId="Run" />
-    <method />
+    <method>
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="OpenFDA:war" />
+      </option>
+    </method>
   </configuration>
 </component>
