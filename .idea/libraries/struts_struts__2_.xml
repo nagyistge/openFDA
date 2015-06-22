@@ -1,11 +1,6 @@
 <component name="libraryTable">
   <library name="struts-struts (2)">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/struts-faces.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/jstl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/struts-el.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/standard.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>
