@@ -12,7 +12,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
   <title><tiles:insertAttribute name="title" /></title>
@@ -72,8 +72,7 @@
   <script src="<c:url value="/resources/lib/jquery-scrollspy.js" />"></script>
   <script src="<c:url value="/resources/lib/jquery.shuffle.js" />"></script>
   <script src="<c:url value="/resources/lib/slick.min.js" />"></script>
-
-  <script src="<c:url value="/resources/js/agency-nyc.js" />"></script>
+  <script src="<c:url value="/resources/foundation/js/agency-nyc.js" />"></script>
   <script>
     $(document).foundation();
   </script>

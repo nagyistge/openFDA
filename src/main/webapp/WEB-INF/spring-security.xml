@@ -19,6 +19,8 @@
         <intercept-url pattern="/"  access="permitAll()" />
         <intercept-url pattern="/default*"  access="permitAll()" />
         <intercept-url pattern="/hello*"  access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/FdaData*"  access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/getFdaData*"  access="hasRole('ROLE_USER')" />
         <form-login
                 login-page="/login"
                 default-target-url="/hello"
@@ -27,7 +29,7 @@
                 password-parameter="j_password" />
         <logout logout-success-url="/login?logout" />
         <!-- enable csrf protection -->
-        <csrf/>
+       <!-- <csrf/>-->
     </http>
 
     <authentication-manager>
