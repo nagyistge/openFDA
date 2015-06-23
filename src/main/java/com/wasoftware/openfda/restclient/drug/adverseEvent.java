@@ -40,17 +40,16 @@ public class adverseEvent {
         return restTemplate.getForObject(uriComponents.toUri(), String.class);
     }
 
-    public String getAdverseEventCountByDate(Date fromDate, Date toDate)
+    public String getAdverseEventCountByDate(String fromDate, String toDate)
     {
         final UriComponents uriComponents = UriComponentsBuilder.fromUriString("{base_ri}?search=receivedate:{DateRange}&count=receivedate").build().expand(base_uri,composeDateRange(fromDate,toDate));
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(uriComponents.toUri(), String.class);
     }
 
-    public String composeDateRange(Date fromDate, Date toDate)
+    public String composeDateRange(String fromDate, String toDate)
     {
-        DateFormat df = new SimpleDateFormat("yyyyMMdd");
-        return "[" + df.format(fromDate) + "+TO+" + df.format(toDate) + "]";
+        return "[" + fromDate + "+TO+" + toDate + "]";
     }
 
 
