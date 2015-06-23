@@ -15,7 +15,7 @@
 	</definition>
 
 	<!--<definition name="hello" extends="welcomeTemplate">-->
-	<definition name="hello" template="/WEB-INF/tiles/template/layout_base_nostyle.jsp">
+	<definition name="hello" extends="welcomeTemplate">
 		<put-attribute name="title" value="Hello" />
 		<put-attribute name="tagline" value="" />
 		<put-attribute name="body" value="/WEB-INF/pages/hello.jsp" />
