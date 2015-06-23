@@ -13,12 +13,10 @@ import java.util.List;
 public class LoginController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String gotoLogin(ModelMap model) {
-		//model.addAttribute("message", "Hello world!");
 		return "login";
 	}
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
-		System.out.println("aaa");
 		model.addAttribute("message", "Hello world!");
 		return "hello";
 	}
