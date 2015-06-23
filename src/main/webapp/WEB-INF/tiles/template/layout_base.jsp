@@ -16,34 +16,34 @@
   <title><tiles:insertAttribute name="title" /></title>
 
   <!-- CSS -->
-  <link href="<c:url value="/resources/foundation/css/normalize.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/slick/style.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/animate.min.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/font-awesome.min.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/lib/hovericon/css/component.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/foundation.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/style.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/style-responsive.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/normalize.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/slick/style.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/animate.min.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/font-awesome.min.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/lib/hovericon/css/component.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/foundation.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/style.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/style-responsive.css" />" rel="stylesheet">
 
   <!--Override CSS-->
-  <link href="<c:url value="/resources/css/app.css" />" rel="stylesheet">
+  <link href="<c:url value="/css/app.css" />" rel="stylesheet">
 </head>
 
 <body>
   <!--Foundation Requirements-->
-  <script src="<c:url value="/resources/foundation/js/vendor/jquery.js" />" />
-  <script src="<c:url value="/resources/foundation/js/vendor/modernizr.js" />" />
-  <script src="<c:url value="/resources/foundation/js/vendor/fastclick.js" />" />
-  <script src="<c:url value="/resources/foundation/js/vendor/jquery.cookie.js" />" />
-  <script src="<c:url value="/resources/foundation/js/vendor/placeholder.js" />" />
-  <script src="<c:url value="/resources/foundation/js/foundation.min.js" />" />
+  <script src="<c:url value="/theme/js/vendor/jquery.js" />" ></script>
+  <script src="<c:url value="/theme/js/vendor/modernizr.js" />" ></script>
+  <script src="<c:url value="/theme/js/vendor/fastclick.js" />" ></script>
+  <script src="<c:url value="/theme/js/vendor/jquery.cookie.js" />" ></script>
+  <script src="<c:url value="/theme/js/vendor/placeholder.js" />" ></script>
+  <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
 
   <div id="wrapper" class="container" style="border: #1c1c1c solid 1px; border-radius: 10px;">
     <div id="header">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
-          <li class="name"><a href="search"><img src="<c:url value="" />" alt="" /></a></li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span><!--menu items--></span></a></li>
+          <li class="name"><a href="search" data-toggle="tooltip" title="Home"><img src="<c:url value="" />" alt="" /></a></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span><!--menu items-->Menu Items</span></a></li>
         </ul>
         <section class="top-bar-section">
           <tiles:insertAttribute name="menu" />
@@ -61,16 +61,16 @@
   </div>
 
   <!-- Landing Page Requirements -->
-  <script src="<c:url value="/resources/lib/jquery.throttle-debounce.js" />"></script>
-  <script src="<c:url value="/resources/lib/jquery.smooth-scroll.min.js" />"></script>
-  <script src="<c:url value="/resources/lib/parallax/jquery.parallax-1.1.3.js" />"></script>
-  <script src="<c:url value="/resources/lib/parallax/TweenMax.min.js" />"></script>
-  <script src="<c:url value="/resources/lib/parallax/jquery.superscrollorama.js" />"></script>
-  <script src="<c:url value="/resources/lib/jquery.backstretch.min.js" />"></script>
-  <script src="<c:url value="/resources/lib/jquery-scrollspy.js" />"></script>
-  <script src="<c:url value="/resources/lib/jquery.shuffle.js" />"></script>
-  <script src="<c:url value="/resources/lib/slick.min.js" />"></script>
-  <script src="<c:url value="/resources/foundation/js/agency-nyc.js" />"></script>
+  <script src="<c:url value="/lib/jquery.throttle-debounce.js" />"></script>
+  <script src="<c:url value="/lib/jquery.smooth-scroll.min.js" />"></script>
+  <script src="<c:url value="/lib/parallax/jquery.parallax-1.1.3.js" />"></script>
+  <script src="<c:url value="/lib/parallax/TweenMax.min.js" />"></script>
+  <script src="<c:url value="/lib/parallax/jquery.superscrollorama.js" />"></script>
+  <script src="<c:url value="/lib/jquery.backstretch.min.js" />"></script>
+  <script src="<c:url value="/lib/jquery-scrollspy.js" />"></script>
+  <script src="<c:url value="/lib/jquery.shuffle.js" />"></script>
+  <script src="<c:url value="/lib/slick.min.js" />"></script>
+  <script src="<c:url value="/theme/js/agency-nyc.js" />"></script>
   <script>
     $(document).foundation();
   </script>

@@ -11,15 +11,15 @@
   <title>AgencyNYC - Responsive Landing Page</title>
 
   <!-- CSS -->
-  <link href="<c:url value="/resources/foundation/css/normalize.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/slick/style.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/animate.min.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/font-awesome.min.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/lib/hovericon/css/component.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/foundation.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/normalize.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/slick/style.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/animate.min.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/font-awesome.min.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/lib/hovericon/css/component.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/foundation.css" />" rel="stylesheet">
 
-  <link href="<c:url value="/resources/foundation/css/style.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/foundation/css/style-responsive.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/style.css" />" rel="stylesheet">
+  <link href="<c:url value="/theme/css/style-responsive.css" />" rel="stylesheet">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -69,12 +69,12 @@
       <h4>FOLLOW US</h4>
       <div class="clear"></div>
       <div class="social-icons">
-        <a href="#fakelink" data-toggle="tooltip" title="Facebook"><img src="<c:url value="/resources/foundation/img/social-icons/facebook.png" />" alt="Facebook icon"></a>
+        <a href="#fakelink" data-toggle="tooltip" title="Facebook"><img src="<c:url value="/theme/img/social-icons/facebook.png" />" alt="Facebook icon"></a>
         <%--                         <a href="#fakelink" data-toggle="tooltip" title="Github"><img src="<c:url value="/theme/img/social-icons/github.png" />" alt="Github icon"></a> --%>
         <%--                         <a href="#fakelink" data-toggle="tooltip" title="Google+"><img src="<c:url value="/theme/img/social-icons/gplus.png" />" alt="Gplus icon"></a> --%>
-        <a href="#fakelink" data-toggle="tooltip" title="Liked In"><img src="<c:url value="/resources/foundation/img/social-icons/likedin.png" />" alt="Linkedin icon"></a>
+        <a href="#fakelink" data-toggle="tooltip" title="Liked In"><img src="<c:url value="/theme/img/social-icons/likedin.png" />" alt="Linkedin icon"></a>
         <%--                         <a href="#fakelink" data-toggle="tooltip" title="Tumblr"><img src="<c:url value="/theme/img/social-icons/tumblr.png" />" alt="Tumblr icon"></a> --%>
-        <a href="#fakelink" data-toggle="tooltip" title="Twitter"><img src="<c:url value="/resources/foundation/img/social-icons/twitter.png" />" alt="Twitter icon"></a>
+        <a href="#fakelink" data-toggle="tooltip" title="Twitter"><img src="<c:url value="/theme/img/social-icons/twitter.png" />" alt="Twitter icon"></a>
         <%--                         <a href="#fakelink" data-toggle="tooltip" title="Vimeo"><img src="<c:url value="/theme/img/social-icons/vimeo.png" />" alt="Vimeo icon"></a> --%>
         <%--                         <a href="#fakelink" data-toggle="tooltip" title="Youtube"><img src="<c:url value="/theme/img/social-icons/youtube.png" />" alt="Youtube icon"></a> --%>
       </div>
@@ -156,7 +156,7 @@
                 &#34;</h5>
               <h4 class="testimonial-name">Jessica Rice - San Francisco, USA</h4>
               <div class="testimonial-avatar">
-                <img src="<c:url value="/resources/" />" class="img-circle" alt="Avatar">
+                <img src="<c:url value="/theme/img/avatar/avatar.jpg" />" class="img-circle" alt="Avatar">
               </div>
             </div>foundation/img/avatar/avatar.jpg
 
@@ -167,7 +167,7 @@
                 &#34;</h5>
               <h4 class="testimonial-name">Sam Bason - Tokyo, Japan</h4>
               <div class="testimonial-avatar">
-                <img src="<c:url value="/resources/foundation/img/avatar/avatar.jpg" />" class="img-circle" alt="Avatar">
+                <img src="<c:url value="/theme/img/avatar/avatar.jpg" />" class="img-circle" alt="Avatar">
               </div>
             </div>
 
@@ -178,7 +178,7 @@
                 &#34;</h5>
               <h4 class="testimonial-name">Sara Curtis - London, UK</h4>
               <div class="testimonial-avatar">
-                <img src="<c:url value="/resources/foundation/img/avatar/avatar.jpg" />" class="img-circle" alt="Avatar">
+                <img src="<c:url value="/theme/img/avatar/avatar.jpg" />" class="img-circle" alt="Avatar">
               </div>
             </div>
           </div>
@@ -208,7 +208,7 @@
             </div>
             <div class="modal-body">
               <ul class="small-block-grid-2">
-                <li><img src="<c:url value="/resources/foundation/img/image_small/image_wide001.jpg" />" class="img-responsive" alt="Image portfolio"></li>
+                <li><img src="<c:url value="/theme/img/image_small/image_wide001.jpg" />" class="img-responsive" alt="Image portfolio"></li>
                 <li>
                   <p class="text-justify">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
@@ -250,7 +250,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small001.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small001.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["ui_design"]'>
               <div class="overlay">
@@ -261,7 +261,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small002.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small002.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["open_source"]'>
               <div class="overlay">
@@ -272,7 +272,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small003.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small003.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item " data-groups='["frameworks"]'>
               <div class="overlay">
@@ -283,7 +283,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small004.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small004.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["web_design"]'>
               <div class="overlay">
@@ -294,7 +294,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small005.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small005.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["open_source"]'>
               <div class="overlay">
@@ -305,7 +305,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small006.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small006.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["open_source"]'>
               <div class="overlay">
@@ -316,7 +316,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small007.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small007.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["community"]'>
               <div class="overlay">
@@ -327,7 +327,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small008.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small008.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["web_design"]'>
               <div class="overlay">
@@ -338,7 +338,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small009.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small009.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["frameworks"]'>
               <div class="overlay">
@@ -349,7 +349,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small010.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small010.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item"  data-groups='["community"]'>
               <div class="overlay">
@@ -360,7 +360,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small011.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small011.jpg" />" alt="Image portfolio">
             </li>
             <li class="picture-item" data-groups='["open_source"]'>
               <div class="overlay">
@@ -371,7 +371,7 @@
                   <a href="#fakelink"><i class="fa fa-link"></i></a>
                 </p>
               </div>
-              <img src="<c:url value="/resources/foundation/img/image_small/image_small012.jpg" />" alt="Image portfolio">
+              <img src="<c:url value="/theme/img/image_small/image_small012.jpg" />" alt="Image portfolio">
             </li>
             <li class="shuffle__sizer"></li>
           </ul>
