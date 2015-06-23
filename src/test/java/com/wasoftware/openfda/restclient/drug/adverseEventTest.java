@@ -5,9 +5,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * adverseEvent Tester.
@@ -16,6 +16,8 @@ import java.util.Date;
  * @version 1.0
  * @since <pre>Jun 22, 2015</pre>
  */
+
+//@RunWith(SpringJUnit4ClassRunner.class)
 public class adverseEventTest {
 
     @Before
@@ -60,9 +62,8 @@ public class adverseEventTest {
     @Test
     public void testGetAdverseEventCountByDate() throws Exception {
 
-        SimpleDateFormat dateformat1 = new SimpleDateFormat("dd/MM/yyyy");
-        Date fromDate = dateformat1.parse("01/01/2005");
-        Date toDate = dateformat1.parse("01/01/2006");
+        String fromDate = "20050101";
+        String toDate = "20060101";
 
         adverseEvent event = new adverseEvent();
         Assert.assertThat(event.getAdverseEventCountByDate(fromDate, toDate), CoreMatchers.containsString("meta"));
@@ -74,12 +75,11 @@ public class adverseEventTest {
     @Test
     public void testComposeDateRange() throws Exception {
 
-        SimpleDateFormat dateformat = new SimpleDateFormat("MM/dd/yyyy");
-        Date fromDate = dateformat.parse("01/01/2005");
-        Date toDate = dateformat.parse("12/31/2010");
+        String fromDate = "20050101";
+        String toDate = "20060101";
 
         adverseEvent event = new adverseEvent();
-        Assert.assertThat(event.composeDateRange(fromDate, toDate), CoreMatchers.containsString("[20050101+TO+20101231]"));
+        Assert.assertThat(event.composeDateRange(fromDate, toDate), CoreMatchers.containsString("[20050101+TO+20060101]"));
     }
 
 
