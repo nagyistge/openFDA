@@ -142,10 +142,10 @@
         <!-- BEGIN TESTIMONIAL CAROUSEL -->
         <div id="carousel-testimonial" class="carousel-landing carousel carousel-testimonial">
           <div class="testimonial-icon">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>
-                                </span>
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>
+            </span>
           </div>
 
           <!-- Wrapper for slides -->

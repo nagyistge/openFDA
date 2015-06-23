@@ -38,12 +38,16 @@
   <script src="<c:url value="/theme/js/vendor/placeholder.js" />" ></script>
   <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
 
-  <div id="wrapper" class="container" style="border: #1c1c1c solid 1px; border-radius: 10px;">
+  <div id="wrapper" class="container" style="border: #C1C1C1 solid 1px; border-radius: 10px;">
     <div id="header">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
-          <li class="name"><a href="search" data-toggle="tooltip" title="Home"><img src="<c:url value="" />" alt="" /></a></li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span><!--menu items-->Menu Items</span></a></li>
+          <li class="name">
+            <a href="search" data-toggle="tooltip" title="Home"></a>
+          </li>
+          <li class="toggle-topbar menu-icon">
+            <a href="#"><span>Menu Items</span></a>
+          </li>
         </ul>
         <section class="top-bar-section">
           <tiles:insertAttribute name="menu" />
