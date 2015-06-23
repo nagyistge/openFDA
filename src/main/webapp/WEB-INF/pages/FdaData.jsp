@@ -35,12 +35,13 @@ path {
 <a href="<c:url value='/getFdaData'/>" onclick="" class="tiny button radius">submit</a>
 <!-- load the d3.js library -->
 
-<h4>${fdaResultSet}</h4>
+<%--<h4>${fdaResultSet}</h4>--%>
 <%--<input type="hidden" value="${fdaResultSet}" id="fdaResultSet" name="fdaResultSet">--%>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="<c:url value="/resources/foundation/js/vendor/jquery.js" />" />
+
 <script>
+
     if(jQuery){
         alert("yes");
     }else{
@@ -56,7 +57,8 @@ path {
             height = 270 - margin.top - margin.bottom;
 
     // Parse the date / time
-    var parseDate = d3.time.format("%d-%b-%y").parse;
+    //var parseDate = d3.time.format("%d-%b-%y").parse;
+    var parseDate = d3.time.format("%Y%m%d").parse;
 
     // Set the ranges
     var x = d3.time.scale().range([0, width]);
@@ -113,19 +115,27 @@ path {
         {date:"26-Mar-12",close:606.98}
     ];
 
-   // data = xxx;
-
+   //var data2 = ${fdaResultSet};
+   var data2 = [{"time":"20040101","count":1},{"time":"20040102","count":519},{"time":"20040103","count":1},{"time":"20040104","count":58},{"time":"20040105","count":230}];
+   data = data2
+   alert(data2);
+   //alert("dsfkjlsjlfkdsflkdsjflkdsfjs");
     //d3.csv("data.csv", function(error, data) {
     data.forEach(function(d) {
-        d.date = parseDate(d.date);
-        d.close = +d.close;
-        //d.date = parseDate(d..time);
-        //d.close = +d.count;
+        //d.date = parseDate(d.date);
+        //d.close = +d.close;
+        d.time = parseDate(d.time);
+        d.count = +d.count;
+
+        alert(d.time);
+        alert(d.count);
     });
 
     // Scale the range of the data
-    x.domain(d3.extent(data, function(d) { return d.date; }));
-    y.domain([0, d3.max(data, function(d) { return d.close; })]);
+    //x.domain(d3.extent(data, function(d) { return d.date; }));
+    //y.domain([0, d3.max(data, function(d) { return d.close; })]);
+    x.domain(d3.extent(data, function(d) { return d.time; }));
+    y.domain([0, d3.max(data, function(d) { return d.count; })]);
 
     // Add the valueline path.
     svg.append("path")
