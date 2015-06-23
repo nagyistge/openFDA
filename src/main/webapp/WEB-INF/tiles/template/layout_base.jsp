@@ -46,7 +46,7 @@
           <li class="toggle-topbar menu-icon"><a href="#"><span><!--menu items--></span></a></li>
         </ul>
         <section class="top-bar-section">
- <%--         <tiles:insertAttribute name="menu" />--%>
+          <tiles:insertAttribute name="menu" />
         </section>
       </nav>
     </div>
@@ -55,7 +55,7 @@
         <tiles:insertAttribute name="body" />
       </div>
       <div id="footer">
-   <%--     <tiles:insertAttribute name="footer" />--%>
+        <tiles:insertAttribute name="footer" />
       </div>
     </div>
   </div>
