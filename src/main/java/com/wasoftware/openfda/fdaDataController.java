@@ -15,18 +15,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class fdaDataController {
-    @RequestMapping(value = "/FdaDataxxx", method = RequestMethod.GET)
-    public String getFdadata(ModelMap model) {
+    @RequestMapping(value = "/FdaData", method = RequestMethod.GET)
+    public String Fdadata(ModelMap model) {
         model.addAttribute("message", "Hello world!");
         return "FdaData";
     }
-    @RequestMapping(value = "/getFdaDataxxx", method = RequestMethod.GET)
-    public String getFdadataAPI(ModelMap model) {
+    @RequestMapping(value = "/getFdaData", method = RequestMethod.GET)
+    public String FdadataAPI(ModelMap model) {
         RestTemplate restTemplate = new RestTemplate();
         String url="https://api.fda.gov/drug/event.json?search=receivedate:[20040101+TO+20160101]&count=receivedate";
         //List<LinkedHashMap> users = restTemplate.getForObject(url, List.class);
-
-        //System.out.println(users.toString());
+        String users = "";
+        System.out.println(users.toString());
         //return new ModelAndView("listUsers", "users", users);
 
         //model.addAttribute("message", "Hello world!");

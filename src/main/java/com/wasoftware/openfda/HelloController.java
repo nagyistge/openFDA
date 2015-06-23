@@ -18,10 +18,17 @@ public class HelloController {
 	}
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
+		System.out.println("aaa");
 		model.addAttribute("message", "Hello world!");
 		return "hello";
 	}
-	@RequestMapping(value = "/FdaData", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello2", method = RequestMethod.GET)
+	public String printWelcome2(ModelMap model) {
+		System.out.println("bbb");
+		model.addAttribute("message", "Hello world!");
+		return "hello2";
+	}
+	/*@RequestMapping(value = "/FdaData", method = RequestMethod.GET)
 	public String getFdadata(ModelMap model) {
 		model.addAttribute("message", "Hello world!");
 		return "FdaData";
@@ -37,5 +44,5 @@ public class HelloController {
 
 		model.addAttribute("message", "Hello world!");
 		return "FdaData";
-	}
+	}*/
 }
