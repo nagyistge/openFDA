@@ -1,0 +1,74 @@
+
+.top-bar {
+	background: #ffffff;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	border-bottom: 5px solid #808080;
+	height: 50px;
+	line-height: 50px;
+}
+.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+	border-bottom: solid 1px #dbdbdb;
+	border-top: solid 1px #dbdbdb;
+	border-right: solid 2px #eeeeee;
+	clear: none;
+	height: 45px;
+	width: 0;
+}
+.top-bar-section ul li {
+	background: #ffffff;
+}
+.top-bar-section ul li > a {
+	color: #008cba;
+	background: #efefef;
+	display: block;
+	width: 100%;
+	padding: 12px 0 12px 0;
+	padding-left: 15px;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 0.95rem;
+	font-weight: normal;
+	text-transform: none;
+}
+
+.top-bar-section ul li > a.button {
+	font-size: 0.8125rem;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.top-bar-section li a:not(.button) {
+	background: #f9f9f9;
+	color: #008cda;
+}
+.top-bar-section li a:not(.button):hover {
+	background: #f9f9f9;
+	color: #ffffff;
+}
+
+/* The top-bar main item with sub-menu without mouse-over */
+.top-bar-section ul li:hover:not(.has-form) > a {
+	background-color: #dddddd;
+	color: #808080;
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+	background: #ffffff;
+}
+
+footer {
+	width: 100%;
+	padding: 30px 0 0;
+	background-color: #d7dfc0;
+	color: #554A47;
+	margin: 0 0 -30px 0;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+.row {
+	max-width: 100%
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+.center {
+	width: 1040px;
+	margin: 0 auto;
+	padding-top: 110px !important;
+}

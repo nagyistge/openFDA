@@ -18,23 +18,6 @@
   <li><a href="#"><spring:message code="menu.item.logout" /></a></li>
   <li class="divider"></li>
 
-  <!-- Button 1 -->
-  <li class="has-dropdown">
-    <a href="#"><spring:message code="menu.item1" /></a>
-    <ul class="dropdown">
-      <li><a href="item1"><spring:message code="item1.subItem1" /></a></li>
-    </ul>
-  </li>
-
-  <li class="divider"></li>
-
-  <!-- Button 2 -->
-  <li class="has-dropdown"><a href="#"><spring:message code="menu.item2" /></a>
-    <ul class="dropdown">
-      <li><a href="item2"><spring:message code="item2.subItem1" /></a></li>
-    </ul>
-  </li>
-
   <!-- Language Button -->
   <li class="has-dropdown"><a href="#"><spring:message code="menu.language" /></a>
           <ul class="dropdown">

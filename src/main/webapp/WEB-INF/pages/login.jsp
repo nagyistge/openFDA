@@ -7,6 +7,23 @@
 --%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<div class="center">
+    <div class="row">
+        <div class="large-12 large-centered columns">
+            <div class="row">
+                <form name="loginForm" action="<c:url value="j_spring_security_check" />" method="POST">
+                    <div class="row">
+                        <div class="large-6 large-offset-3 medium-12 small-12 columns">
+                            <br />
+                            <header><h1><b><spring:message code="login.header" /></b></h1></header>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <html>
 <head>
     <title>Login</title>

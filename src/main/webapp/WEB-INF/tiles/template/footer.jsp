@@ -5,19 +5,19 @@
   Time: 9:58 AM
   To change this template use File | Settings | File Templates.
 --%>
-<<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <link href="<c:url value="/css/webicons-master/webicons.scss" />" rel="stylesheet">
 
-<footer class="row">
-  <div class="large-6 medium-6 columns">
+<footer class="large-12 columns">
+  <div class="large-6 medium-6 small-12 columns">
     <p>
       <b><spring:message code="footer.copyRight.text" /></b><br />
       <a href="mailto:info@wasoftware.com?subject=Mail from the site."><spring:message code="footer.contact.text" /></a>
     </p>
   </div>
 
-  <div class="large-6 medium-6 columns">
+  <div class="large-6 medium-6 small-12 columns">
     <div class="row text-right">
       <div class="large-11 push-1 medium-10 small-12 columns">
         <a href="#" class="fc-webicons facebook" data-toggle="tooltip" title="<spring:message code = "footer.soicalIcon.fackbook"/>">
@@ -33,4 +33,5 @@
     </div>
   </div>
 </footer>
+
 
