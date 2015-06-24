@@ -11,7 +11,7 @@ import java.util.List;
 
 @Controller
 public class LoginController {
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = {"/","login"}, method = RequestMethod.GET)
 	public String gotoLogin(ModelMap model) {
 		return "login";
 	}
