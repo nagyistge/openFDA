@@ -15,7 +15,7 @@ body { font: 12px Arial;}
 
 path {
     stroke: steelblue;
-    stroke-width: 2;
+    stroke-width: 1;
     fill: none;
 }
 
@@ -28,33 +28,62 @@ path {
 }
 
 </style>
+
 <%--<body>--%>
-<h1>Get FDA Data</h1>
+<h1><spring:message code = "fdaData.title"/></h1>
 <h1>${message}</h1>
-<small>New item 1</small>
-<a href="<c:url value='/getFdaData'/>" onclick="" class="tiny button radius">submit</a>
+
+<form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/fdaData"/>" id="form1">
+    <div class="row">
+        <div class="large-12 columns">
+            <spring:message code="fdaData.datefrom"/>: <input type="text" id="fromDate" value=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <spring:message code="fdaData.dateto"/>: <input type="text" id="toDate" value=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <%--<a href="<c:url value='/getFdaData'/>" onclick="" class="tiny button radius">submit</a>--%>
+            <input type="submit" value="<spring:message code = "fdaData.submit"/>" class="tiny button radius"/>
+        </div>
+    </div>
+</form>
+<%--<p>Date From: <input type="text" id="fromDate"></p>
+<p>Date To: <input type="text" id="toDate"></p>
+<a href="<c:url value='/getFdaData'/>" onclick="" class="tiny button radius">submit</a>--%>
 <!-- load the d3.js library -->
 
 <%--<h4>${fdaResultSet}</h4>--%>
 <%--<input type="hidden" value="${fdaResultSet}" id="fdaResultSet" name="fdaResultSet">--%>
-
+<div id="svghome" ></div>
 <script src="http://d3js.org/d3.v3.min.js"></script>
+
 
 <script>
 
     if(jQuery){
-        alert("yes");
+        //alert("yes");
     }else{
-        alert("none");
+        //alert("none");
     }
-
+    $(function() {
+        $("#fromDate").datepicker();
+        $("#toDate").datepicker();
+    });
 
     ///alert(JSON.stringify(xxx));
 
     // Set the dimensions of the canvas / graph
-    var margin = {top: 30, right: 20, bottom: 30, left: 50},
+    /*var margin = {top: 30, right: 20, bottom: 30, left: 50},
             width = 600 - margin.left - margin.right,
-            height = 270 - margin.top - margin.bottom;
+            height = 270 - margin.top - margin.bottom;*/
+    function drawChart(){
+    var margin = {top: 30, right: 20, bottom: 30, left: 50},
+            width = 1200 - margin.left - margin.right,
+            height = 600 - margin.top - margin.bottom;
 
     // Parse the date / time
     //var parseDate = d3.time.format("%d-%b-%y").parse;
@@ -72,12 +101,15 @@ path {
             .orient("left").ticks(5);
 
     // Define the line
-    var valueline = d3.svg.line()
+   /* var valueline = d3.svg.line()
             .x(function(d) { return x(d.date); })
-            .y(function(d) { return y(d.close); });
+            .y(function(d) { return y(d.close); });*/
+     var valueline = d3.svg.line()
+         .x(function(d) { return x(d.time); })
+         .y(function(d) { return y(d.count); });
 
     // Adds the svg canvas
-    var svg = d3.select("body")
+    var svg = d3.select("#svghome")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
@@ -86,7 +118,7 @@ path {
             "translate(" + margin.left + "," + margin.top + ")");
 
     // Get the data
-    data = [
+    var data = [
         {date:"1-May-12",close:58.13},
         {date:"30-Apr-12",close:53.98},
         {date:"27-Apr-12",close:67.00},
@@ -118,7 +150,7 @@ path {
    //var data2 = ${fdaResultSet};
    var data2 = [{"time":"20040101","count":1},{"time":"20040102","count":519},{"time":"20040103","count":1},{"time":"20040104","count":58},{"time":"20040105","count":230}];
    data = data2
-   alert(data2);
+   //alert(data2);
    //alert("dsfkjlsjlfkdsflkdsjflkdsfjs");
     //d3.csv("data.csv", function(error, data) {
     data.forEach(function(d) {
@@ -127,8 +159,8 @@ path {
         d.time = parseDate(d.time);
         d.count = +d.count;
 
-        alert(d.time);
-        alert(d.count);
+        //alert(d.time);
+        //alert(d.count);
     });
 
     // Scale the range of the data
@@ -154,6 +186,6 @@ path {
             .call(yAxis);
 
     //});
-
+    }
 </script>
 <%--</body>--%>
