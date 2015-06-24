@@ -19,10 +19,10 @@
   <li class="divider"></li>
 
   <!-- Openfda Button -->
-  <li><a href="FdaData"><spring:message code="menu.item.openfda" /></a></li>
+  <li><a href="<c:url value="/fdaData" />"><spring:message code="menu.item.openfda" /></a></li>
   <li class="divider"></li>
 
   <!-- My Data Button -->
   <li><a href="#"><spring:message code="menu.item.mydata" /></a></li>
 
-</ul>
+  </ul>
