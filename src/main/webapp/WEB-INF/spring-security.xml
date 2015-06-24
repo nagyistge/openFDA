@@ -19,11 +19,11 @@
         <intercept-url pattern="/"  access="permitAll()" />
         <intercept-url pattern="/default*"  access="permitAll()" />
         <intercept-url pattern="/hello*"  access="hasRole('ROLE_USER')" />
-        <intercept-url pattern="/FdaData*"  access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/fdaData*"  access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/getFdaData*"  access="hasRole('ROLE_USER')" />
         <form-login
                 login-page="/login"
-                default-target-url="/hello"
+                default-target-url="/fdaData"
                 authentication-failure-url="/login?error"
                 username-parameter="j_username"
                 password-parameter="j_password" />

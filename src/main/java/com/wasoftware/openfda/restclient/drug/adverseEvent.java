@@ -1,5 +1,6 @@
 package com.wasoftware.openfda.restclient.drug;
 
+import org.json.simple.JSONObject;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;

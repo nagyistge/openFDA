@@ -15,7 +15,7 @@
 
 <html>
 <head>
-  <title><tiles:insertAttribute name="title" /></title>
+
 
   <!-- CSS -->
  <%-- <link href="<c:url value="/resources/foundation/css/normalize.css" />" rel="stylesheet">
@@ -31,9 +31,9 @@
   <%--<link href="<c:url value="/resources/css/app.css" />" rel="stylesheet">--%>
 </head>
 
-<body>
+
   <!--Foundation Requirements-->
- <%-- <script src="<c:url value="/resources/foundation/js/vendor/jquery.js" />" />
+<%--  <script src="<c:url value="/resources/foundation/js/vendor/jquery.js" />" />
   <script src="<c:url value="/resources/foundation/js/vendor/modernizr.js" />" />
   <script src="<c:url value="/resources/foundation/js/vendor/fastclick.js" />" />
   <script src="<c:url value="/resources/foundation/js/vendor/jquery.cookie.js" />" />
