@@ -37,7 +37,6 @@ public class FdaDataController {
             JSONParser jsonParser = new JSONParser();
             try{
                 jsonResult = adverseevent.getAdverseEventCountByDate(fromDate, toDate);
-                System.out.println(jsonResult.toString());
                 Object object = jsonParser.parse(jsonResult);
                 JSONObject jsonObject = (JSONObject) object;
                 jsonArrayResult = (JSONArray) jsonObject.get("results");
@@ -46,7 +45,7 @@ public class FdaDataController {
                 System.out.println(e.toString());
                 message = GetMessage.getMessage("fdaData.nodata");
             }
-
+            model.addAttribute("hasResult", "yes");
             model.addAttribute("fdaResultSet", jsonArrayResult.toString());
         }
         model.addAttribute("message", message);
