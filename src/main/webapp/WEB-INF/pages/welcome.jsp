@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <div class="row">
-	< class="large-12 large-centered columns">
+	<div class="large-12 large-centered columns">
 		<br />
 		<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
 			<li role="menuitem" class="current"><a href="<c:url value="/welcome"/>"></a><spring:message code = "welcome.label" /></li>
