@@ -4,7 +4,8 @@
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	border-bottom: 5px solid #808080;
 	height: 50px;
-	line-height: 50px; }
+	line-height: 50px;
+	}
 	.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
 	border-bottom: solid 1px #dbdbdb;
 	border-top: solid 1px #dbdbdb;
@@ -12,7 +13,7 @@
 	clear: none;
 	height: 45px;
 	width: 0;
-}
+	}
 .top-bar-section ul li {
 	background: #ffffff;
 	}
@@ -125,6 +126,13 @@ header {
 	margin-buttom: 0.01em;
 	color: #008cba;
 }
+#footer {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
 
 footer {
 	width: 100%;
@@ -135,7 +143,7 @@ footer {
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 #content-row {
-	padding-bottom: 100px;
+	padding-bottom: 40px;
 }
 
 .row {
@@ -193,7 +201,7 @@ footer {
 html, body {
 	margin: 0;
 	padding: 0;
-	height: auto;
+	height: 100%;
 	background: #ffffff;
 }
 hr {
@@ -229,6 +237,7 @@ h5 {
 h6 {
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	font-size: 1rem; }
+
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 	color: #808080;
 	font-size: 40%;
