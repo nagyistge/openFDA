@@ -19,7 +19,7 @@ public class LoginController {
 
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("greeting", GetMessage.getMessage("home.greeting"));
-		model.addAttribute("header", GetMessage.getMessage("home.title"));
+		model.addAttribute("title", GetMessage.getMessage("home.title"));
 		model.addAttribute("message", GetMessage.getMessage("home.introduction"));
 		return "welcome";
 	}
