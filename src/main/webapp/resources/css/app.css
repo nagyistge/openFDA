@@ -4,9 +4,8 @@
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	border-bottom: 5px solid #808080;
 	height: 50px;
-	line-height: 50px;
-}
-.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+	line-height: 50px; }
+	.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
 	border-bottom: solid 1px #dbdbdb;
 	border-top: solid 1px #dbdbdb;
 	border-right: solid 2px #eeeeee;
@@ -16,33 +15,47 @@
 }
 .top-bar-section ul li {
 	background: #ffffff;
-}
-.top-bar-section ul li > a {
-	color: #008cba;
-	background: #efefef;
-	display: block;
-	width: 100%;
-	padding: 12px 0 12px 0;
-	padding-left: 15px;
-	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	font-size: 0.95rem;
-	font-weight: normal;
-	text-transform: none;
-}
-
-.top-bar-section ul li > a.button {
-	font-size: 0.8125rem;
-	padding-right: 15px;
-	padding-left: 15px;
-}
-.top-bar-section li a:not(.button) {
-	background: #f9f9f9;
-	color: #008cda;
-}
-.top-bar-section li a:not(.button):hover {
-	background: #f9f9f9;
-	color: #ffffff;
-}
+	}
+	.top-bar-section ul li > a {
+		color: #008cba;
+		background: #efefef;
+		display: block;
+		width: 100%;
+		padding: 12px 0 12px 0;
+		padding-left: 15px;
+		font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		font-size: 0.95rem;
+		font-weight: normal;
+		text-transform: none;
+		}
+	.top-bar-section ul li > a.button {
+		font-size: 0.8125rem;
+		padding-right: 15px;
+		padding-left: 15px;
+		}
+	.top-bar-section li a:not(.button) {
+		background: #f9f9f9;
+		color: #008cda;
+		}
+	.top-bar-section li a:not(.button):hover {
+		background-color: #f9f9f9;
+		color: #ffffff;
+		}
+	.top-bar-section li.hover > a:not(.button) {
+		background-color: #d7dfc0;
+		background: #008cba;
+		color: #FFFFFF;
+		}
+	.top-bar-section li:not(.has-form) a:not(.button) {
+		background: #333333;
+		line-height: 2.8125rem;
+		padding: 0 0.9375rem;
+		}
+	.top-bar-section li:not(.has-form) a:not(.button):hover {
+		background-color: #d7dfc0;
+		background: #008cba;
+		color: #ffffff;
+		}
 
 /* The top-bar main item with sub-menu without mouse-over */
 .top-bar-section ul li:hover:not(.has-form) > a {
@@ -50,13 +63,67 @@
 	color: #808080;
 }
 .top-bar-section li:not(.has-form) a:not(.button) {
-	background: #ffffff;
+	background-color: #ffffff;
 }
+
+.top-bar-section .has-dropdown {
+	position: relative; }
+	.top-bar-section .has-dropdown > a:after {
+		border: inset 5px;
+		content: "";
+		display: block;
+		height: 0;
+		width: 0;
+		border-color: #eeeeee transparent transparent transparent;
+		border-left-style: solid;
+		margin-right: 15px;
+		margin-top: -2.5px;
+		position: absolute;
+		top: 50%;
+		right: 0; }
+	.top-bar-section .has-dropdown.moved {
+		position: static; }
+	.top-bar-section .has-dropdown.moved > .dropdown {
+		position: static !important;
+		height: auto;
+		width: auto;
+		overflow: visible;
+		clip: auto;
+		display: block;
+		position: absolute !important;
+		width: 100%; }
+	.top-bar-section .has-dropdown.moved > a:after {
+		display: none; }
+.top-bar-section .dropdown {
+	left: 0;
+	background: transparent;
+	min-width: 100%;
+	top: auto; }
+	.top-bar-section .dropdown li a {
+		background: #d7dfc0;
+		color: #FFFFFF;
+		line-height: 2.8125rem;
+		padding: 12px 0.9375rem;
+		white-space: nowrap; }
+	.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
+		background: #d7dfc0;
+		color: #FFFFFF; }
+	.top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
+		background-color: #008cba;
+		color: #FFFFFF;
+		background: #008cba; }
+	.top-bar-section .dropdown li label {
+		background: #008cba;
+		white-space: nowrap; }
+	.top-bar-section .dropdown li .dropdown {
+		left: 100%;
+		top: 0; }
 
 header {
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	margin-top: 0.01em;
 	margin-buttom: 0.01em;
+	color: #008cba;
 }
 
 footer {
@@ -129,3 +196,40 @@ html, body {
 	height: auto;
 	background: #ffffff;
 }
+hr {
+	border: solid #d7dfc0;
+	border-width: 4px 0 0;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+small {
+	font-size: 40%;
+	line-height: inherit;
+}
+h1 {
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 2.75rem; }
+
+h2 {
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 2.3125rem; }
+
+h3 {
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 1.6875rem; }
+
+h4 {
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 1.4375rem; }
+
+h5 {
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 1.125rem; }
+
+h6 {
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 1rem; }
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+	color: #808080;
+	font-size: 40%;
+	line-height: 0; }

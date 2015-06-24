@@ -4,10 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import java.util.LinkedHashMap;
-import java.util.List;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by yipty on 6/22/2015.

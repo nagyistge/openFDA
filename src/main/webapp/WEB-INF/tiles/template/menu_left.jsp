@@ -15,11 +15,11 @@
 <ul class="left">
 
   <!-- Home Button -->
-  <li><a href="#"><spring:message code="menu.item.home" /></a></li>
+  <li><a href="hello"><spring:message code="menu.item.home" /></a></li>
   <li class="divider"></li>
 
   <!-- Openfda Button -->
-  <li><a href="#"><spring:message code="menu.item.openfda" /></a></li>
+  <li><a href="FdaData"><spring:message code="menu.item.openfda" /></a></li>
   <li class="divider"></li>
 
   <!-- My Data Button -->
