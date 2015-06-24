@@ -23,6 +23,11 @@
                             <c:if test="${not empty msg}">
                                 <div class="msg">${msg}</div>
                             </c:if>
+                            <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+                                <font color="red"><spring:message code = "login.failAttempt.alert" />
+                                    <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />.
+                                </font>
+                            </c:if>
                         </div>
                     </div>
                     <div class="row">
