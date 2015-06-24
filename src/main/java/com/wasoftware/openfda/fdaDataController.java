@@ -9,7 +9,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.wasoftware.util.GetMessage;
+import com.wasoftware.util.*;
 
 /**
  * Created by yipty on 6/22/2015.
@@ -26,11 +26,11 @@ public class FdaDataController {
                              @RequestParam(value = "fromDate",defaultValue="") String fromDate,
                              @RequestParam(value = "toDate",defaultValue="") String toDate
                              ) {
-        String message="";
+        String errorMessage="";
         if (fromDate.length() > 0 && toDate.length() > 0) {
             adverseEvent adverseevent = new adverseEvent();
-            fromDate = reformatDate(fromDate);
-            toDate = reformatDate(toDate);
+            fromDate = FormatDate.formatDate(fromDate);
+            toDate = FormatDate.formatDate(toDate);
             String jsonResult = "";
             JSONArray jsonArrayResult;
             jsonArrayResult = new JSONArray();
@@ -43,19 +43,13 @@ public class FdaDataController {
                 model.addAttribute("fdaResultSet", jsonArrayResult.toString());
             }catch(Exception e){
                 System.out.println(e.toString());
-                message = GetMessage.getMessage("fdaData.nodata");
+                errorMessage = GetMessage.getMessage("fdaData.nodata");
             }
             model.addAttribute("hasResult", "yes");
             model.addAttribute("fdaResultSet", jsonArrayResult.toString());
         }
-        model.addAttribute("message", message);
+        model.addAttribute("errorMessage", errorMessage);
         return "fdaData";
     }
-    public String reformatDate(String unformattedDate){
-        String year = unformattedDate.substring(6, 10);
-        String month = unformattedDate.substring(0, 2);
-        String day = unformattedDate.substring(3, 5);
-        String formattedDate = year + month + day;
-        return formattedDate;
-    }
+
 }
