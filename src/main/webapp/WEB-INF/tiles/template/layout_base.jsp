@@ -38,8 +38,11 @@
   <script src="<c:url value="/theme/js/vendor/placeholder.js" />" ></script>
   <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
 
-  <div id="wrapper" class="container" style="border: #C1C1C1 solid 1px; border-radius: 10px;">
+  <div id="wrapper" class="container">
+    <!-- header section -->
     <div id="header">
+
+      <!-- top bar section -->
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
@@ -50,17 +53,19 @@
           </li>
         </ul>
         <section class="top-bar-section">
-          <tiles:insertAttribute name="menu" />
+          <tiles:insertAttribute name="menu_right" />
+          <tiles:insertAttribute name="menu_left" />
         </section>
       </nav>
     </div>
+
     <div class="row">
       <div id="content-row" class="large-12 columns">
         <tiles:insertAttribute name="body" />
       </div>
-      <div id="footer">
-        <tiles:insertAttribute name="footer" />
-      </div>
+    </div>
+    <div id="footer">
+      <tiles:insertAttribute name="footer" />
     </div>
   </div>
 
