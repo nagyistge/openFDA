@@ -15,7 +15,7 @@
 <ul class="right">
 
   <!-- Login/Logout Button -->
-  <li><a href="/login"><spring:message code="menu.item.login" /></a></li>
+  <li><a href="login"><spring:message code="menu.item.login" /></a></li>
   <li class="divider"></li>
 
   <!-- Language Button -->
