@@ -15,7 +15,7 @@
 <ul class="left">
 
   <!-- Home Button -->
-  <li><a href="hello"><spring:message code="menu.item.home" /></a></li>
+  <li><a href="<c:url value="/welcome" />"><spring:message code="menu.item.home" /></a></li>
   <li class="divider"></li>
 
   <!-- Openfda Button -->
