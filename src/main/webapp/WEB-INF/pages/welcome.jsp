@@ -2,16 +2,15 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <div class="row">
-	<div class="large-12 large-centered columns">
+	<div class="large-10 large-centered medium-12 small-12 columns">
 		<br />
 		<nav class="breadcrumbs" role="navigation">
-			<li class="current"><a href="<c:url value="/welcome"/>"></a><spring:message code = "welcome.label" /></li>
-			<li class="unavailable"><a href="<c:url value="/fdaData"/>"></a><spring:message code = "openPDA.label" /></li>
-			<li class="unavailable"><a href="<c:url value="/myData"/>"></a><spring:message code="myData.label" /></li>
+			<a class="current" href="<c:url value="/welcome"/>"><spring:message code="welcome.label" /></a>
+			<a class="unavailable" href="<c:url value="/fdaData"/>"><spring:message code = "openPDA.label" /></a>
+			<a class="unavailable" href="<c:url value="/myData"/>"><spring:message code="myData.label" /></a>
 		</nav>
-		<br />
 	</div>
-	<div class="large-12 medium-12 small-12 columns">
+	<div class="large-10 large-centered medium-12 small-12 columns">
 		<header><h1><b>${greeting}</b><small></small></h1></header>
 		<h3><b>${title}</b></h3>
 		<p>${message}</p>
