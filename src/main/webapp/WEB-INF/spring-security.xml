@@ -17,7 +17,7 @@
         <form-login
                 login-page="/login"
                 default-target-url="/welcome"
-                authentication-failure-url="/login?error"
+                authentication-failure-url="/login"
                 username-parameter="j_username"
                 password-parameter="j_password" />
         <logout logout-success-url="/login" />
