@@ -4,7 +4,7 @@
 <div class="row">
 	<div class="large-12 large-centered columns">
 		<br />
-		<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+		<nav class="breadcrumbs" role="navigation">
 			<li class="current"><a href="<c:url value="/welcome"/>"></a><spring:message code = "welcome.label" /></li>
 			<li class="unavailable"><a href="<c:url value="/fdaData"/>"></a><spring:message code = "openPDA.label" /></li>
 			<li class="unavailable"><a href="<c:url value="/myData"/>"></a><spring:message code="myData.label" /></li>
