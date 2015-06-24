@@ -18,6 +18,8 @@ public class LoginController {
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 
 	public String printWelcome(ModelMap model) {
+		model.addAttribute("greeting", GetMessage.getMessage("home.greeting"));
+		model.addAttribute("header", GetMessage.getMessage("home.title"));
 		model.addAttribute("message", GetMessage.getMessage("home.introduction"));
 		return "welcome";
 	}
