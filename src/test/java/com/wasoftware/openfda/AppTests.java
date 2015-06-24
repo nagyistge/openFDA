@@ -1,5 +1,7 @@
 package com.wasoftware.openfda;
 
+import com.wasoftware.util.FormatDate;
+import com.wasoftware.util.GetMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +12,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -32,8 +35,23 @@ public class AppTests {
 
     @Test
     public void simple() throws Exception {
-        mockMvc.perform(get("/hello"))
+        mockMvc.perform(get("/welcome"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("hello"));
+                .andExpect(view().name("welcome"));
     }
+    @Test
+    public void testfdaData() throws Exception {
+        mockMvc.perform(get("/fdaData"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("fdaData"));
+    }
+    @Test
+    public void testReformatDate() throws Exception {
+        assertEquals("20150206", FormatDate.formatDate("02/06/2015"));
+    }
+    @Test
+    public void testGetMessage() throws Exception {
+        assertEquals("Login", GetMessage.getMessage("login.header"));
+    }
+
 }
