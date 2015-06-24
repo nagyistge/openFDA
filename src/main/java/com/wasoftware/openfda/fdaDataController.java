@@ -8,11 +8,8 @@ import com.wasoftware.openfda.restclient.drug.*;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-//javax.json.JsonArray;
-//import javax.json.JsonObject;
-
+import org.springframework.web.bind.annotation.RequestParam;
+import com.wasoftware.util.GetMessage;
 
 /**
  * Created by yipty on 6/22/2015.
@@ -21,32 +18,44 @@ import org.json.simple.parser.ParseException;
 @Controller
 public class FdaDataController {
     @RequestMapping(value = "/fdaData", method = RequestMethod.GET)
-    public String fdadata(ModelMap model) {
-        System.out.println("vvv");
-        model.addAttribute("message", "Hello world!");
+    public String fdaData(ModelMap model) {
         return "fdaData";
     }
-    @RequestMapping(value = "/getFdaData", method = RequestMethod.GET)
-    public String getFdaData(ModelMap model) throws ParseException {
-        adverseEvent adverseevent = new adverseEvent();
-        String jsonResult = adverseevent.getAdverseEventCountByDate("20040101","20160101");
-        JSONArray jsonArrayResult;
-        jsonArrayResult = new JSONArray();
-        try{
-            JSONParser parser = new JSONParser();
-            Object obj = parser.parse(jsonResult);
-            JSONObject jsonObject = (JSONObject) obj;
-            System.out.println("xxx");
-            System.out.println(jsonObject.toString());
-            jsonArrayResult = (JSONArray) jsonObject.get("results");
-            System.out.println(jsonArrayResult.toString());
-            System.out.println(" " + jsonArrayResult.size());
-        }catch(Exception e){
-            System.out.println(e.toString());
+    @RequestMapping(value = "/fdaData", method = RequestMethod.POST)
+    public String getFdaData(ModelMap model,
+                             @RequestParam(value = "fromDate",defaultValue="") String fromDate,
+                             @RequestParam(value = "toDate",defaultValue="") String toDate
+                             ) {
+        String message="";
+        if (fromDate.length() > 0 && toDate.length() > 0) {
+            adverseEvent adverseevent = new adverseEvent();
+            fromDate = reformatDate(fromDate);
+            toDate = reformatDate(toDate);
+            String jsonResult = "";
+            JSONArray jsonArrayResult;
+            jsonArrayResult = new JSONArray();
+            JSONParser jsonParser = new JSONParser();
+            try{
+                jsonResult = adverseevent.getAdverseEventCountByDate(fromDate, toDate);
+                Object object = jsonParser.parse(jsonResult);
+                JSONObject jsonObject = (JSONObject) object;
+                jsonArrayResult = (JSONArray) jsonObject.get("results");
+                model.addAttribute("fdaResultSet", jsonArrayResult.toString());
+            }catch(Exception e){
+                System.out.println(e.toString());
+                message = GetMessage.getMessage("fdaData.nodata");
+            }
+            model.addAttribute("hasResult", "yes");
+            model.addAttribute("fdaResultSet", jsonArrayResult.toString());
         }
-        //return new ModelAndView("listUsers", "users", users);
-
-        model.addAttribute("fdaResultSet", jsonArrayResult.toString());
+        model.addAttribute("message", message);
         return "fdaData";
+    }
+    public String reformatDate(String unformattedDate){
+        String year = unformattedDate.substring(6, 10);
+        String month = unformattedDate.substring(0, 2);
+        String day = unformattedDate.substring(3, 5);
+        String formattedDate = year + month + day;
+        return formattedDate;
     }
 }

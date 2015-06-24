@@ -24,7 +24,7 @@
   <link href="<c:url value="/theme/css/foundation.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/style.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/style-responsive.css" />" rel="stylesheet">
-
+  <link href="<c:url value="/css/jquery-ui.css" />" rel="stylesheet">
   <!--Override CSS-->
   <link href="<c:url value="/css/app.css" />" rel="stylesheet">
 </head>
@@ -37,6 +37,7 @@
   <script src="<c:url value="/theme/js/vendor/jquery.cookie.js" />" ></script>
   <script src="<c:url value="/theme/js/vendor/placeholder.js" />" ></script>
   <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
+  <script src="<c:url value="/lib/jquery-ui.js" />" ></script>
 
   <div id="wrapper" class="container">
     <!-- header section -->
