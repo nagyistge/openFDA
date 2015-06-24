@@ -15,9 +15,17 @@ public class LoginController {
 	public String gotoLogin(ModelMap model) {
 		return "login";
 	}
+
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("message", "Hello world!");
 		return "hello";
+	}
+
+	//for 404 access denied page
+	@RequestMapping(value = "/404", method = RequestMethod.GET)
+	public String accesssDenied(ModelMap model) {
+		//model.addAttribute("message", "Hello world!");
+		return "login";
 	}
 }
