@@ -114,7 +114,10 @@ path {
                 "translate(" + margin.left + "," + margin.top + ")");
 
         // Get the data
-        var data = ${fdaResultSet};
+        var data = null;
+        <c:if test="${not empty fdaResultSet}">
+            data = ${fdaResultSet};
+        </c:if>
         //var data = [{"time":"20040101","count":1},{"time":"20040102","count":519},{"time":"20040103","count":1},{"time":"20040104","count":58},{"time":"20040105","count":230}];
 
         //alert(data2);
