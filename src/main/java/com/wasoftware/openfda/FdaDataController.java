@@ -19,7 +19,7 @@ import com.wasoftware.util.*;
 public class FdaDataController {
     @RequestMapping(value = "/fdaData", method = RequestMethod.GET)
     public String fdaData(ModelMap model) {
-        return "fdaData";
+        return "drugAdverseEvent";
     }
     @RequestMapping(value = "/fdaData", method = RequestMethod.POST)
     public String getFdaData(ModelMap model,
@@ -49,7 +49,7 @@ public class FdaDataController {
             model.addAttribute("fdaResultSet", jsonArrayResult.toString());
         }
         model.addAttribute("errorMessage", errorMessage);
-        return "fdaData";
+        return "drugAdverseEvent";
     }
 
 }
