@@ -23,6 +23,7 @@ path {
 
 <%--<body>--%>
 <div class="row">
+	<!-- Breadcrumbs section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <br />
         <nav class="breadcrumbs" role="navigation">
@@ -31,24 +32,25 @@ path {
             <a class="unavailable" href="<c:url value="/myData"/>"><spring:message code="myData.label" /></a>
         </nav>
     </div>
-    <div class="large-10 large-centered medium-10 small-12 columns">
-        <header><h1><b><spring:message code = "fdaData.title"/></b></h1></header>
+
+	<!-- Body section -->
+    <div class="large-10 large-centered medium-12 small-12 columns">
+        <header><h1><b><spring:message code = "fdaData.title"/></b>&nbsp;<small><spring:message code = "fdaData.subtitle" /></small></h1></header>
         <p>${message}</p>
     </div>
-    <div class="large-10 medium-10 small-12 columns">
+    <div class="large-10 large-centered medium-12 small-12 columns">
         <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/fdaData"/>" id="form1">
             <div class="row">
-                <div class="large-3 medium-6 small-12 columns">
-                    <spring:message code="fdaData.datefrom"/><input type="text" id="fromDate" name="fromDate" value=""/>
+                <div class="large-3 medium-12 small-12 columns">
+                    <label><spring:message code="fdaData.datefrom"/></label><input type="text" value="" data-date-format="mm-dd-yyyy" id="fromDate" name="fromDate"/>
                 </div>
-                <div class="large-3 medium-6 small-12 columns">
-                    <spring:message code="fdaData.dateto"/><input type="text" id="toDate" name="toDate" value=""/>
+                <div class="large-3 medium-12 small-12 columns">
+                    <label><spring:message code="fdaData.dateto"/></label><input type="text" value="" data-date-format="mm-dd-yyyy" id="toDate" name="toDate"/>
                 </div>
-                <div class="large-3 medium-6 small-12 columns">
-                    <input type="submit" value="<spring:message code="fdaData.submit"/>" class="tiny button radius"/>
+                <div class="large-3 medium-12 small-12 columns">
+                    <label>&nbsp;</label><input type="submit" value="<spring:message code="fdaData.submit"/>" class="tiny button radius"/>
                 </div>
-                <div class="large-3 medium-6 small-12 columns">
-					<label>&nbsp;</label>
+                <div class="large-3 medium-12 small-12 columns">
                     <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
                 </div>
             </div>
@@ -61,10 +63,11 @@ path {
 
 <script>
 
-    $(function() {
-        $("#fromDate").datepicker();
-        $("#toDate").datepicker();
-    });
+	$(function(){
+		$("#fromDate").fdatepicker('show');
+		$("#toDate").fdatepicker('show');
+	});
+
 
     var hasResult = document.getElementById("hasResult");
     if (hasResult.value == "yes"){

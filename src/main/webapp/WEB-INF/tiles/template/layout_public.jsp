@@ -25,6 +25,8 @@
   <link href="<c:url value="/theme/css/foundation.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/style.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/style-responsive.css" />" rel="stylesheet">
+  <%--<link href="<c:url value="/css/jquery-ui.css" />" rel="stylesheet">--%>
+  <link href="<c:url value="/css/foundation.datepicker.css" />" rel="stylesheet">
 
   <!-- CSS Override -->
   <link href="<c:url value="/css/app.css" />" rel="stylesheet">
@@ -37,7 +39,9 @@
   <script src="<c:url value="/theme/js/vendor/fastclick.js" />"></script>
   <script src="<c:url value="/theme/js/vendor/jquery.cookie.js" />"></script>
   <script src="<c:url value="/theme/js/vendor/placeholder.js" />"></script>
-  <script src="<c:url value="/theme/js/foundation.min.js" />"></script>
+  <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
+  <%--<script src="<c:url value="/lib/jquery-ui.js" />" ></script>--%>
+  <script src="<c:url value="/lib/foundation.datepicker.js" />
 
 <div id="wrapper" class="container">
   <!-- header Page -->
