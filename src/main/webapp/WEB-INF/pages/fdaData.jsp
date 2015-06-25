@@ -38,14 +38,14 @@ path {
             <div class="row">
                 <div class="large-3 medium-12 small-12 columns">
 					<div class="row collapse prefix-radius">
-						<div class="large-2 medium-4 small-6 columns"><span class="prefix"><spring:message code="fdaData.datefrom"/></span></div>
-						<div class="large-3 medium-9 small-6 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
+						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="fdaData.datefrom"/></span></div>
+						<div class="large-3 medium-3 small-3 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
 					</div>
 				</div>
                 <div class="large-3 medium-12 small-12 columns">
 					<div class="row collapse prefix-radius">
-						<div class="large-2 medium-4 small-6 columns"><span class="prefix"><spring:message code="fdaData.dateto"/></span></div>
-						<div class="large-3 medium-9 small-6 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
+						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="fdaData.dateto"/></span></div>
+						<div class="large-3 medium-3 small-3 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
 					</div>
                 </div>
                 <div class="large-3 medium-12 small-12 columns end">
