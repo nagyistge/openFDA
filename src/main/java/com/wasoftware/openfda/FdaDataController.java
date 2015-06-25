@@ -17,11 +17,11 @@ import com.wasoftware.util.*;
 
 @Controller
 public class FdaDataController {
-    @RequestMapping(value = "/fdaData", method = RequestMethod.GET)
+    @RequestMapping(value = "/drugAdverseEvent", method = RequestMethod.GET)
     public String fdaData(ModelMap model) {
         return "drugAdverseEvent";
     }
-    @RequestMapping(value = "/fdaData", method = RequestMethod.POST)
+    @RequestMapping(value = "/drugAdverseEvent", method = RequestMethod.POST)
     public String getFdaData(ModelMap model,
                              @RequestParam(value = "fromDate",defaultValue="") String fromDate,
                              @RequestParam(value = "toDate",defaultValue="") String toDate

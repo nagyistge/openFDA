@@ -23,33 +23,33 @@ path {
         <br />
         <nav class="breadcrumbs" role="navigation">
             <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
-            <a class="current" href="<c:url value="/fdaData"/>"><spring:message code = "openPDA.label" /></a>
+            <a class="current" href="<c:url value="/drugAdverseEvent"/>"><spring:message code = "openPDA.label" /></a>
             <a class="unavailable" href="<c:url value="/myData"/>"><spring:message code="myData.label" /></a>
         </nav>
     </div>
 
 	<!-- Body section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
-        <header><h1><b><spring:message code = "fdaData.title"/></b>&nbsp;<small><spring:message code = "fdaData.subtitle" /></small></h1></header>
+        <header><h1><b><spring:message code = "drugAdverseEvent.title"/></b></h1></header>
         <p>${message}</p>
     </div>
     <div class="large-10 large-centered medium-12 small-12 columns">
-        <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/fdaData"/>" id="form1">
+        <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/drugAdverseEvent"/>" id="form1">
             <div class="row">
                 <div class="large-3 medium-12 small-12 columns">
 					<div class="row collapse prefix-radius">
-						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="fdaData.datefrom"/></span></div>
+						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugAdverseEvent.datefrom"/></span></div>
 						<div class="large-2 medium-2 small-2 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
 					</div>
 				</div>
                 <div class="large-3 medium-12 small-12 columns">
 					<div class="row collapse prefix-radius">
-						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="fdaData.dateto"/></span></div>
+						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugAdverseEvent.dateto"/></span></div>
 						<div class="large-2 medium-2 small-2 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
 					</div>
                 </div>
                 <div class="large-3 medium-12 small-12 columns end">
-                    <input type="submit" value="<spring:message code="fdaData.submit"/>" class="tiny button radius"/>
+                    <input type="submit" value="<spring:message code="drugAdverseEvent.submit"/>" class="tiny button radius"/>
                 </div>
 				<input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
             </div>
