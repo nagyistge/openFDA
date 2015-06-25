@@ -18,8 +18,17 @@
     <li><a href="<c:url value="/welcome" />"><spring:message code="menu.item.home" /></a></li>
     <li class="divider"></li>
 
-    <!-- Openfda Button -->
-    <li><a href="<c:url value="/fdaData" />"><spring:message code="menu.item.openfda" /></a></li>
+    <!-- OpenFDA Data Button -->
+    <li class="has-dropdown"><a href=""><spring:message code="menu.item.openfda" /></a>
+        <ul class="dropdown">
+            <li class="divider"></li>
+            <li><label><spring:message code = "menu.label.dataset" /></label></li>
+            <li class="divider"></li>
+            <li><a href="<c:url value="/drugAdverseEvent"/>"><spring:message code="menu.datasets.drugs" /></a></li>
+            <li><a href="#"><spring:message code="menu.datasets.devices" /></a></li>
+            <li><a href="#"><spring:message code="menu.datasets.foods" /></a></li>
+        </ul>
+    </li>
     <li class="divider"></li>
 
     <!-- My Data Button -->
