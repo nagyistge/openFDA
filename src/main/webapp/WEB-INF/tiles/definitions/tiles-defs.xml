@@ -37,16 +37,29 @@
 		<put-attribute name="body" value="/WEB-INF/pages/login.jsp" />
 	</definition>
 
-	<definition name="drugAdverseEvent" extends="welcomeTemplate">
+	<definition name="drugs" extends="welcomeTemplate">
 	<!--<definition name="FdaData" template="/WEB-INF/tiles/template/layout_base_nostyle.jsp">-->
-		<put-attribute name="title" value="DrugAdverseEvent" />
+		<put-attribute name="title" value="Drugs" />
 		<put-attribute name="tagline" value="" />
-		<put-attribute name="body" value="/WEB-INF/pages/drugAdverseEvent.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/drugs.jsp" />
 	</definition>
+
+	<definition name="devices" extends="welcomeTemplate">
+		<put-attribute name="title" value="Devices" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="body" value="/WEB-INF/pages/devices.jsp" />
+	</definition>
+
+	<definition name="foods" extends="welcomeTemplate">
+		<put-attribute name="title" value="Foods" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="body" value="/WEB-INF/pages/foods.jsp" />
+	</definition>
+
 	<definition name="getFdaData" extends="welcomeTemplate">
 	<!--<definition name="getFdaData" template="/WEB-INF/tiles/template/layout_base_nostyle.jsp">-->
 	    <put-attribute name="title" value="FdaData" />
 	    <put-attribute name="tagline" value="" />
-	    <put-attribute name="body" value="/WEB-INF/pages/drugAdverseEvent.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/pages/drugs.jsp" />
     </definition>
 </tiles-definitions>

@@ -16,12 +16,12 @@ import com.wasoftware.util.*;
  */
 
 @Controller
-public class FdaDataController {
-    @RequestMapping(value = "/drugAdverseEvent", method = RequestMethod.GET)
+public class DrugsController {
+    @RequestMapping(value = "/drugs", method = RequestMethod.GET)
     public String fdaData(ModelMap model) {
-        return "drugAdverseEvent";
+        return "drugs";
     }
-    @RequestMapping(value = "/drugAdverseEvent", method = RequestMethod.POST)
+    @RequestMapping(value = "/drugs", method = RequestMethod.POST)
     public String getFdaData(ModelMap model,
                              @RequestParam(value = "fromDate",defaultValue="") String fromDate,
                              @RequestParam(value = "toDate",defaultValue="") String toDate
@@ -49,7 +49,7 @@ public class FdaDataController {
             model.addAttribute("fdaResultSet", jsonArrayResult.toString());
         }
         model.addAttribute("errorMessage", errorMessage);
-        return "drugAdverseEvent";
+        return "drugs";
     }
 
 }

@@ -24,15 +24,15 @@
             <li class="divider"></li>
             <li><label><spring:message code = "menu.label.dataset" /></label></li>
             <li class="divider"></li>
-            <li><a href="<c:url value="/drugAdverseEvent"/>"><spring:message code="menu.datasets.drugs" /></a></li>
-            <li><a href="#"><spring:message code="menu.datasets.devices" /></a></li>
-            <li><a href="#"><spring:message code="menu.datasets.foods" /></a></li>
+            <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
+            <li><a href="<c:url value="/devices"/>"><spring:message code="menu.datasets.devices" /></a></li>
+            <li><a href="<c:url value="/foods"/>"><spring:message code="menu.datasets.foods" /></a></li>
         </ul>
     </li>
     <li class="divider"></li>
 
     <!-- My Data Button -->
-    <li><a href="#"><spring:message code="menu.item.mydata" /></a></li>
+    <li><a href="#"><spring:message code="menu.item.mySavedData" /></a></li>
 </ul>
 
 <!-- Right Nav. Section -->
