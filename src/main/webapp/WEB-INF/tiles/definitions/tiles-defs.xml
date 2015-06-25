@@ -41,12 +41,12 @@
 	<!--<definition name="FdaData" template="/WEB-INF/tiles/template/layout_base_nostyle.jsp">-->
 		<put-attribute name="title" value="FdaData" />
 		<put-attribute name="tagline" value="" />
-		<put-attribute name="body" value="/WEB-INF/pages/fdaData.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/drugAdverseEvent.jsp" />
 	</definition>
 	<definition name="getFdaData" extends="welcomeTemplate">
 	<!--<definition name="getFdaData" template="/WEB-INF/tiles/template/layout_base_nostyle.jsp">-->
 	    <put-attribute name="title" value="FdaData" />
 	    <put-attribute name="tagline" value="" />
-	    <put-attribute name="body" value="/WEB-INF/pages/fdaData.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/pages/drugAdverseEvent.jsp" />
     </definition>
 </tiles-definitions>

@@ -39,13 +39,13 @@ path {
                 <div class="large-3 medium-12 small-12 columns">
 					<div class="row collapse prefix-radius">
 						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="fdaData.datefrom"/></span></div>
-						<div class="large-3 medium-3 small-3 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
+						<div class="large-2 medium-2 small-2 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
 					</div>
 				</div>
                 <div class="large-3 medium-12 small-12 columns">
 					<div class="row collapse prefix-radius">
 						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="fdaData.dateto"/></span></div>
-						<div class="large-3 medium-3 small-3 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
+						<div class="large-2 medium-2 small-2 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
 					</div>
                 </div>
                 <div class="large-3 medium-12 small-12 columns end">
@@ -55,10 +55,11 @@ path {
             </div>
         </form>
     </div>
-</div>
 
-<div id="svghome" ></div>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+		<div id="svghome" ></div>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+
+</div>
 
 <script>
 
@@ -74,8 +75,10 @@ path {
     // Set the dimensions of the canvas / graph
     function drawChart(){
         var margin = {top: 30, right: 20, bottom: 30, left: 50},
-                width = 1200 - margin.left - margin.right,
-                height = 600 - margin.top - margin.bottom;
+                /*width = 1200 - margin.left - margin.right,*/
+				width = $(window).width() - margin.left - margin.right,
+                /*height = 600 - margin.top - margin.bottom;*/
+				height = $(window).height() - margin.top - margin.bottom;
 
         // Parse the date / time
         var parseDate = d3.time.format("%Y%m%d").parse;
