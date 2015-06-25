@@ -23,6 +23,17 @@
                         <div class="large-6 medium-12 small-12 columns">
                             <br />
                             <header><h1><b><spring:message code="login.header" /></b></h1></header>
+                            <c:if test="${not empty error}">
+                                <div class="error">${error}</div>
+                            </c:if>
+                            <c:if test="${not empty msg}">
+                                <div class="msg">${msg}</div>
+                            </c:if>
+                            <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+                                <font color="red"><spring:message code = "login.failAttempt.alert" />
+                                    <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />.
+                                </font>
+                            </c:if>
                         </div>
                     </div>
                     <div class="row">
@@ -31,12 +42,6 @@
                             <input type="text" name="j_username" value="" placeholder="<spring:message code = "login.placeholder.username" />" />
                             <label><spring:message code = "login.label.password" /></label>
                             <input type="password" name="j_password" value="" placeholder="<spring:message code = "login.placeholder.password" />" />
-                            <c:if test="${not empty error}">
-                                <div class="error">${error}</div>
-                            </c:if>
-                            <c:if test="${not empty msg}">
-                                <div class="msg">${msg}</div>
-                            </c:if>
                             <input type="submit" name="submit" value="<spring:message code="button.submit" />" class="tiny blue radius button" />
                         </div>
                     </div>

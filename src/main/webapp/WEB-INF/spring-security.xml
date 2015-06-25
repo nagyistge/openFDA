@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">-->
 
 <beans:beans xmlns="http://www.springframework.org/schema/security"
              xmlns:beans="http://www.springframework.org/schema/beans"
@@ -12,6 +19,8 @@
         <intercept-url pattern="/"  access="permitAll()" />
         <intercept-url pattern="/default*"  access="permitAll()" />
         <intercept-url pattern="/welcome*"  access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/login*"  access="permitAll()" />
+        <intercept-url pattern="/hello*"  access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/fdaData*"  access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/getFdaData*"  access="hasRole('ROLE_USER')" />
         <form-login
@@ -21,6 +30,7 @@
                 username-parameter="j_username"
                 password-parameter="j_password" />
         <logout logout-success-url="/" />
+        <logout logout-success-url="/" delete-cookies="JSESSIONID" invalidate-session="true" />
         <!-- enable csrf protection -->
        <!-- <csrf/>-->
     </http>
