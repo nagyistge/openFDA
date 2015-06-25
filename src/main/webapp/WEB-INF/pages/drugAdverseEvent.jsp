@@ -55,10 +55,10 @@ path {
             </div>
         </form>
     </div>
-
+	<div class="large-10 large-centered medium-12 small-12 columns">
 		<div id="svghome" ></div>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
-
+	</div>
 </div>
 
 <script>
@@ -74,7 +74,8 @@ path {
     }
     // Set the dimensions of the canvas / graph
     function drawChart(){
-        var margin = {top: 30, right: 20, bottom: 30, left: 50},
+        /*var margin = {top: 30, right: 20, bottom: 30, left: 50},*/
+		var margin = {top: 30, right: 20, bottom: 50, left: 80},
                 /*width = 1200 - margin.left - margin.right,*/
 				width = $(window).width() - margin.left - margin.right,
                 /*height = 600 - margin.top - margin.bottom;*/
