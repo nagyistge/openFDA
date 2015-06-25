@@ -32,7 +32,7 @@ path {
         </nav>
         <br />
     </div>
-    <div class="large-10 medium-10 small-12 columns">
+    <div class="large-10 large-centered medium-10 small-12 columns">
         <header><h1><b><spring:message code = "fdaData.title"/></b></h1></header>
         <p>${message}</p>
     </div>
