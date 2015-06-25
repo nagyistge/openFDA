@@ -1,14 +1,6 @@
-
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%--
-<h1>Get FDA Data</h1>
-<h1>${message}</h1>
-<small>New item 1</small>
-<a href="<c:url value='/getFdaData'/>" onclick="" class="tiny button radius">submit</a>--%>
 
-<%--<!DOCTYPE html>
-<meta charset="utf-8">--%>
 <style> /* set the CSS */
 
 body { font: 12px Arial;}
@@ -30,36 +22,46 @@ path {
 </style>
 
 <%--<body>--%>
-<h1><spring:message code = "fdaData.title"/></h1>
-<h1>${message}</h1>
-
-<form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/fdaData"/>" id="form1">
-    <div class="row">
-        <div class="large-12 columns">
-            <spring:message code="fdaData.datefrom"/>: <input type="text" id="fromDate" name="fromDate" value=""/>
-        </div>
+<div class="row">
+    <div class="large-10 large-centered columns">
+        <br />
+        <nav class="breadcrumbs" role="navigation">
+            <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
+            <a class="current" href="<c:url value="/fdaData"/>"><spring:message code = "openPDA.label" /></a>
+            <a class="unavailable" href="<c:url value="/myData"/>"><spring:message code="myData.label" /></a>
+        </nav>
+        <br />
     </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <spring:message code="fdaData.dateto"/>: <input type="text" id="toDate" name="toDate" value=""/>
-        </div>
+    <div class="large-10 medium-10 small-12 columns">
+        <header><h1><b><spring:message code = "fdaData.title"/></b></h1></header>
+        <p>${message}</p>
     </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <input type="submit" value="<spring:message code="fdaData.submit"/>" class="tiny button radius"/>
-        </div>
+    <div class="large-10 medium-10 small-12 columns">
+        <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/fdaData"/>" id="form1">
+            <div class="row">
+                <div class="large-12 columns">
+                    <spring:message code="fdaData.datefrom"/>: <input type="text" id="fromDate" name="fromDate" value=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <spring:message code="fdaData.dateto"/>: <input type="text" id="toDate" name="toDate" value=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="submit" value="<spring:message code="fdaData.submit"/>" class="tiny button radius"/>
+                </div>
+            </div>
+            <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
+        </form>
     </div>
-    <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
-</form>
+</div>
 
-
-<%--<h4>${fdaResultSet}</h4>--%>
 <div id="svghome" ></div>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
-
 <script>
-
 
     $(function() {
         $("#fromDate").datepicker();
@@ -149,8 +151,7 @@ path {
         svg.append("g")
                 .attr("class", "y axis")
                 .call(yAxis);
-
         //});
     }
 </script>
-<%--</body>--%>
+
