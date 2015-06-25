@@ -3,14 +3,11 @@
 
 <style> /* set the CSS */
 
-body { font: 12px Arial;}
-
 path {
     stroke: steelblue;
     stroke-width: 1;
     fill: none;
 }
-
 .axis path,
 .axis line {
     fill: none;
@@ -18,10 +15,8 @@ path {
     stroke-width: 1;
     shape-rendering: crispEdges;
 }
-
 </style>
 
-<%--<body>--%>
 <div class="row">
 	<!-- Breadcrumbs section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
@@ -42,17 +37,21 @@ path {
         <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/fdaData"/>" id="form1">
             <div class="row">
                 <div class="large-3 medium-12 small-12 columns">
-                    <label><spring:message code="fdaData.datefrom"/></label><input type="text" value="" data-date-format="mm-dd-yyyy" id="fromDate" name="fromDate"/>
-                </div>
+					<div class="row collapse prefix-radius">
+						<div class="large-2 medium-4 small-6 columns"><span class="prefix"><spring:message code="fdaData.datefrom"/></span></div>
+						<div class="large-3 medium-9 small-6 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
+					</div>
+				</div>
                 <div class="large-3 medium-12 small-12 columns">
-                    <label><spring:message code="fdaData.dateto"/></label><input type="text" value="" data-date-format="mm-dd-yyyy" id="toDate" name="toDate"/>
+					<div class="row collapse prefix-radius">
+						<div class="large-2 medium-4 small-6 columns"><span class="prefix"><spring:message code="fdaData.dateto"/></span></div>
+						<div class="large-3 medium-9 small-6 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
+					</div>
                 </div>
-                <div class="large-3 medium-12 small-12 columns">
-                    <label>&nbsp;</label><input type="submit" value="<spring:message code="fdaData.submit"/>" class="tiny button radius"/>
+                <div class="large-3 medium-12 small-12 columns end">
+                    <input type="submit" value="<spring:message code="fdaData.submit"/>" class="tiny button radius"/>
                 </div>
-                <div class="large-3 medium-12 small-12 columns">
-                    <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
-                </div>
+				<input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
             </div>
         </form>
     </div>
@@ -64,26 +63,21 @@ path {
 <script>
 
 	$(function(){
-		$("#fromDate").fdatepicker('show');
-		$("#toDate").fdatepicker('show');
+		$("#fromDate").fdatepicker();
+		$("#toDate").fdatepicker();
 	});
-
 
     var hasResult = document.getElementById("hasResult");
     if (hasResult.value == "yes"){
         drawChart()
     }
     // Set the dimensions of the canvas / graph
-    /*var margin = {top: 30, right: 20, bottom: 30, left: 50},
-     width = 600 - margin.left - margin.right,
-     height = 270 - margin.top - margin.bottom;*/
     function drawChart(){
         var margin = {top: 30, right: 20, bottom: 30, left: 50},
                 width = 1200 - margin.left - margin.right,
                 height = 600 - margin.top - margin.bottom;
 
         // Parse the date / time
-        //var parseDate = d3.time.format("%d-%b-%y").parse;
         var parseDate = d3.time.format("%Y%m%d").parse;
 
         // Set the ranges
@@ -98,9 +92,6 @@ path {
                 .orient("left").ticks(5);
 
         // Define the line
-        /* var valueline = d3.svg.line()
-         .x(function(d) { return x(d.date); })
-         .y(function(d) { return y(d.close); });*/
         var valueline = d3.svg.line()
                 .x(function(d) { return x(d.time); })
                 .y(function(d) { return y(d.count); });
@@ -119,24 +110,13 @@ path {
         <c:if test="${not empty fdaResultSet}">
             data = ${fdaResultSet};
         </c:if>
-        //var data = [{"time":"20040101","count":1},{"time":"20040102","count":519},{"time":"20040103","count":1},{"time":"20040104","count":58},{"time":"20040105","count":230}];
 
-        //alert(data2);
-
-        //d3.csv("data.csv", function(error, data) {
         data.forEach(function(d) {
-            //d.date = parseDate(d.date);
-            //d.close = +d.close;
             d.time = parseDate(d.time);
             d.count = +d.count;
-
-            //alert(d.time);
-            //alert(d.count);
         });
 
         // Scale the range of the data
-        //x.domain(d3.extent(data, function(d) { return d.date; }));
-        //y.domain([0, d3.max(data, function(d) { return d.close; })]);
         x.domain(d3.extent(data, function(d) { return d.time; }));
         y.domain([0, d3.max(data, function(d) { return d.count; })]);
 
@@ -155,7 +135,6 @@ path {
         svg.append("g")
                 .attr("class", "y axis")
                 .call(yAxis);
-        //});
     }
 </script>
 
