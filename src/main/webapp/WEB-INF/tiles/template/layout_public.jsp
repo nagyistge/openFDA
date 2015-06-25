@@ -41,7 +41,7 @@
   <script src="<c:url value="/theme/js/vendor/placeholder.js" />"></script>
   <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
   <%--<script src="<c:url value="/lib/jquery-ui.js" />" ></script>--%>
-  <script src="<c:url value="/lib/foundation.datepicker.js" />
+  <script src="<c:url value="/lib/foundation.datepicker.js" />"></script>
 
 <div id="wrapper" class="container">
   <!-- header Page -->
