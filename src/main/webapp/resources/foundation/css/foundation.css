@@ -3581,6 +3581,7 @@ ul.pagination {
 
   .small-text-justify {
     text-align: justify !important; } }
+
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   .medium-only-text-left {
     text-align: left !important; }
@@ -3593,6 +3594,7 @@ ul.pagination {
 
   .medium-only-text-justify {
     text-align: justify !important; } }
+
 @media only screen and (min-width: 40.0625em) {
   .medium-text-left {
     text-align: left !important; }
