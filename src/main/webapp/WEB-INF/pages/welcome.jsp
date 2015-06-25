@@ -11,8 +11,10 @@
 		</nav>
 	</div>
 	<div class="large-10 large-centered medium-12 small-12 columns">
-		<header><h1><b>${greeting}</b><small></small></h1></header>
-		<h3><b>${title}</b></h3>
-		<p>${message}</p>
+		<header><h1><b>${greeting}</b></h1></header>
+		<h3><b>${topic1}</b></h3>
+		<p>${message1}</p>
+		<h3><b>${topic2}</b></h3>
+		<p>${message2}</p>
 	</div>
 </div>

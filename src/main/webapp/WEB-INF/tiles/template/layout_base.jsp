@@ -55,8 +55,7 @@
           </li>
         </ul>
         <section class="top-bar-section">
-          <tiles:insertAttribute name="menu_right" />
-          <tiles:insertAttribute name="menu_left" />
+          <tiles:insertAttribute name="menu" />
         </section>
       </nav>
     </div>

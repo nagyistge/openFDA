@@ -9,20 +9,28 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="center">
-    <div class="row medium-uncollapse">
-        <div class="small-6 push-2 columns">
+    <div class="row">
+        <div class="large-6 large-push-2 medium-10 small-10 columns">
             <br /><br /><br />
             <img src="/img/WSI_Logo.png" style="width:50%;height:50%;">
             <%--<img src="/img/l_openFDA.png">--%>
         </div>
         <div class="divider"></div>
-        <div class="small-6 columns">
+        <div class="large-6 medium-10 small-10 columns">
             <div id="login-box" class="row">
                 <form name="loginForm" action="<c:url value="j_spring_security_check" />" method="POST">
                     <div class="row">
-                        <div class="large-6 medium-12 small-12 columns">
+                        <div class="large-6 medium-10 small-10 columns">
                             <br />
                             <header><h1><b><spring:message code="login.header" /></b></h1></header>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-6 medium-10 small-10 columns">
+                            <label><spring:message code = "login.label.username" /></label>
+                            <input type="text" name="j_username" value="" placeholder="<spring:message code = "login.placeholder.username" />" />
+                            <label><spring:message code = "login.label.password" /></label>
+                            <input type="password" name="j_password" value="" placeholder="<spring:message code = "login.placeholder.password" />" />
                             <c:if test="${not empty error}">
                                 <div class="error">${error}</div>
                             </c:if>
@@ -34,14 +42,6 @@
                                     <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />.
                                 </font>
                             </c:if>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-6 medium-12 small-12 columns">
-                            <label><spring:message code = "login.label.username" /></label>
-                            <input type="text" name="j_username" value="" placeholder="<spring:message code = "login.placeholder.username" />" />
-                            <label><spring:message code = "login.label.password" /></label>
-                            <input type="password" name="j_password" value="" placeholder="<spring:message code = "login.placeholder.password" />" />
                             <input type="submit" name="submit" value="<spring:message code="button.submit" />" class="tiny blue radius button" />
                         </div>
                     </div>
