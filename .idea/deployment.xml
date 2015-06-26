@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="openFDA_54.173.229.9">
+    <serverData>
+      <paths name="openFDA_54.173.229.9">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/centos" local="$PROJECT_DIR$" web=":8080" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
