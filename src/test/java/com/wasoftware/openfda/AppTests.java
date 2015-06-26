@@ -40,10 +40,10 @@ public class AppTests {
                 .andExpect(view().name("welcome"));
     }
     @Test
-    public void testdrugs() throws Exception {
-        mockMvc.perform(get("/drugs"))
+    public void testLogin() throws Exception {
+        mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("drugs"));
+                .andExpect(view().name("login"));
     }
     @Test
     public void testReformatDate() throws Exception {
