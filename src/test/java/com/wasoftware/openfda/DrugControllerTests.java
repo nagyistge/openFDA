@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration("file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml")
-public class FdaDataControllerTests {
+public class DrugControllerTests {
     private MockMvc mockMvc;
 
     @SuppressWarnings("SpringJavaAutowiringInspection")
@@ -50,10 +50,10 @@ public class FdaDataControllerTests {
      * Method: fdaData(ModelMap model)
      */
     @Test
-    public void testFdaData() throws Exception {
-        mockMvc.perform(get("/fdaData"))
+    public void testdrug() throws Exception {
+        mockMvc.perform(get("/drugs"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("fdaData"));
+                .andExpect(view().name("drugs"));
     }
 
     /**
@@ -61,9 +61,9 @@ public class FdaDataControllerTests {
      */
     @Test
     public void testGetFdaData() throws Exception {
-        mockMvc.perform(post("/fdaData").param("20140101", "20140201"))
+        mockMvc.perform(post("/drugs").param("20140101", "20140201"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("fdaData"));
+                .andExpect(view().name("drugs"));
     }
 
 
