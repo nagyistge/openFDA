@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration("file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml")
-public class FdaDataControllerTest {
+public class FdaDataControllerTests {
     private MockMvc mockMvc;
 
     @SuppressWarnings("SpringJavaAutowiringInspection")
