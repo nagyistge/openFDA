@@ -43,7 +43,7 @@ public class DrugsController {
                 model.addAttribute("fdaResultSet", jsonArrayResult.toString());
             }catch(Exception e){
                 System.out.println(e.toString());
-                errorMessage = GetMessage.getMessage("fdaData.nodata");
+                errorMessage = GetMessage.getMessage("drugs.nodata");
             }
             model.addAttribute("hasResult", "yes");
             model.addAttribute("fdaResultSet", jsonArrayResult.toString());
