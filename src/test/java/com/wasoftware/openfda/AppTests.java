@@ -40,10 +40,10 @@ public class AppTests {
                 .andExpect(view().name("welcome"));
     }
     @Test
-    public void testfdaData() throws Exception {
-        mockMvc.perform(get("/fdaData"))
+    public void testdrugs() throws Exception {
+        mockMvc.perform(get("/drugs"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("fdaData"));
+                .andExpect(view().name("drugs"));
     }
     @Test
     public void testReformatDate() throws Exception {
