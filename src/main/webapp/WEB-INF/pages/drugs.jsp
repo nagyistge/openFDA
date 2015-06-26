@@ -109,8 +109,8 @@ path {
 
         // Get the data
         var data = null;
-        <c:if test="${not empty fdaResultSet}">
-            data = ${fdaResultSet};
+        <c:if test="${not empty drugResultSet}">
+            data = ${drugResultSet};
         </c:if>
 
         data.forEach(function(d) {
