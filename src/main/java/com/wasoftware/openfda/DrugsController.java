@@ -40,13 +40,13 @@ public class DrugsController {
                 Object object = jsonParser.parse(jsonResult);
                 JSONObject jsonObject = (JSONObject) object;
                 jsonArrayResult = (JSONArray) jsonObject.get("results");
-                model.addAttribute("fdaResultSet", jsonArrayResult.toString());
+                model.addAttribute("drugResultSet", jsonArrayResult.toString());
             }catch(Exception e){
                 System.out.println(e.toString());
                 errorMessage = GetMessage.getMessage("drugs.nodata");
             }
             model.addAttribute("hasResult", "yes");
-            model.addAttribute("fdaResultSet", jsonArrayResult.toString());
+            model.addAttribute("drugResultSet", jsonArrayResult.toString());
         }
         model.addAttribute("errorMessage", errorMessage);
         return "drugs";
