@@ -27,6 +27,8 @@ public class DrugsController {
                              @RequestParam(value = "toDate",defaultValue="") String toDate
     ) {
         String errorMessage="";
+        String originalFromDate = fromDate;
+        String originalToDate = toDate;
         if (fromDate.length() > 0 && toDate.length() > 0) {
             adverseEvent adverseevent = new adverseEvent();
             fromDate = FormatDate.formatDate(fromDate);
@@ -48,6 +50,8 @@ public class DrugsController {
             model.addAttribute("hasResult", "yes");
             model.addAttribute("drugResultSet", jsonArrayResult.toString());
         }
+        model.addAttribute("fromDate",originalFromDate);
+        model.addAttribute("toDate", originalToDate);
         model.addAttribute("errorMessage", errorMessage);
         return "drugs";
     }
