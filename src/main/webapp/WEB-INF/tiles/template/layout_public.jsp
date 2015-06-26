@@ -25,6 +25,8 @@
   <link href="<c:url value="/theme/css/foundation.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/style.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/style-responsive.css" />" rel="stylesheet">
+  <%--<link href="<c:url value="/css/jquery-ui.css" />" rel="stylesheet">--%>
+  <link href="<c:url value="/css/foundation.datepicker.css" />" rel="stylesheet">
 
   <!-- CSS Override -->
   <link href="<c:url value="/css/app.css" />" rel="stylesheet">
@@ -37,7 +39,9 @@
   <script src="<c:url value="/theme/js/vendor/fastclick.js" />"></script>
   <script src="<c:url value="/theme/js/vendor/jquery.cookie.js" />"></script>
   <script src="<c:url value="/theme/js/vendor/placeholder.js" />"></script>
-  <script src="<c:url value="/theme/js/foundation.min.js" />"></script>
+  <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
+  <%--<script src="<c:url value="/lib/jquery-ui.js" />" ></script>--%>
+  <script src="<c:url value="/lib/foundation.datepicker.js" />"></script>
 
 <div id="wrapper" class="container">
   <!-- header Page -->
@@ -45,23 +49,12 @@
 
     <!-- top bar section -->
     <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <a href="search" data-toggle="tooltip" title="Home"></a>
-        </li>
-
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon">
-          <a href="#"><span>Menu Items</span></a>
-        </li>
-      </ul>
-
       <section class="top-bar-section">
-        <tiles:insertAttribute name="menu_right" />
-        <tiles:insertAttribute name="menu_left" />
+        <tiles:insertAttribute name="menu" />
       </section>
     </nav>
   </div>
+
   <div class="row">
     <div id="content-row" class="large-12 columns">
       <tiles:insertAttribute name="body" />

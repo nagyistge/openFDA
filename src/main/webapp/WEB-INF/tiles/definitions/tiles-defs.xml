@@ -5,21 +5,21 @@
 		"http://struts.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+	<!-- Template for Logged in users -->
 	<definition name="welcomeTemplate" template="/WEB-INF/tiles/template/layout_base.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="tagline" value="" />
-		<put-attribute name="menu_right" value="/WEB-INF/tiles/template/menu_right.jsp" />
-		<put-attribute name="menu_left" value="/WEB-INF/tiles/template/menu_left.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/tiles/template/menu_inSession.jsp" />
 		<put-attribute name="header" value="/WEB-INF/tiles/template/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
 	</definition>
 
+	<!-- Template before login -->
 	<definition name="publicTemplate" template="/WEB-INF/tiles/template/layout_public.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="tagline" value="" />
-		<put-attribute name="menu_left" value="" />
-		<put-attribute name="menu_right" value="/WEB-INF/tiles/template/menu_right_outSession.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/tiles/template/menu_outSession.jsp" />
 		<put-attribute name="header" value="/WEB-INF/tiles/template/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
@@ -37,16 +37,29 @@
 		<put-attribute name="body" value="/WEB-INF/pages/login.jsp" />
 	</definition>
 
-	<definition name="fdaData" extends="welcomeTemplate">
+	<definition name="drugs" extends="welcomeTemplate">
 	<!--<definition name="FdaData" template="/WEB-INF/tiles/template/layout_base_nostyle.jsp">-->
-		<put-attribute name="title" value="FdaData" />
+		<put-attribute name="title" value="Drugs" />
 		<put-attribute name="tagline" value="" />
-		<put-attribute name="body" value="/WEB-INF/pages/fdaData.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/drugs.jsp" />
 	</definition>
+
+	<definition name="devices" extends="welcomeTemplate">
+		<put-attribute name="title" value="Devices" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="body" value="/WEB-INF/pages/devices.jsp" />
+	</definition>
+
+	<definition name="foods" extends="welcomeTemplate">
+		<put-attribute name="title" value="Foods" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="body" value="/WEB-INF/pages/foods.jsp" />
+	</definition>
+
 	<definition name="getFdaData" extends="welcomeTemplate">
 	<!--<definition name="getFdaData" template="/WEB-INF/tiles/template/layout_base_nostyle.jsp">-->
 	    <put-attribute name="title" value="FdaData" />
 	    <put-attribute name="tagline" value="" />
-	    <put-attribute name="body" value="/WEB-INF/pages/fdaData.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/pages/drugs.jsp" />
     </definition>
 </tiles-definitions>

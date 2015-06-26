@@ -193,26 +193,44 @@ footer {
 #content-row {
 	padding-bottom: 40px;
 }
-
 .row {
 	max-width: 100rem;
 	min-width: 727px;
 	margin: 0 auto;
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
-
 .center {
 	width: 1040px;
 	margin: 0 auto;
 	min-width: 727px;
 	padding-top: 110px !important;
 }
-
 #wrapper {
 	min-height: 100%;
 	position: relative;
 }
-
+label {
+	color: #4d4d4d;
+	cursor: pointer;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: normal;
+	line-height: 1.5;
+	margin-bottom: 0;
+	/* Styles for required inputs */
+}
+label.right {
+	float: none !important;
+	text-align: right;
+}
+label.inline {
+	margin: 0 0 1rem 0;
+	padding: 0.5625rem 0;
+}
+label small {
+	text-transform: capitalize;
+	color: #676767;
+}
 html, body {
 	margin: 0;
 	padding: 0;

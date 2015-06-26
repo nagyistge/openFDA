@@ -16,17 +16,19 @@ import com.wasoftware.util.*;
  */
 
 @Controller
-public class FdaDataController {
-    @RequestMapping(value = "/fdaData", method = RequestMethod.GET)
+public class DrugsController {
+    @RequestMapping(value = "/drugs", method = RequestMethod.GET)
     public String fdaData(ModelMap model) {
-        return "fdaData";
+        return "drugs";
     }
-    @RequestMapping(value = "/fdaData", method = RequestMethod.POST)
+    @RequestMapping(value = "/drugs", method = RequestMethod.POST)
     public String getFdaData(ModelMap model,
                              @RequestParam(value = "fromDate",defaultValue="") String fromDate,
                              @RequestParam(value = "toDate",defaultValue="") String toDate
     ) {
         String errorMessage="";
+        String originalFromDate = fromDate;
+        String originalToDate = toDate;
         if (fromDate.length() > 0 && toDate.length() > 0) {
             adverseEvent adverseevent = new adverseEvent();
             fromDate = FormatDate.formatDate(fromDate);
@@ -40,16 +42,17 @@ public class FdaDataController {
                 Object object = jsonParser.parse(jsonResult);
                 JSONObject jsonObject = (JSONObject) object;
                 jsonArrayResult = (JSONArray) jsonObject.get("results");
-                model.addAttribute("fdaResultSet", jsonArrayResult.toString());
+                model.addAttribute("drugResultSet", jsonArrayResult.toString());
+                model.addAttribute("hasResult", "yes");
             }catch(Exception e){
                 System.out.println(e.toString());
-                errorMessage = GetMessage.getMessage("fdaData.nodata");
+                errorMessage = GetMessage.getMessage("drugs.nodata");
             }
-            model.addAttribute("hasResult", "yes");
-            model.addAttribute("fdaResultSet", jsonArrayResult.toString());
         }
+        model.addAttribute("fromDate",originalFromDate);
+        model.addAttribute("toDate", originalToDate);
         model.addAttribute("errorMessage", errorMessage);
-        return "fdaData";
+        return "drugs";
     }
 
 }

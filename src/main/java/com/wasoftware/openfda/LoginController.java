@@ -23,8 +23,10 @@ public class LoginController {
 
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("greeting", GetMessage.getMessage("home.greeting"));
-		model.addAttribute("title", GetMessage.getMessage("home.title"));
-		model.addAttribute("message", GetMessage.getMessage("home.introduction"));
+		model.addAttribute("topic1", GetMessage.getMessage("home.topic.aboutUs"));
+		model.addAttribute("message1", GetMessage.getMessage("home.aboutUs.introduction"));
+		model.addAttribute("topic2", GetMessage.getMessage("home.topic.whoMadeOpenFDAPortal"));
+		model.addAttribute("message2", GetMessage.getMessage("home.whoMadeOpenFDAPortal"));
 		return "welcome";
 	}
 
