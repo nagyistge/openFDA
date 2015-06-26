@@ -23,8 +23,6 @@ path {
         <br />
         <nav class="breadcrumbs" role="navigation">
             <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
-            <a class="current" href="<c:url value="/drugs"/>"><spring:message code = "openPDA.label" /></a>
-            <a class="unavailable" href="<c:url value="/mySavedData"/>"><spring:message code="mySavedData.label" /></a>
         </nav>
     </div>
 

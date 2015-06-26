@@ -6,8 +6,7 @@
 		<br />
 		<nav class="breadcrumbs" role="navigation">
 			<a class="current" href="<c:url value="/welcome"/>"><spring:message code="welcome.label" /></a>
-			<a class="unavailable" href="<c:url value="/fdaData"/>"><spring:message code = "openPDA.label" /></a>
-			<a class="unavailable" href="<c:url value="/myData"/>"><spring:message code="myData.label" /></a>
+
 		</nav>
 	</div>
 	<div class="large-10 large-centered medium-12 small-12 columns">
