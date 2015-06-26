@@ -43,12 +43,11 @@ public class DrugsController {
                 JSONObject jsonObject = (JSONObject) object;
                 jsonArrayResult = (JSONArray) jsonObject.get("results");
                 model.addAttribute("drugResultSet", jsonArrayResult.toString());
+                model.addAttribute("hasResult", "yes");
             }catch(Exception e){
                 System.out.println(e.toString());
                 errorMessage = GetMessage.getMessage("drugs.nodata");
             }
-            model.addAttribute("hasResult", "yes");
-            model.addAttribute("drugResultSet", jsonArrayResult.toString());
         }
         model.addAttribute("fromDate",originalFromDate);
         model.addAttribute("toDate", originalToDate);
