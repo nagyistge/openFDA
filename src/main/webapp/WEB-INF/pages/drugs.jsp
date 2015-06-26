@@ -29,7 +29,7 @@ path {
 	<!-- Body section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <header><h1><b><spring:message code = "drugs.title"/></b></h1></header>
-        <p>${message}</p>
+        <p>${errorMessage}</p>
     </div>
     <div class="large-10 large-centered medium-12 small-12 columns">
         <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/drugs"/>" id="form1">
