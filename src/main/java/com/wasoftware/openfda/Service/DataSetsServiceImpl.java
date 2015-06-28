@@ -10,7 +10,8 @@ import java.util.List;
 import com.wasoftware.openfda.Dao.DataSetsDao;
 import com.wasoftware.openfda.model.DataSetsEntity;
 
-public class DataSetsServiceImpl implements DataSetsDao{
+@Service
+public class DataSetsServiceImpl implements DataSetsService{
     private DataSetsDao dataSetsDao;
 
     public void setDataSetsDao(DataSetsDao dataSetsDao) {

@@ -10,7 +10,8 @@ import java.util.List;
 import com.wasoftware.openfda.Dao.UsersDao;
 import com.wasoftware.openfda.model.UsersEntity;
 
-public class UsersServiceImpl implements UsersDao {
+@Service
+public class UsersServiceImpl implements UsersService {
     private UsersDao usersDao;
 
     public void setUsersDao(UsersDao usersDao) {
