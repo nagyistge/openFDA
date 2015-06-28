@@ -9,7 +9,7 @@ import com.wasoftware.openfda.model.UsersEntity;
 public interface UsersService {
     public void addUsersEntity(UsersEntity users);
     public void updateUsersEntity(UsersEntity users);
-    public List<UsersEntity> listCategoriesEntity();
+    public List<UsersEntity> listUsersEntity();
     public UsersEntity getUsersEntityById(int id);
     public void removeUsersEntity(int id);
 }
