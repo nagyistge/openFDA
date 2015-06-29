@@ -107,24 +107,24 @@
         </beans:property>
     </beans:bean>
 
-    <beans:bean id="dataSetListsDao" class="com.wasoftware.openfda.Dao.DataSetListsDaoImpl">
+    <beans:bean id="dataSetListsDao" class="com.wasoftware.openfda.dao.DataSetListsDaoImpl">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" ></beans:property>
     </beans:bean>
-    <beans:bean id="dataSetListsService" class="com.wasoftware.openfda.Service.DataSetListsServiceImpl">
+    <beans:bean id="dataSetListsService" class="com.wasoftware.openfda.service.DataSetListsServiceImpl">
         <beans:property name="dataSetListsDao" ref="dataSetListsDao"></beans:property>
     </beans:bean>
 
-    <beans:bean id="dataSetsDao" class="com.wasoftware.openfda.Dao.DataSetsDaoImpl">
+    <beans:bean id="dataSetsDao" class="com.wasoftware.openfda.dao.DataSetsDaoImpl">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
     </beans:bean>
-    <beans:bean id="dataSetsService" class="com.wasoftware.openfda.Service.DataSetsServiceImpl">
+    <beans:bean id="dataSetsService" class="com.wasoftware.openfda.service.DataSetsServiceImpl">
         <beans:property name="dataSetsDao" ref="dataSetsDao"></beans:property>
     </beans:bean>
 
-    <beans:bean id="usersDao" class="com.wasoftware.openfda.Dao.UsersDaoImpl">
+    <beans:bean id="usersDao" class="com.wasoftware.openfda.dao.UsersDaoImpl">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
     </beans:bean>
-    <beans:bean id="usersService" class="com.wasoftware.openfda.Service.UsersServiceImpl">
+    <beans:bean id="usersService" class="com.wasoftware.openfda.service.UsersServiceImpl">
         <beans:property name="usersDao" ref="usersDao"></beans:property>
     </beans:bean>
 
