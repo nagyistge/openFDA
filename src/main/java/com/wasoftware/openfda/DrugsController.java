@@ -17,9 +17,9 @@ import com.wasoftware.openfda.util.*;
 import com.wasoftware.openfda.model.DataSetListsEntity;
 import com.wasoftware.openfda.model.DataSetsEntity;
 import com.wasoftware.openfda.model.UsersEntity;
-import com.wasoftware.openfda.Service.DataSetListsService;
-import com.wasoftware.openfda.Service.DataSetsService;
-import com.wasoftware.openfda.Service.UsersService;
+import com.wasoftware.openfda.service.DataSetListsService;
+import com.wasoftware.openfda.service.DataSetsService;
+import com.wasoftware.openfda.service.UsersService;
 
 
 /**
