@@ -1,6 +1,6 @@
 package com.wasoftware.openfda;
 
-import com.wasoftware.util.GetMessage;
+import com.wasoftware.openfda.util.GetMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
