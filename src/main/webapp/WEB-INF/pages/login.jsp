@@ -12,7 +12,7 @@
     <div class="row">
         <div class="large-6 large-push-2 medium-10 small-10 columns">
             <br /><br /><br />
-            <img src="/img/WSI_Logo.png" style="width:50%;height:50%;">
+            <img src="<c:url value="/img/WSI_Logo.png"/>" style="width:50%;height:50%;">
             <%--<img src="/img/l_openFDA.png">--%>
         </div>
         <div class="divider"></div>
