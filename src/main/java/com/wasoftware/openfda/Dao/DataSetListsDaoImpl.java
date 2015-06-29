@@ -35,7 +35,7 @@ public class DataSetListsDaoImpl implements DataSetListsDao{
     @Override
     public List<DataSetListsEntity> listDataSetListsEntity() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<DataSetListsEntity> dataSetListsEntityList = session.createQuery("from DataSetListsEntity").list();
+        List<DataSetListsEntity> dataSetListsEntityList = session.createQuery("from DataSetListsEntity d order by d.id desc").list();
         for (DataSetListsEntity dataSetList : dataSetListsEntityList) {
             System.out.println("DataSetLists List::" + dataSetList);
         }
