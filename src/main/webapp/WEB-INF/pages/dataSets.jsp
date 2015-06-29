@@ -18,7 +18,7 @@ path {
 </style>
 
 <div class="row">
-	<!-- Breadcrumbs section -->
+    <!-- Breadcrumbs section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <br />
         <nav class="breadcrumbs" role="navigation">
@@ -26,7 +26,7 @@ path {
         </nav>
     </div>
 
-	<!-- Body section -->
+    <!-- Body section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <header><h1><b><spring:message code = "drugs.title"/></b></h1></header>
         <p>${errorMessage}</p>
@@ -35,35 +35,33 @@ path {
         <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/drugs"/>" id="form1">
             <div class="row">
                 <div class="large-3 medium-12 small-12 columns">
-					<div class="row collapse prefix-radius">
-						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
-						<div class="large-2 medium-2 small-2 columns end"><input type="text" value="${fromDate}" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
-					</div>
-				</div>
+                    <div class="row collapse prefix-radius">
+                        <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
+                        <div class="large-2 medium-2 small-2 columns end"><input type="text" value="${fromDate}" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
+                    </div>
+                </div>
                 <div class="large-3 medium-12 small-12 columns">
-					<div class="row collapse prefix-radius">
-						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
-						<div class="large-2 medium-2 small-2 columns end"><input type="text" value="${toDate}" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
-					</div>
+                    <div class="row collapse prefix-radius">
+                        <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
+                        <div class="large-2 medium-2 small-2 columns end"><input type="text" value="${toDate}" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
+                    </div>
                 </div>
                 <div class="large-3 medium-12 small-12 columns end">
                     <input type="submit" value="<spring:message code="drugs.submit"/>" class="tiny button radius"/>
                 </div>
-				<input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
+                <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
             </div>
         </form>
     </div>
-	<div class="large-10 large-centered medium-12 small-12 columns">
-		<div id="svghome" ></div>
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-	</div>
+    <div class="large-10 large-centered medium-12 small-12 columns">
+        <div id="svghome" ></div>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+    </div>
 </div>
 
-<div class="row" id="notebox" style="display:none;">
+<div class="row">
     <div class="large-10 large-centered medium-12 small-12 columns">
         <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
-            <label><spring:message code="drugs.notelabel"/></label>
-            <input type="text" id="inputNote" name="inputNote" value="" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
             <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
         </form>
     </div>
@@ -71,24 +69,23 @@ path {
 
 <script>
 
-	$(function(){
-		$("#fromDate").fdatepicker();
-		$("#toDate").fdatepicker();
-	});
+    $(function(){
+        $("#fromDate").fdatepicker();
+        $("#toDate").fdatepicker();
+    });
 
     var hasResult = document.getElementById("hasResult");
     if (hasResult.value == "yes"){
         drawChart()
-        $("#notebox").show();
     }
     // Set the dimensions of the canvas / graph
     function drawChart(){
         /*var margin = {top: 30, right: 20, bottom: 30, left: 50},*/
-		var margin = {top: 30, right: 20, bottom: 50, left: 80},
-                /*width = 1200 - margin.left - margin.right,*/
-				width = $(window).width() - margin.left - margin.right,
-                /*height = 600 - margin.top - margin.bottom;*/
-				height = $(window).height() - margin.top - margin.bottom;
+        var margin = {top: 30, right: 20, bottom: 50, left: 80},
+        /*width = 1200 - margin.left - margin.right,*/
+                width = $(window).width() - margin.left - margin.right,
+        /*height = 600 - margin.top - margin.bottom;*/
+                height = $(window).height() - margin.top - margin.bottom;
 
         // Parse the date / time
         var parseDate = d3.time.format("%Y%m%d").parse;
@@ -121,7 +118,7 @@ path {
         // Get the data
         var data = null;
         <c:if test="${not empty drugResultSet}">
-            data = ${drugResultSet};
+        data = ${drugResultSet};
         </c:if>
 
         data.forEach(function(d) {

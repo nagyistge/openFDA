@@ -1,7 +1,7 @@
 package com.wasoftware.openfda;
 
-import com.wasoftware.util.FormatDate;
-import com.wasoftware.util.GetMessage;
+import com.wasoftware.openfda.util.FormatDate;
+import com.wasoftware.openfda.util.GetMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

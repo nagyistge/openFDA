@@ -10,7 +10,8 @@ import java.util.List;
 import com.wasoftware.openfda.Dao.DataSetsDao;
 import com.wasoftware.openfda.model.DataSetsEntity;
 
-public class DataSetsServiceImpl implements DataSetsDao{
+@Service
+public class DataSetsServiceImpl implements DataSetsService{
     private DataSetsDao dataSetsDao;
 
     public void setDataSetsDao(DataSetsDao dataSetsDao) {
@@ -35,6 +36,12 @@ public class DataSetsServiceImpl implements DataSetsDao{
         return this.dataSetsDao.listDataSetsEntity();
     }
 
+    @Override
+    @Transactional
+    public List<DataSetsEntity> listDataSetsEntityByDataSetListID(int listId) {
+        return this.dataSetsDao.listDataSetsEntity();
+    }
+
 
     @Override
     @Transactional
@@ -46,5 +53,11 @@ public class DataSetsServiceImpl implements DataSetsDao{
     @Transactional
     public void removeDataSetsEntity(int id) {
         this.dataSetsDao.removeDataSetsEntity(id);
+    }
+
+    @Override
+    @Transactional
+    public void removeDataSetsEntityByDataSetListID(int id) {
+        this.dataSetsDao.removeDataSetsEntityByDataSetListID(id);
     }
 }

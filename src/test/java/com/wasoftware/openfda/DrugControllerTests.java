@@ -10,7 +10,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
-import com.wasoftware.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -50,7 +49,7 @@ public class DrugControllerTests {
      * Method: fdaData(ModelMap model)
      */
     @Test
-    public void testdrug() throws Exception {
+    public void testDrug() throws Exception {
         mockMvc.perform(get("/drugs"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("drugs"));
@@ -65,6 +64,11 @@ public class DrugControllerTests {
                 .andExpect(status().isOk())
                 .andExpect(view().name("drugs"));
     }
-
+    @Test
+    public void testDrugsSaveDrugData() throws Exception {
+        mockMvc.perform(get("/drugsSaveDrugData"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("drugsSaveDrugData"));
+    }
 
 } 

@@ -9,10 +9,12 @@ import javax.persistence.*;
 @Table(name = "DataSets", schema = "", catalog = "openfda_test")
 public class DataSetsEntity {
     private int id;
+    private int dataSetList_id;
     private String key;
     private String value;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -23,7 +25,15 @@ public class DataSetsEntity {
     }
 
     @Basic
-    @Column(name = "key")
+    @Column(name = "dataSetList_id")
+    public int getDataSetListID() {
+        return this.dataSetList_id;
+    }
+
+    public void setDataSetListID(int ListId) {this.dataSetList_id = ListId;}
+
+    @Basic
+    @Column(name = "`key`")
     public String getKey() {
         return key;
     }
@@ -50,6 +60,7 @@ public class DataSetsEntity {
         DataSetsEntity that = (DataSetsEntity) o;
 
         if (id != that.id) return false;
+        if (dataSetList_id != that.dataSetList_id) return false;
         if (key != null ? !key.equals(that.key) : that.key != null) return false;
         if (value != null ? !value.equals(that.value) : that.value != null) return false;
 
@@ -59,6 +70,7 @@ public class DataSetsEntity {
     @Override
     public int hashCode() {
         int result = id;
+        result = 31 * result + dataSetList_id;
         result = 31 * result + (key != null ? key.hashCode() : 0);
         result = 31 * result + (value != null ? value.hashCode() : 0);
         return result;

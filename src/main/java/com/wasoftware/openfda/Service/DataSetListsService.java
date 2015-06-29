@@ -8,7 +8,7 @@ import com.wasoftware.openfda.model.DataSetListsEntity;
 
 public interface DataSetListsService {
     public void addDataSetListsEntity(DataSetListsEntity dataSetList);
-    public void updateDataSetListEntity(DataSetListsEntity dataSetList);
+    public void updateDataSetListsEntity(DataSetListsEntity dataSetList);
     public List<DataSetListsEntity> listDataSetListsEntity();
     public DataSetListsEntity getDataSetListsEntityById(int id);
     public void removeDataSetListsEntity(int id);

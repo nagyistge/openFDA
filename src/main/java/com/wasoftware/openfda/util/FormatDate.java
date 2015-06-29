@@ -1,4 +1,4 @@
-package com.wasoftware.util;
+package com.wasoftware.openfda.util;
 
 /**
  * Created by yipty on 6/24/2015.

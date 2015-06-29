@@ -56,10 +56,14 @@
 		<put-attribute name="body" value="/WEB-INF/pages/foods.jsp" />
 	</definition>
 
-	<definition name="getFdaData" extends="welcomeTemplate">
-	<!--<definition name="getFdaData" template="/WEB-INF/tiles/template/layout_base_nostyle.jsp">-->
-	    <put-attribute name="title" value="FdaData" />
+	<definition name="dataSetLists" extends="welcomeTemplate">
+	    <put-attribute name="title" value="DataSetList" />
 	    <put-attribute name="tagline" value="" />
-	    <put-attribute name="body" value="/WEB-INF/pages/drugs.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/pages/dataSetLists.jsp" />
     </definition>
+	<definition name="dataSets" extends="welcomeTemplate">
+		<put-attribute name="title" value="DataSet" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="body" value="/WEB-INF/pages/dataSets.jsp" />
+	</definition>
 </tiles-definitions>

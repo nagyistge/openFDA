@@ -10,7 +10,8 @@ import java.util.List;
 import com.wasoftware.openfda.Dao.UsersDao;
 import com.wasoftware.openfda.model.UsersEntity;
 
-public class UsersServiceImpl implements UsersDao {
+@Service
+public class UsersServiceImpl implements UsersService {
     private UsersDao usersDao;
 
     public void setUsersDao(UsersDao usersDao) {
@@ -40,6 +41,12 @@ public class UsersServiceImpl implements UsersDao {
     @Transactional
     public UsersEntity getUsersEntityById(int id) {
         return this.usersDao.getUsersEntityById(id);
+    }
+
+    @Override
+    @Transactional
+    public UsersEntity getUsersEntityByUsername(String userName) {
+        return this.usersDao.getUsersEntityByUsername(userName);
     }
 
     @Override
