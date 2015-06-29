@@ -16,7 +16,6 @@ import com.wasoftware.openfda.model.DataSetListsEntity;
 import com.wasoftware.openfda.model.DataSetsEntity;
 import com.wasoftware.openfda.service.DataSetListsService;
 import com.wasoftware.openfda.service.DataSetsService;
-import com.wasoftware.openfda.service.UsersService;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
@@ -44,11 +43,6 @@ public class ViewDataController {
         this.dataSetsService = ps;
     }
 
-    @Autowired(required = true)
-    @Qualifier(value = "usersService")
-    public void setUsersService(UsersService ps) {
-        this.usersService = ps;
-    }
 
     JSONObject jsonObjectMeta = new JSONObject();
     JSONArray jsonArrayResult = new JSONArray();
