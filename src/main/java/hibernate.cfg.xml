@@ -6,10 +6,11 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://54.173.229.9:3308/openfda_test</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">welcome123</property>
         <mapping class="com.wasoftware.openfda.model.DataSetListsEntity"/>
-       <!-- <mapping class="com.wasoftware.openfda.model.DataSetsEntity"/>
-        <mapping class="com.wasoftware.openfda.model.UsersEntity"/>-->
-
+        <mapping class="com.wasoftware.openfda.model.DataSetsEntity"/>
+        <mapping class="com.wasoftware.openfda.model.UsersEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
