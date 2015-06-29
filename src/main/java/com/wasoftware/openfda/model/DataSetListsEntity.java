@@ -16,6 +16,8 @@ public class DataSetListsEntity {
     private String valueName;
     private String metadata;
     private String notes;
+    private String startdate;
+    private String enddate;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -98,6 +100,26 @@ public class DataSetListsEntity {
         this.notes = notes;
     }
 
+    @Basic
+    @Column(name = "startdate")
+    public String getStartDate() {
+        return startdate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startdate = startDate;
+    }
+
+    @Basic
+    @Column(name = "enddate")
+    public String getEndDate() {
+        return enddate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.enddate = endDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -113,6 +135,8 @@ public class DataSetListsEntity {
         if (valueName != null ? !valueName.equals(that.valueName) : that.valueName != null) return false;
         if (metadata != null ? !metadata.equals(that.metadata) : that.metadata != null) return false;
         if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
+        if (startdate != null ? !startdate.equals(that.startdate) : that.startdate != null) return false;
+        if (enddate != null ? !enddate.equals(that.enddate) : that.enddate != null) return false;
 
         return true;
     }
@@ -127,6 +151,8 @@ public class DataSetListsEntity {
         result = 31 * result + (valueName != null ? valueName.hashCode() : 0);
         result = 31 * result + (metadata != null ? metadata.hashCode() : 0);
         result = 31 * result + (notes != null ? notes.hashCode() : 0);
+        result = 31 * result + (startdate != null ? startdate.hashCode() : 0);
+        result = 31 * result + (enddate != null ? enddate.hashCode() : 0);
         return result;
     }
 }
