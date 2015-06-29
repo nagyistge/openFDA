@@ -22,10 +22,10 @@ path {
         <br />
         <nav class="breadcrumbs" role="navigation">
             <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
-            <a class="current" href="<c:url value="/drugs"/>"><spring:message code="drugs.label" /></a>
         </nav>
     </div>
 
+	<!-- Body section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <!-- Page Title section -->
         <div class="large-4 medium-12 small-12 columns">
@@ -66,9 +66,8 @@ path {
                         </div>
                     </form>
                 </div>
-                <div class="large-12 large-centered medium-12 small-12 columns">
-                    <div id="svghome" ></div>
-                    <script src="http://d3js.org/d3.v3.min.js"></script>
+                <div class="large-3 medium-12 small-12 columns end">
+                    <input type="submit" value="<spring:message code="drugs.submit"/>" class="tiny button radius"/>
                 </div>
             </section>
             <section class="content" id="labeling" aria-hidden="true">
@@ -84,9 +83,20 @@ path {
             </section>
         </div>
     </div>
+	<div class="large-10 large-centered medium-12 small-12 columns">
+		<div id="svghome" ></div>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+	</div>
+</div>
 
-    <!-- Tab Content Section -->
-
+<div class="row" id="notebox" style="display:none;">
+    <div class="large-10 large-centered medium-12 small-12 columns">
+        <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
+            <label><spring:message code="drugs.notelabel"/></label>
+            <input type="text" id="inputNote" name="inputNote" value="" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
+            <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
+        </form>
+    </div>
 </div>
 
 <script>
@@ -99,6 +109,7 @@ path {
     var hasResult = document.getElementById("hasResult");
     if (hasResult.value == "yes"){
         drawChart()
+        $("#notebox").show();
     }
     // Set the dimensions of the canvas / graph
     function drawChart(){
@@ -139,8 +150,8 @@ path {
 
         // Get the data
         var data = null;
-        <c:if test="${not empty fdaResultSet}">
-            data = ${fdaResultSet};
+        <c:if test="${not empty drugResultSet}">
+            data = ${drugResultSet};
         </c:if>
 
         data.forEach(function(d) {

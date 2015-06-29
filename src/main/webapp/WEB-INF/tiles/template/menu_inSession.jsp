@@ -33,7 +33,7 @@
     <li class="divider"></li>
 
     <!-- My Data Button -->
-    <li><a href="#"><spring:message code="menu.item.mySavedData" /></a></li>
+    <li><a href="<c:url value="/dataSetLists"/>"><spring:message code="menu.item.mySavedData" /></a></li>
 </ul>
 
 <!-- Right Nav. Section -->

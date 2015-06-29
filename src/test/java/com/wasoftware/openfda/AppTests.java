@@ -1,7 +1,7 @@
 package com.wasoftware.openfda;
 
-import com.wasoftware.util.FormatDate;
-import com.wasoftware.util.GetMessage;
+import com.wasoftware.openfda.util.FormatDate;
+import com.wasoftware.openfda.util.GetMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,10 +40,10 @@ public class AppTests {
                 .andExpect(view().name("welcome"));
     }
     @Test
-    public void testfdaData() throws Exception {
-        mockMvc.perform(get("/fdaData"))
+    public void testLogin() throws Exception {
+        mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("fdaData"));
+                .andExpect(view().name("login"));
     }
     @Test
     public void testReformatDate() throws Exception {
