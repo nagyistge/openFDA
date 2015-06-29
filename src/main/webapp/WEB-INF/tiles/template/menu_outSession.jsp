@@ -10,6 +10,7 @@
 
 <script src="<c:url value="/theme/js/foundation/foundation.js" />" ></script>
 <script src="<c:url value="/theme/js/foundation/foundation.topbar.js" />" ></script>
+<script src="<c:url value="/theme/js/foundation/foundation.tab.js" />" ></script>
 
 <!-- Before Login Menu -->
 <!-- Right Nav. Section -->

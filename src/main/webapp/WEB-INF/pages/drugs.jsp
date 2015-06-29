@@ -8,8 +8,7 @@ path {
     stroke-width: 1;
     fill: none;
 }
-.axis path,
-.axis line {
+.axis path, .axis line {
     fill: none;
     stroke: grey;
     stroke-width: 1;
@@ -23,40 +22,71 @@ path {
         <br />
         <nav class="breadcrumbs" role="navigation">
             <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
+            <a class="current" href="<c:url value="/drugs"/>"><spring:message code="drugs.label" /></a>
         </nav>
     </div>
 
-	<!-- Body section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
-        <header><h1><b><spring:message code = "drugs.title"/></b></h1></header>
-        <p>${message}</p>
-    </div>
-    <div class="large-10 large-centered medium-12 small-12 columns">
-        <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/drugs"/>" id="form1">
-            <div class="row">
-                <div class="large-3 medium-12 small-12 columns">
-					<div class="row collapse prefix-radius">
-						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
-						<div class="large-2 medium-2 small-2 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
-					</div>
-				</div>
-                <div class="large-3 medium-12 small-12 columns">
-					<div class="row collapse prefix-radius">
-						<div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
-						<div class="large-2 medium-2 small-2 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
-					</div>
+        <!-- Page Title section -->
+        <div class="large-4 medium-12 small-12 columns">
+            <header><h1><b><spring:message code = "drugs.title"/></b></h1></header>
+            <p>${message}</p>
+        </div>
+        <!-- Tab Title Section -->
+        <div class="large-7 medium-12 small-12 end columns">
+            <dl class="tabs contained" data-tab role="tablist">
+                <dd class="tab-title active"><a href="#adverseEvents" ><spring:message code = "drugs.tab.adverseEvents" /></a></dd>
+                <dd class="tab-title"><a href="#labeling" ><spring:message code = "drugs.tab.labeling" /></a></dd>
+                <dd class="tab-title"><a href="#enforcementReports" ><spring:message code = "drugs.tab.enforcementReports" /></a></dd>
+            </dl>
+        </div>
+
+        <!-- Tab Content Section -->
+        <div class="tabs-content contained">
+            <section class="content active" id="adverseEvents" aria-hidden="false">
+                <div class="large-12 medium-12 small-12 columns">
+                    <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/drugs"/>" id="form1">
+                        <div class="row">
+                            <div class="large-3 medium-12 small-12 columns">
+                                <div class="row collapse prefix-radius">
+                                    <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
+                                    <div class="large-2 medium-2 small-2 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
+                                </div>
+                            </div>
+                            <div class="large-3 medium-12 small-12 columns">
+                                <div class="row collapse prefix-radius">
+                                    <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
+                                    <div class="large-2 medium-2 small-2 columns end"><input type="text" value="" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
+                                </div>
+                            </div>
+                            <div class="large-3 medium-12 small-12 columns end">
+                                <input type="submit" value="<spring:message code="drugs.submit"/>" class="tiny button radius"/>
+                            </div>
+                            <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
+                        </div>
+                    </form>
                 </div>
-                <div class="large-3 medium-12 small-12 columns end">
-                    <input type="submit" value="<spring:message code="drugs.submit"/>" class="tiny button radius"/>
+                <div class="large-12 large-centered medium-12 small-12 columns">
+                    <div id="svghome" ></div>
+                    <script src="http://d3js.org/d3.v3.min.js"></script>
                 </div>
-				<input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
-            </div>
-        </form>
+            </section>
+            <section class="content" id="labeling" aria-hidden="true">
+                <div class="large-12 medium-12 small-12 columns">
+                    <p>In labeling tab now!</p>
+                </div>
+            </section>
+
+            <section class="content" id="enforcementReports" aria-hidden="true">
+                <div class="large-12 medium-12 small-12 columns">
+                    <p>In enforcement reports tab now!</p>
+                </div>
+            </section>
+        </div>
     </div>
-	<div class="large-10 large-centered medium-12 small-12 columns">
-		<div id="svghome" ></div>
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-	</div>
+
+    <!-- Tab Content Section -->
+
 </div>
 
 <script>
@@ -73,7 +103,7 @@ path {
     // Set the dimensions of the canvas / graph
     function drawChart(){
         /*var margin = {top: 30, right: 20, bottom: 30, left: 50},*/
-		var margin = {top: 30, right: 20, bottom: 50, left: 80},
+		var margin = {top: 30, right: 40, bottom: 50, left: 40},
                 /*width = 1200 - margin.left - margin.right,*/
 				width = $(window).width() - margin.left - margin.right,
                 /*height = 600 - margin.top - margin.bottom;*/
