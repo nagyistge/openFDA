@@ -100,6 +100,8 @@ public class DrugsController {
         dataSetListsEntity.setDataSetType("Drug");
         dataSetListsEntity.setMetadata(jsonObjectMeta.toString());
         dataSetListsEntity.setNotes(inputNote);
+        dataSetListsEntity.setStartDate(originalFromDate);
+        dataSetListsEntity.setEndDate(originalToDate);
         dataSetListsService.addDataSetListsEntity(dataSetListsEntity);
 
         // save detail data set
