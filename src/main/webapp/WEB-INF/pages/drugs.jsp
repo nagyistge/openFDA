@@ -59,6 +59,16 @@ path {
 	</div>
 </div>
 
+<div class="row" id="notebox" style="display:none;">
+    <div class="large-10 large-centered medium-12 small-12 columns">
+        <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
+            <label><spring:message code="drugs.notelabel"/></label>
+            <input type="text" id="inputNote" name="inputNote" value="" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
+            <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
+        </form>
+    </div>
+</div>
+
 <script>
 
 	$(function(){
@@ -69,6 +79,7 @@ path {
     var hasResult = document.getElementById("hasResult");
     if (hasResult.value == "yes"){
         drawChart()
+        $("#notebox").show();
     }
     // Set the dimensions of the canvas / graph
     function drawChart(){
