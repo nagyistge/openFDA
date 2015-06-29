@@ -1,4 +1,4 @@
-package com.wasoftware.openfda.Dao;
+package com.wasoftware.openfda.dao;
 
 import com.wasoftware.openfda.model.UsersEntity;
 import org.hibernate.Session;
