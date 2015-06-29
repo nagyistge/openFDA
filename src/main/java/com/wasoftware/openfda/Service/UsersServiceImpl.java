@@ -45,6 +45,12 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     @Transactional
+    public UsersEntity getUsersEntityByUsername(String userName) {
+        return this.usersDao.getUsersEntityByUsername(userName);
+    }
+
+    @Override
+    @Transactional
     public void removeUsersEntity(int id) {
         this.usersDao.removeUsersEntity(id);
     }

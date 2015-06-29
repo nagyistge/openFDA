@@ -36,6 +36,12 @@ public class DataSetsServiceImpl implements DataSetsService{
         return this.dataSetsDao.listDataSetsEntity();
     }
 
+    @Override
+    @Transactional
+    public List<DataSetsEntity> listDataSetsEntityByDataSetListID(int listId) {
+        return this.dataSetsDao.listDataSetsEntity();
+    }
+
 
     @Override
     @Transactional
@@ -47,5 +53,11 @@ public class DataSetsServiceImpl implements DataSetsService{
     @Transactional
     public void removeDataSetsEntity(int id) {
         this.dataSetsDao.removeDataSetsEntity(id);
+    }
+
+    @Override
+    @Transactional
+    public void removeDataSetsEntityByDataSetListID(int id) {
+        this.dataSetsDao.removeDataSetsEntityByDataSetListID(id);
     }
 }
