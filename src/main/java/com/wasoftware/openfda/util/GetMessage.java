@@ -1,4 +1,4 @@
-package com.wasoftware.util;
+package com.wasoftware.openfda.util;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
