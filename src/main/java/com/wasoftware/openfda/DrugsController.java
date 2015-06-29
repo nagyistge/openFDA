@@ -21,7 +21,6 @@ import com.wasoftware.openfda.Service.DataSetListsService;
 import com.wasoftware.openfda.Service.DataSetsService;
 import com.wasoftware.openfda.Service.UsersService;
 
-
 /**
  * Created by yipty on 6/22/2015.
  */
