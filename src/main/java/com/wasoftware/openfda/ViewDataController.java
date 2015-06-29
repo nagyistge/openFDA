@@ -29,7 +29,6 @@ import java.util.List;
 public class ViewDataController {
     private DataSetListsService dataSetListsService;
     private DataSetsService dataSetsService;
-    private UsersService usersService;
     private int currentDataSetListID;
 
 
@@ -77,14 +76,13 @@ public class ViewDataController {
                 jsonArrayResult.add(jsonObject);
             }
         }
-        System.out.print("fffffffffffffffffffffffffffff   "+jsonArrayResult.toString());
         model.addAttribute("currentDataSetListEntity",dataSetListsEntity);
         model.addAttribute("ResultSet",jsonArrayResult);
         model.addAttribute("hasResult","yes");
         return "dataSets";
     }
     @RequestMapping(value = "/deleteDataSets/{id}", method = RequestMethod.GET)
-    public String deleteDataSets(ModelMap model,
+    public String deleteDataSets(
                                  @PathVariable("id") int selectedDateSetListID
                                  ) {
         dataSetListsService.removeDataSetListsEntity(selectedDateSetListID);
@@ -92,13 +90,13 @@ public class ViewDataController {
         return "redirect:/dataSetLists";
     }
 
-   /* @RequestMapping(value = "/dataSetsNewGet", method = RequestMethod.GET)*/
+
     @RequestMapping(value = "/viewDataSets", params="reloadData", method = RequestMethod.POST)
     public String dataSetsNewGet(ModelMap model,
                                  @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
                                  @RequestParam(value = "toDate", defaultValue = "") String toDate
                                  ) {
-        //get current datasetlistid from session
+
         String errorMessage = "";
         String originalFromDate = fromDate;
         String originalToDate = toDate;
@@ -110,7 +108,6 @@ public class ViewDataController {
             JSONParser jsonParser = new JSONParser();
             try {
                 jsonResult = adverseevent.getAdverseEventCountByDate(fromDate, toDate);
-                System.out.println("xxxxxxxxxxxxxxx" + jsonResult);
                 Object object = jsonParser.parse(jsonResult);
                 JSONObject jsonObject = (JSONObject) object;
                 jsonObjectMeta = (JSONObject) jsonObject.get("meta");
@@ -127,11 +124,10 @@ public class ViewDataController {
         dataSetListsEntity.setEndDate(originalToDate);
         model.addAttribute("currentDataSetListEntity",dataSetListsEntity);
         model.addAttribute("errorMessage", errorMessage);
-        System.out.println("reloaddata");
         return "dataSets";
     }
 
-    //@RequestMapping(value = "/dataSetsOverwrite", method = RequestMethod.POST)
+
     @RequestMapping(value = "/viewDataSets", params="overwriteData", method = RequestMethod.POST)
     public String dataSetsOverwrite(ModelMap model,
                                     @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
@@ -158,7 +154,6 @@ public class ViewDataController {
         model.addAttribute("currentDataSetListEntity",dataSetListsEntity);
         model.addAttribute("ResultSet", jsonArrayResult.toString());
         model.addAttribute("hasResult", "yes");
-        System.out.println("overwritedata");
         return "dataSets";
     }
 
