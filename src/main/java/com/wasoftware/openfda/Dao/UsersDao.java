@@ -11,5 +11,6 @@ public interface UsersDao {
     public void updateUsersEntity(UsersEntity users);
     public List<UsersEntity> listUsersEntity();
     public UsersEntity getUsersEntityById(int id);
+    public UsersEntity getUsersEntityByUsername(String userName);
     public void removeUsersEntity(int id);
 }

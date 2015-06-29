@@ -20,7 +20,7 @@ public class DataSetListsDaoImpl implements DataSetListsDao{
     @Override
     public void addDataSetListsEntity(DataSetListsEntity dataSetList) {
         Session session = this.sessionFactory.getCurrentSession();
-        session.persist(dataSetList);
+        session.persist(dataSetList);        
         System.out.println("DataSetLists saved successfully, DataSetLists Details=" + dataSetList);
     }
 

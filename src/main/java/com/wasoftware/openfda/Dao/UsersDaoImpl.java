@@ -3,7 +3,7 @@ package com.wasoftware.openfda.Dao;
 import com.wasoftware.openfda.model.UsersEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
+import org.hibernate.Query;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
@@ -48,6 +48,16 @@ public class UsersDaoImpl implements UsersDao{
     public UsersEntity getUsersEntityById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         UsersEntity users = (UsersEntity) session.load(UsersEntity.class, new Integer(id));
+        System.out.println("Users loaded successfully, Users details=" + users);
+        return users;
+    }
+    @Override
+    public UsersEntity getUsersEntityByUsername(String userName) {
+        Session session = this.sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from UsersEntity u where u.username = :userName");
+        query.setParameter("userName",userName);
+        List<UsersEntity> usersList = query.list();
+        UsersEntity users = usersList.get(0); // get the first one
         System.out.println("Users loaded successfully, Users details=" + users);
         return users;
     }
