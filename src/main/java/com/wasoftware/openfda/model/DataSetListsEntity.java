@@ -9,14 +9,16 @@ import javax.persistence.*;
 @Table(name = "DataSetLists", schema = "", catalog = "openfda_test")
 public class DataSetListsEntity {
     private int id;
+    private int user_id;
     private String dataSetName;
     private String dataSetType;
-    private String ketName;
+    private String keyName;
     private String valueName;
     private String metadata;
     private String notes;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -24,6 +26,16 @@ public class DataSetListsEntity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "user_id")
+    public int getUserID() {
+        return this.user_id;
+    }
+
+    public void setUserID(int user_id) {
+        this.user_id = user_id;
     }
 
     @Basic
@@ -47,13 +59,13 @@ public class DataSetListsEntity {
     }
 
     @Basic
-    @Column(name = "ketName")
-    public String getKetName() {
-        return ketName;
+    @Column(name = "keyName")
+    public String getKeyName() {
+        return keyName;
     }
 
-    public void setKetName(String ketName) {
-        this.ketName = ketName;
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
     }
 
     @Basic
@@ -94,9 +106,10 @@ public class DataSetListsEntity {
         DataSetListsEntity that = (DataSetListsEntity) o;
 
         if (id != that.id) return false;
+        if (user_id != that.user_id) return false;
         if (dataSetName != null ? !dataSetName.equals(that.dataSetName) : that.dataSetName != null) return false;
         if (dataSetType != null ? !dataSetType.equals(that.dataSetType) : that.dataSetType != null) return false;
-        if (ketName != null ? !ketName.equals(that.ketName) : that.ketName != null) return false;
+        if (keyName != null ? !keyName.equals(that.keyName) : that.keyName != null) return false;
         if (valueName != null ? !valueName.equals(that.valueName) : that.valueName != null) return false;
         if (metadata != null ? !metadata.equals(that.metadata) : that.metadata != null) return false;
         if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
@@ -107,9 +120,10 @@ public class DataSetListsEntity {
     @Override
     public int hashCode() {
         int result = id;
+        result = 31* result + user_id;
         result = 31 * result + (dataSetName != null ? dataSetName.hashCode() : 0);
         result = 31 * result + (dataSetType != null ? dataSetType.hashCode() : 0);
-        result = 31 * result + (ketName != null ? ketName.hashCode() : 0);
+        result = 31 * result + (keyName != null ? keyName.hashCode() : 0);
         result = 31 * result + (valueName != null ? valueName.hashCode() : 0);
         result = 31 * result + (metadata != null ? metadata.hashCode() : 0);
         result = 31 * result + (notes != null ? notes.hashCode() : 0);
