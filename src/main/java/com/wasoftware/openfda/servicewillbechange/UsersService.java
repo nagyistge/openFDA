@@ -1,4 +1,4 @@
-package com.wasoftware.openfda.service;
+package com.wasoftware.openfda.servicewillbechange;
 
 /**
  * Created by yipty on 6/25/2015.
