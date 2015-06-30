@@ -1,4 +1,4 @@
-package com.wasoftware.openfda.daoxxxxxxxxxxxxxxxxxxxxx;
+package com.wasoftware.openfda.dao;
 
 import com.wasoftware.openfda.model.UsersEntity;
 import java.util.List;
