@@ -60,4 +60,10 @@ public class DataSetListsDaoImpl implements DataSetListsDao{
         }
         System.out.println("DataSetLists deleted successfully, DataSetLists details=" + dataSetList);
     }
+    @Override
+    public int getDataSetListsEntityMaxId() {
+        Session session = this.sessionFactory.getCurrentSession();
+        int dataSetListsEntityMaxID = (Integer)session.createQuery("select max(id) from DataSetListsEntity").uniqueResult();
+        return dataSetListsEntityMaxID;
+    }
 }

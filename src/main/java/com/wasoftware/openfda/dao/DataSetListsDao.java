@@ -11,5 +11,6 @@ public interface DataSetListsDao {
     public void updateDataSetListsEntity(DataSetListsEntity dataSetList);
     public List<DataSetListsEntity> listDataSetListsEntity();
     public DataSetListsEntity getDataSetListsEntityById(int id);
+    public int getDataSetListsEntityMaxId();
     public void removeDataSetListsEntity(int id);
 }
