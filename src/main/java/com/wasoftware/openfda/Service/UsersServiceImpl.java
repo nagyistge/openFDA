@@ -1,4 +1,4 @@
-package com.wasoftware.openfda.Service;
+package com.wasoftware.openfda.service;
 
 /**
  * Created by yipty on 6/25/2015.
@@ -7,7 +7,7 @@ package com.wasoftware.openfda.Service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
-import com.wasoftware.openfda.Dao.UsersDao;
+import com.wasoftware.openfda.dao.UsersDao;
 import com.wasoftware.openfda.model.UsersEntity;
 
 @Service
