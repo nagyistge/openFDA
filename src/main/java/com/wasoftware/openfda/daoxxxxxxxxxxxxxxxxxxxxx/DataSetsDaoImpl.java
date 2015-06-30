@@ -1,4 +1,4 @@
-package com.wasoftware.openfda.dao;
+package com.wasoftware.openfda.daoxxxxxxxxxxxxxxxxxxxxx;
 
 /**
  * Created by yipty on 6/25/2015.
