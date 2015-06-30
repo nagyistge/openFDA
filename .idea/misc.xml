@@ -21,6 +21,21 @@
       </list>
     </option>
   </component>
+  <component name="ProjectFacetManager">
+    <default-configurations>
+      <entry facet-type="struts">
+        <default-facet-configuration>
+          <configuration>
+            <option name="myStrutsValidationEnabled" value="true" />
+            <option name="myTilesValidationEnabled" value="true" />
+            <option name="myValidatorValidationEnabled" value="true" />
+            <option name="myReportErrorsAsWarnings" value="true" />
+            <option name="mySuppressPropertiesValidation" value="true" />
+          </configuration>
+        </default-facet-configuration>
+      </entry>
+    </default-configurations>
+  </component>
   <component name="ProjectKey">
     <option name="state" value="https://github.com/JetBrains/idea-templates.git" />
   </component>
