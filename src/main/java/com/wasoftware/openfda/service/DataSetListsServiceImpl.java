@@ -46,7 +46,12 @@ public class DataSetListsServiceImpl implements DataSetListsService{
 
     @Override
     @Transactional
+    public int getDataSetListsEntityMaxId() {return this.dataSetListsDao.getDataSetListsEntityMaxId();}
+
+    @Override
+    @Transactional
     public void removeDataSetListsEntity(int id) {
         this.dataSetListsDao.removeDataSetListsEntity(id);
     }
+
 }
