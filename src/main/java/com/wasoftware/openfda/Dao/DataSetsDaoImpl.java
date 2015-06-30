@@ -1,4 +1,4 @@
-package com.wasoftware.openfda.Dao;
+package com.wasoftware.openfda.dao;
 
 /**
  * Created by yipty on 6/25/2015.
@@ -86,10 +86,6 @@ public class DataSetsDaoImpl implements DataSetsDao{
         Query query = session.createQuery("delete DataSetsEntity d where d.dataSetListID =:listId");
         query.setParameter("listId", listId);
         int result = query.executeUpdate();
-       // DataSetsEntity dataSet = (DataSetsEntity) session.load(DataSetsEntity.class, new Integer(id));
-       // if (null != dataSet) {
-        //    session.delete(dataSet);
-       // }
         System.out.println("DataSets deleted successfully, DataSets details=" + result);
     }
 }
