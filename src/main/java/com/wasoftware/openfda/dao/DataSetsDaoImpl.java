@@ -39,7 +39,7 @@ public class DataSetsDaoImpl implements DataSetsDao{
     @Override
     public List<DataSetsEntity> listDataSetsEntity() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<DataSetsEntity> dataSetsEntityList = session.createQuery("from DataSetsEntity").list();
+        List<DataSetsEntity> dataSetsEntityList = session.createQuery("from DataSetsEntity d order by d.key").list();
         for (DataSetsEntity dataSet : dataSetsEntityList) {
             System.out.println("DataSets List::" + dataSet);
         }
