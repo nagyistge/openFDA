@@ -16,11 +16,15 @@
                 http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
     <http auto-config="true"  use-expressions="true">
+        <access-denied-handler error-page="/404" />
         <intercept-url pattern="/"  access="permitAll()" />
+        <intercept-url pattern="/favicon.ico" access="permitAll"/>
         <intercept-url pattern="/welcome*"  access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/login*"  access="permitAll()" />
-        <intercept-url pattern="/fdaData*"  access="hasRole('ROLE_USER')" />
-        <intercept-url pattern="/getFdaData*"  access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/drug*"  access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/viewData*"  access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/dataSet*"  access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/deleteDataSet*"  access="hasRole('ROLE_USER')" />
         <form-login
                 login-page="/login"
                 default-target-url="/welcome"
