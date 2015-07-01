@@ -112,16 +112,16 @@ public class ViewDataController {
                 jsonArrayResult = (JSONArray) jsonObject.get("results");
                 model.addAttribute("ResultSet", jsonArrayResult.toString());
                 model.addAttribute("hasResult", "yes");
+                model.addAttribute("errorMessage", GetMessage.getMessage("viewdataset.datareloaded"));
             } catch (Exception e) {
                 System.out.println(e.toString());
-                errorMessage = GetMessage.getMessage("drugs.nodata");
+                model.addAttribute("errorMessage", GetMessage.getMessage("drugs.nodata"));
             }
         }
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);
         dataSetListsEntity.setStartDate(originalFromDate);
         dataSetListsEntity.setEndDate(originalToDate);
         model.addAttribute("currentDataSetListEntity",dataSetListsEntity);
-        model.addAttribute("errorMessage", errorMessage);
         return "dataSets";
     }
 
@@ -131,7 +131,7 @@ public class ViewDataController {
                                     @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
                                     @RequestParam(value = "toDate", defaultValue = "") String toDate
                                     ) {
-
+        String errorMessage="";
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);
         dataSetListsEntity.setMetadata(jsonObjectMeta.toString());
         dataSetListsEntity.setStartDate(fromDate);
@@ -147,7 +147,7 @@ public class ViewDataController {
             dataSetsEntity.setValue(jsonObjectItem.get("count").toString());
             dataSetsEntity.setDataSetListID(currentDataSetListID);
             dataSetsService.addDataSetsEntity(dataSetsEntity);
-            System.out.println("insert dtaset:"+ dataSetsEntity.getValue() + "," + dataSetsEntity.getId());
+            model.addAttribute("errorMessage", GetMessage.getMessage("dataSet.dataoverwritten"));
         }
         model.addAttribute("currentDataSetListEntity",dataSetListsEntity);
         model.addAttribute("ResultSet", jsonArrayResult.toString());
