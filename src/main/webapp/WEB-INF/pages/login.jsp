@@ -30,7 +30,7 @@
                             <label><spring:message code = "login.label.username" /></label>
                             <input type="text" name="j_username" value="" placeholder="<spring:message code = "login.placeholder.username" />" />
                             <label><spring:message code = "login.label.password" /></label>
-                            <input type="password" name="j_password" value="" placeholder="<spring:message code = "login.placeholder.password" />" />
+                            <input type="password" name="j_password" value="" autocomplete="off" placeholder="<spring:message code = "login.placeholder.password" />" />
                             <c:if test="${not empty error}">
                                 <div class="error">${error}</div>
                             </c:if>
