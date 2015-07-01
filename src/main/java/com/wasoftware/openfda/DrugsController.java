@@ -90,33 +90,38 @@ public class DrugsController {
     public String saveDrugData(ModelMap model,
                                @RequestParam(value = "inputNote",defaultValue="") String inputNote
                                ) {
-        DataSetListsEntity dataSetListsEntity = new DataSetListsEntity();
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName(); //get logged in username
-        UsersEntity users = usersService.getUsersEntityByUsername(username);
-        dataSetListsEntity.setUserID(users.getId());
-        dataSetListsEntity.setDataSetName("");
-        dataSetListsEntity.setDataSetType("Drug");
-        dataSetListsEntity.setMetadata(jsonObjectMeta.toString());
-        dataSetListsEntity.setNotes(inputNote);
-        dataSetListsEntity.setStartDate(originalFromDate);
-        dataSetListsEntity.setEndDate(originalToDate);
-        dataSetListsService.addDataSetListsEntity(dataSetListsEntity);
+        try{
+            DataSetListsEntity dataSetListsEntity = new DataSetListsEntity();
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            String username = auth.getName(); //get logged in username
+            UsersEntity users = usersService.getUsersEntityByUsername(username);
+            dataSetListsEntity.setUserID(users.getId());
+            dataSetListsEntity.setDataSetName("");
+            dataSetListsEntity.setDataSetType("Drug");
+            dataSetListsEntity.setMetadata(jsonObjectMeta.toString());
+            dataSetListsEntity.setNotes(inputNote);
+            dataSetListsEntity.setStartDate(originalFromDate);
+            dataSetListsEntity.setEndDate(originalToDate);
+            dataSetListsService.addDataSetListsEntity(dataSetListsEntity);
 
-        // save detail data set
-        for (Object item : jsonArrayResult){
-            JSONObject jsonObjectItem  = (JSONObject) item;
-            DataSetsEntity dataSetsEntity = new DataSetsEntity();
-            dataSetsEntity.setKey(jsonObjectItem.get("time").toString());
-            dataSetsEntity.setValue(jsonObjectItem.get("count").toString());
-            dataSetsEntity.setDataSetListID(dataSetListsEntity.getId());
-            dataSetsService.addDataSetsEntity(dataSetsEntity);
+            // save detail data set
+            for (Object item : jsonArrayResult){
+                JSONObject jsonObjectItem  = (JSONObject) item;
+                DataSetsEntity dataSetsEntity = new DataSetsEntity();
+                dataSetsEntity.setKey(jsonObjectItem.get("time").toString());
+                dataSetsEntity.setValue(jsonObjectItem.get("count").toString());
+                dataSetsEntity.setDataSetListID(dataSetListsEntity.getId());
+                dataSetsService.addDataSetsEntity(dataSetsEntity);
+            }
+            model.addAttribute("drugResultSet", jsonArrayResult.toString());
+            model.addAttribute("hasResult", "yes");
+            model.addAttribute("fromDate",originalFromDate);
+            model.addAttribute("toDate", originalToDate);
+            model.addAttribute("errorMessage", GetMessage.getMessage("drugs.datasaved"));
+        }catch(Exception e){
+            e.toString();
+            model.addAttribute("errorMessage", GetMessage.getMessage("errors.system"));
         }
-        model.addAttribute("drugResultSet", jsonArrayResult.toString());
-        model.addAttribute("hasResult", "yes");
-        model.addAttribute("fromDate",originalFromDate);
-        model.addAttribute("toDate", originalToDate);
-        model.addAttribute("errorMessage", GetMessage.getMessage("drugs.datasaved"));
         return "drugs";
     }
 
