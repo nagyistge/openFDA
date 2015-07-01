@@ -79,8 +79,12 @@ public class ViewDataController {
     public String deleteDataSets(
                                  @PathVariable("id") int selectedDateSetListID
                                  ) {
-        dataSetListsService.removeDataSetListsEntity(selectedDateSetListID);
-        dataSetsService.removeDataSetsEntityByDataSetListID(selectedDateSetListID);
+        try{
+            dataSetsService.removeDataSetsEntityByDataSetListID(selectedDateSetListID);
+            dataSetListsService.removeDataSetListsEntity(selectedDateSetListID);
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
         return "redirect:/dataSetLists";
     }
 
