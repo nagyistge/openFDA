@@ -7,6 +7,7 @@ package com.wasoftware.openfda;
 
 import com.wasoftware.openfda.model.DataSetListsEntity;
 import com.wasoftware.openfda.service.DataSetListsService;
+import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
@@ -14,16 +15,21 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.mock.web.MockHttpSession;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.*;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.http.HttpSession;
 
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -44,6 +50,8 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 public class ViewDataControllerTests {
     private MockMvc mockMvc;
     private DataSetListsService dataSetListsService;
+    private static String SEC_CONTEXT_ATTR = HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY;
+
 
     @Autowired(required = true)
     @Qualifier(value = "dataSetListsService")
@@ -108,35 +116,55 @@ public class ViewDataControllerTests {
                 .andExpect(view().name("dataSets"));
     }
 
-   /* @Test
+    @Test
     public void testDataSetListsDelete() throws Exception {
+        //Account account = new AccountBuilder("test", "test", "test@gmail.com", Address.FAKE_EMPTY_ADDRESS4TESTS)
+        //        .build();
+        /*mockMvc.perform(post("/j_spring_security_check")
+                .param("j_username", "user1")
+                .param("j_password", "123456"))
+                .andDo(print());*/
+                //.andExpect(status().isMovedTemporarily());
+                //.andExpect(status().isOk());
+                //.andExpect(view().name("welcome"));
         //RequestBuilder requestBuilder = formLogin().user("username").password("passowrd");
-        HttpSession session = mockMvc.perform(post("/j_security_check")
+        /*mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(cookie().exists("JSESSIONID"))
+                .andExpect(view().name("login"));*/
+       /* HttpSession session = mockMvc.perform(post("/j_spring_security_check")
                 .param("j_username", "user1").param("j_password", "123456"))
                 .andExpect(status().is(HttpStatus.FOUND.value()))
-                .andExpect(redirectedUrl("/welcome"))
+                //.andExpect(redirectedUrl("welcome"))
+                .andExpect(view().name("welcome"))
                 .andReturn()
                 .getRequest()
-                .getSession();
-        mockMvc.perform(post("/j_spring_security_check")
-                        .param("j_username", "user1")
+                .getSession();*/
+        /*mockMvc.perform((post("/drugs").session((MockHttpSession) session))
+                .param("fromDate", "05/01/2014")
+                .param("toDate", "06/30/2014"))
+                .andExpect(status().isOk());*/
+       /* mockMvc.perform(post("/j_spring_security_check")
+                        .param("j_username", "user")
                         .param("j_password", "123456"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(cookie().exists("JSESSIONID"));
-        *//*mockMvc.perform(post("/drugs").param("fromDate","05/01/2014")
+                .andExpect(cookie().exists("JSESSIONID"));*/
+       /* mockMvc.perform(post("/drugs").param("fromDate","05/01/2014")
                                       .param("toDate", "06/30/2014") )
                 .andExpect(status().isOk())
-                .andExpect(view().name("drugs"));
-        mockMvc.perform(get("/drugsSaveDrugData").param("inputNote","test"))
+                .andExpect(view().name("drugs"));*/
+        /*mockMvc.perform(get("/drugsSaveDrugData").param("inputNote","test"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("drugs"));*//*
-        *//*String maxDataSetListID = String.valueOf(dataSetListsService.getDataSetListsEntityMaxId());
+                .andExpect(view().name("drugs"));
+        String maxDataSetListID = String.valueOf(dataSetListsService.getDataSetListsEntityMaxId());
         System.out.println("-----------------"+maxDataSetListID);
         String routeParam = "/deleteDataSets/" + maxDataSetListID;
         mockMvc.perform(get(routeParam))
                 .andExpect(status().isOk())
-                .andExpect(view().name("dataSetLists"));*//*
-    }*/
+                .andExpect(view().name("dataSetLists"));*/
+    }
+
+
 }
 
