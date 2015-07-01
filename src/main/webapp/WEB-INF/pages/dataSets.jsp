@@ -25,7 +25,6 @@ path {
             <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
         </nav>
     </div>
-
     <!-- Body section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <header><h1><b><spring:message code = "dataSet.title"/></b></h1></header>
