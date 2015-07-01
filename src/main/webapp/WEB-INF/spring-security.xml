@@ -31,8 +31,9 @@
                 authentication-failure-url="/login"
                 username-parameter="j_username"
                 password-parameter="j_password" />
-        <logout logout-success-url="/" />
         <logout logout-success-url="/" delete-cookies="JSESSIONID" invalidate-session="true" />
+        <!-- The rest of our application is protected. -->
+
         <!-- enable csrf protection -->
        <!-- <csrf/>-->
     </http>
