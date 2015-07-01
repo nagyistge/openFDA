@@ -48,6 +48,10 @@
 		<location>/WEB-INF/pages/404.jsp</location>
 	</error-page>
 
+	<security-role>
+		<role-name>*</role-name>
+	</security-role>
+
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>restricted methods</web-resource-name>
