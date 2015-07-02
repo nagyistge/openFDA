@@ -32,9 +32,9 @@ path {
         <!-- Page Title section -->
         <div class="large-12 medium-12 small-12 columns">
             <header><h1><b><spring:message code = "drugs.title"/></b><small><spring:message code="drugs.subtitle"/></small></h1></header>
-            <p><c:out value="${message}"/></p>
+            <p><c:out value="${errorMessage}"/></p>
         </div>
-
+      
         <div class="large-12 medium-12 small-12 columns">
             <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/drugs"/>" id="form1">
                 <div class="row">
