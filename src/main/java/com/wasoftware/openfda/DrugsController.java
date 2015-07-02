@@ -122,6 +122,7 @@ public class DrugsController {
             e.toString();
             model.addAttribute("errorMessage", GetMessage.getMessage("errors.system"));
         }
+        model.addAttribute("inputNote", inputNote);
         return "drugs";
     }
 
