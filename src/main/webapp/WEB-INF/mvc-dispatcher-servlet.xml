@@ -26,9 +26,6 @@
     <resources mapping="/img/**" location="/resources/img/" />
     <resources mapping="/lib/**" location="/resources/lib/" />
 
-
-
-
     <context:component-scan base-package="com.wasoftware.openfda"/>
     <beans:bean id="viewResolver"
           class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -81,8 +78,8 @@
     <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
                 destroy-method="close">
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <beans:property name="url"
-                        value="jdbc:mysql://mysql_dev:3306/openfda_test" />
+        <!--<beans:property name="url" value="jdbc:mysql://mysql_dev:3306/openfda_test" />-->
+        <beans:property name="url" value="jdbc:mysql://54.173.229.9:3308/openfda_test" />
         <beans:property name="username" value="root" />
         <beans:property name="password" value="welcome123" />
     </beans:bean>
@@ -128,13 +125,10 @@
         <beans:property name="usersDao" ref="usersDao"></beans:property>
     </beans:bean>
 
-
     <tx:annotation-driven transaction-manager="transactionManager"/>
-
 
     <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
     </beans:bean>
-
 
 </beans:beans>

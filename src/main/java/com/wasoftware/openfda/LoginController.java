@@ -21,6 +21,8 @@ public class LoginController {
 		model.addAttribute("message1", GetMessage.getMessage("home.aboutUs.introduction"));
 		model.addAttribute("topic2", GetMessage.getMessage("home.topic.whoMadeOpenFDAPortal"));
 		model.addAttribute("message2", GetMessage.getMessage("home.whoMadeOpenFDAPortal"));
+		model.addAttribute("topic3", GetMessage.getMessage("home.topic.whatCanOpenFDAPortalDo"));
+		model.addAttribute("message3", GetMessage.getMessage("home.whatCanOpenFDAPortalDo"));
 		return "welcome";
 	}
 

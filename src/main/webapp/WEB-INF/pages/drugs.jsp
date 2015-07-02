@@ -21,71 +21,48 @@ path {
     <div class="large-10 large-centered medium-12 small-12 columns">
         <br />
         <nav class="breadcrumbs" role="navigation">
-            <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
+            <li role="label"><spring:message code="breadcrumbs.label" /></li>
+            <li role="menuitem"><a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a></li>
+            <li role="menuitem"><a class="" href="<c:url value="/drugs" />"><spring:message code = "drugs.label" /></a></li>
         </nav>
     </div>
 
 	<!-- Body section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <!-- Page Title section -->
-        <div class="large-4 medium-12 small-12 columns">
-            <header><h1><b><spring:message code = "drugs.title"/></b></h1></header>
-            <p>${message}</p>
+        <div class="large-12 medium-12 small-12 columns">
+            <header><h1><b><spring:message code = "drugs.title"/></b><small><spring:message code="drugs.subtitle"/></small></h1></header>
+            <p><c:out value="${errorMessage}"/></p>
         </div>
-        <!-- Tab Title Section -->
-        <div class="large-7 medium-12 small-12 end columns">
-            <dl class="tabs contained" data-tab role="tablist">
-                <dd class="tab-title active"><a href="#adverseEvents" ><spring:message code = "drugs.tab.adverseEvents" /></a></dd>
-                <dd class="tab-title"><a href="#labeling" ><spring:message code = "drugs.tab.labeling" /></a></dd>
-                <dd class="tab-title"><a href="#enforcementReports" ><spring:message code = "drugs.tab.enforcementReports" /></a></dd>
-            </dl>
-        </div>
-
-        <!-- Tab Content Section -->
-        <div class="tabs-content contained">
-            <section class="content active" id="adverseEvents" aria-hidden="false">
-                <div class="large-12 medium-12 small-12 columns">
-                    <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/drugs"/>" id="form1">
-                        <div class="row">
-                            <div class="large-3 medium-12 small-12 columns">
-                                <div class="row collapse prefix-radius">
-                                    <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
-                                    <div class="large-2 medium-2 small-2 columns end"><input type="text" value="${fromDate}" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" place/></div>
-                                </div>
-                            </div>
-                            <div class="large-3 medium-12 small-12 columns">
-                                <div class="row collapse prefix-radius">
-                                    <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
-                                    <div class="large-2 medium-2 small-2 columns end"><input type="text" value="${toDate}" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
-                                </div>
-                            </div>
-                            <div class="large-3 medium-12 small-12 columns end">
-                                <input type="submit" value="<spring:message code="drugs.submit"/>" class="tiny button radius"/>
-                            </div>
-                            <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
+      
+        <div class="large-12 medium-12 small-12 columns">
+            <form accept-charset="UTF-8" name="form1" method="post" action="<c:url value="/drugs"/>" id="form1">
+                <div class="row">
+                    <div class="large-3 medium-12 small-12 columns">
+                        <div class="row collapse prefix-radius">
+                            <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
+                            <div class="large-2 medium-2 small-2 columns end"><input type="text" value="<c:out value="${fromDate}"/>" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" required/></div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="large-3 medium-12 small-12 columns">
+                        <div class="row collapse prefix-radius">
+                            <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
+                            <div class="large-2 medium-2 small-2 columns end"><input type="text" value="<c:out value="${toDate}"/>" data-date-format="mm/dd/yyyy" id="toDate" name="toDate" required/></div>
+                        </div>
+                    </div>
+                    <div class="large-3 medium-12 small-12 columns end">
+                        <input type="submit" value="<spring:message code="drugs.submit"/>" class="tiny button radius"/>
+                    </div>
+                    <input type="hidden" id="hasResult" name="hasResult" value="<c:out value="{hasResult}"/>" />
                 </div>
-                <div class="large-12 medium-12 small-12 columns" id="notebox" style="display:none;">
-                        <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
-                            <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.notelabel"/></span></div>
-                            <input type="text" id="inputNote" name="inputNote" value="" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
-                            <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
-                        </form>
-
-                </div>
-            </section>
-            <section class="content" id="labeling" aria-hidden="true">
-                <div class="large-12 medium-12 small-12 columns">
-                    <p>In labeling tab now!</p>
-                </div>
-            </section>
-
-            <section class="content" id="enforcementReports" aria-hidden="true">
-                <div class="large-12 medium-12 small-12 columns">
-                    <p>In enforcement reports tab now!</p>
-                </div>
-            </section>
+            </form>
+        </div>
+        <div class="large-12 medium-12 small-12 columns" id="notebox" style="display:none;">
+                <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
+                    <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.notelabel"/></span></div>
+                    <input type="text" id="inputNote" name="inputNote" value="<c:out value="${inputNote}"/>" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
+                    <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
+                </form>
         </div>
     </div>
 	<div class="large-10 large-centered medium-12 small-12 columns">
@@ -147,7 +124,7 @@ path {
         // Get the data
         var data = null;
         <c:if test="${not empty drugResultSet}">
-            data = ${drugResultSet};
+            data = <c:out value="{drugResultSet}" />;
         </c:if>
 
         data.forEach(function(d) {

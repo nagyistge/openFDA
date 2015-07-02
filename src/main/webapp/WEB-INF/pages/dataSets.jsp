@@ -30,7 +30,7 @@ path {
         <header><h1><b><spring:message code = "dataSet.title"/></b></h1></header>
         <h4><spring:message code = "dataSet.datatype"/>${currentDataSetListEntity.dataSetType}</h4>
         <h4><spring:message code = "dataSet.id"/>${currentDataSetListEntity.id}</h4>
-        <p>${errorMessage}</p>
+        <p><c:out value="${errorMessage}" /></p>
     </div>
 
     <div class="large-10 large-centered medium-12 small-12 columns">
@@ -39,20 +39,20 @@ path {
                 <div class="large-3 medium-12 small-12 columns">
                     <div class="row collapse prefix-radius">
                         <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
-                        <div class="large-2 medium-2 small-2 columns end"><input type="text" value="${currentDataSetListEntity.startDate}" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" /></div>
+                        <div class="large-2 medium-2 small-2 columns end"><input type="text" value="<c:out value="${currentDataSetListEntity.startDate}"/>" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" /></div>
                     </div>
                 </div>
                 <div class="large-3 medium-12 small-12 columns">
                     <div class="row collapse prefix-radius">
                         <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
-                        <div class="large-2 medium-2 small-2 columns end"><input type="text" value="${currentDataSetListEntity.endDate}" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
+                        <div class="large-2 medium-2 small-2 columns end"><input type="text" value="<c:out value="${currentDataSetListEntity.endDate}"/>" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
                     </div>
                 </div>
                 <div class="large-3 medium-12 small-12 columns end">
                     <input type="submit"  name="reloadData" value="<spring:message code="viewdataset.reloaddata"/>" class="tiny button radius"/>
                     <input type="submit"  name="overwriteData" value="<spring:message code="viewdataset.overwritedate"/>" class="tiny button radius"/>
                 </div>
-                <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
+                <input type="hidden" id="hasResult" name="hasResult" value="<c:out value="${hasResult}"/>" />
             </div>
         </form>
     </div>
@@ -121,7 +121,7 @@ path {
         // Get the data
         var data = null;
         <c:if test="${not empty ResultSet}">
-        data = ${ResultSet};
+        data = <c:out value="{ResultSet}"/>;
         </c:if>
 
         data.forEach(function(d) {

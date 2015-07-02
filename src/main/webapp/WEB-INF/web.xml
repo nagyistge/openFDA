@@ -51,6 +51,12 @@
 		<role-name>*</role-name>
 	</security-role>
 
+	<session-config>
+		<cookie-config>
+			<http-only>true</http-only>
+		</cookie-config>
+	</session-config>
+
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>restricted methods</web-resource-name>

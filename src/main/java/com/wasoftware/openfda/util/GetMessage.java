@@ -12,7 +12,11 @@ public class GetMessage {
         //this is only work for spring framework
         Locale locale = LocaleContextHolder.getLocale();
         ResourceBundle messages = ResourceBundle.getBundle("messages", locale);
-        messageStr = messages.getString(inputMessageCode);
+        try{
+            messageStr = messages.getString(inputMessageCode);
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
         return messageStr;
     }
 }
