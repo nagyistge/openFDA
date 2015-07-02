@@ -53,7 +53,7 @@ path {
                     <div class="large-3 medium-12 small-12 columns end">
                         <input type="submit" value="<spring:message code="drugs.submit"/>" class="tiny button radius"/>
                     </div>
-                    <input type="hidden" id="hasResult" name="hasResult" value="${hasResult}"/>
+                    <input type="hidden" id="hasResult" name="hasResult" value="<c:out value="{hasResult}"/>" />
                 </div>
             </form>
         </div>
@@ -124,7 +124,7 @@ path {
         // Get the data
         var data = null;
         <c:if test="${not empty drugResultSet}">
-            data = ${drugResultSet};
+            data = <c:out value="{drugResultSet}" />;
         </c:if>
 
         data.forEach(function(d) {
