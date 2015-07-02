@@ -52,7 +52,7 @@ public class DataSetsDaoImpl implements DataSetsDao{
     @Override
     public List<DataSetsEntity> listDataSetsEntityByDataSetListID(int listId) {
         Session session = this.sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from DataSetsEntity d where d.dataSetListID = :listId");
+        Query query = session.createQuery("from DataSetsEntity d where d.dataSetListID = :listId order by d.key");
         query.setParameter("listId", listId);
         List<DataSetsEntity> dataSetsEntityList = query.list();
         //for (DataSetsEntity dataSet : dataSetsEntityList) {
