@@ -69,7 +69,7 @@ path {
                 <div class="large-12 medium-12 small-12 columns" id="notebox" style="display:none;">
                         <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
                             <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.notelabel"/></span></div>
-                            <input type="text" id="inputNote" name="inputNote" value="" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
+                            <input type="text" id="inputNote" name="inputNote" value="${inputNote}" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
                             <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
                         </form>
 
