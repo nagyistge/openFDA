@@ -39,7 +39,7 @@ public class DataSetsServiceImpl implements DataSetsService{
     @Override
     @Transactional
     public List<DataSetsEntity> listDataSetsEntityByDataSetListID(int listId) {
-        return this.dataSetsDao.listDataSetsEntity();
+        return this.dataSetsDao.listDataSetsEntityByDataSetListID(listId);
     }
 
 
