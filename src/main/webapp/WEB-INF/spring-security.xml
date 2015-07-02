@@ -40,9 +40,9 @@
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="user1" password="123456" authorities="ROLE_USER"/>
-                <user name="user2" password="123456" authorities="ROLE_USER"/>
-                <user name="user3" password="123456" authorities="ROLE_USER"/>
+                <user name="user1" password="q2$EWl0a" authorities="ROLE_USER"/>
+                <user name="user2" password="q2$EWl0a" authorities="ROLE_USER"/>
+                <user name="user3" password="q2$EWl0a" authorities="ROLE_USER"/>
             </user-service>
         </authentication-provider>
     </authentication-manager>

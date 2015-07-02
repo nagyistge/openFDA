@@ -1,21 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%--<style> /* set the CSS */
-
-path {
-    stroke: steelblue;
-    stroke-width: 1;
-    fill: none;
-}
-.axis path, .axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-</style>--%>
-
 <div class="row">
 	<!-- Breadcrumbs section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
@@ -40,14 +25,22 @@ path {
                 <div class="row">
                     <div class="large-3 medium-12 small-12 columns">
                         <div class="row collapse prefix-radius">
-                            <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
-                            <div class="large-2 medium-2 small-2 columns end"><input type="text" value="<c:out value="${fromDate}"/>" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" required/></div>
+                            <div class="large-2 medium-2 small-2 columns">
+                                <span class="prefix"><spring:message code="drugs.datefrom"/></span>
+                            </div>
+                            <div class="large-2 medium-2 small-2 columns end">
+                                <input type="text" value="<c:out value="${fromDate}"/>" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" required/>
+                            </div>
                         </div>
                     </div>
                     <div class="large-3 medium-12 small-12 columns">
                         <div class="row collapse prefix-radius">
-                            <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
-                            <div class="large-2 medium-2 small-2 columns end"><input type="text" value="<c:out value="${toDate}"/>" data-date-format="mm/dd/yyyy" id="toDate" name="toDate" required/></div>
+                            <div class="large-2 medium-2 small-2 columns">
+                                <span class="prefix"><spring:message code="drugs.dateto"/></span>
+                            </div>
+                            <div class="large-2 medium-2 small-2 columns end">
+                                <input type="text" value="<c:out value="${toDate}"/>" data-date-format="mm/dd/yyyy" id="toDate" name="toDate" required/>
+                            </div>
                         </div>
                     </div>
                     <div class="large-3 medium-12 small-12 columns end">
@@ -57,18 +50,30 @@ path {
                 </div>
             </form>
         </div>
+
+        <!-- Note Section: Display after date range submission -->
         <div class="large-12 medium-12 small-12 columns" id="notebox" style="display:none;">
-                <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
-                    <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.notelabel"/></span></div>
-                    <input type="text" id="inputNote" name="inputNote" value="<c:out value="${inputNote}"/>" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
-                    <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
-                </form>
+            <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
+                <div class="row">
+                    <div class="large-6 medium-12 small-12 columns">
+                        <div class="row collapse prefix-radius">
+                            <div class="large-2 medium-2 small-2 columns">
+                                <span class="prefix"><spring:message code="drugs.notelabel"/></span>
+                            </div>
+                            <div class="large-6 medium-2 small-2 columns end">
+                                <input type="text" id="inputNote" name="inputNote" value="<c:out value="${inputNote}"/>" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="large-3 medium-2 small-2 columns end">
+                        <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-	<div class="large-10 large-centered medium-12 small-12 columns">
-		<div id="svghome" ></div>
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-	</div>
+    <div id="svghome"></div>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
 </div>
 
 <script>
@@ -85,11 +90,8 @@ path {
     }
     // Set the dimensions of the canvas / graph
     function drawChart(){
-        /*var margin = {top: 30, right: 20, bottom: 30, left: 50},*/
-		var margin = {top: 30, right: 600, bottom: 50, left: 80},
-                /*width = 1200 - margin.left - margin.right,*/
+		var margin = {top: 100, right: 80, bottom: 100, left: 80},
 				width = $(window).width() - margin.left - margin.right,
-                /*height = 600 - margin.top - margin.bottom;*/
 				height = $(window).height() - margin.top - margin.bottom;
 
         // Parse the date / time
@@ -117,8 +119,7 @@ path {
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
-                .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Get the data
         var data = null;

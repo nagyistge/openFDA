@@ -25,10 +25,4 @@ public class LoginController {
 		model.addAttribute("message3", GetMessage.getMessage("home.whatCanOpenFDAPortalDo"));
 		return "welcome";
 	}
-
-	//for 404 access denied page
-	@RequestMapping(value = "/404", method = RequestMethod.GET)
-	public String accesssDenied() {
-		return "login";
-	}
 }

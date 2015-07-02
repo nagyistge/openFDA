@@ -1,21 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%--<style> /* set the CSS */
-
-path {
-    stroke: steelblue;
-    stroke-width: 1;
-    fill: none;
-}
-.axis path, .axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-</style>--%>
-
 <div class="row">
 
     <!-- Breadcrumbs section -->
