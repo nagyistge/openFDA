@@ -60,15 +60,16 @@ public class DrugControllerTests {
      */
     @Test
     public void testGetFdaData() throws Exception {
-        mockMvc.perform(post("/drugs").param("20140101", "20140201"))
+        mockMvc.perform(post("/drugs").param("fromDate","05/01/2014")
+                                      .param("toDate","06/30/2014") )
                 .andExpect(status().isOk())
                 .andExpect(view().name("drugs"));
     }
     @Test
     public void testDrugsSaveDrugData() throws Exception {
-        mockMvc.perform(get("/drugsSaveDrugData"))
+        mockMvc.perform(get("/drugsSaveDrugData").param("inputNote","test"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("drugsSaveDrugData"));
+                .andExpect(view().name("drugs"));
     }
 
 } 
