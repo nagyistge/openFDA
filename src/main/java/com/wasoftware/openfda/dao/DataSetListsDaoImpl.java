@@ -21,14 +21,14 @@ public class DataSetListsDaoImpl implements DataSetListsDao{
     public void addDataSetListsEntity(DataSetListsEntity dataSetList) {
         Session session = this.sessionFactory.getCurrentSession();
         session.persist(dataSetList);        
-        System.out.println("DataSetLists saved successfully, DataSetLists Details=" + dataSetList);
+        //System.out.println("DataSetLists saved successfully, DataSetLists Details=" + dataSetList);
     }
 
     @Override
     public void updateDataSetListsEntity(DataSetListsEntity dataSetList) {
         Session session = this.sessionFactory.getCurrentSession();
         session.update(dataSetList);
-        System.out.println("DataSetLists  updated successfully, DataSetLists Details=" + dataSetList);
+        //System.out.println("DataSetLists  updated successfully, DataSetLists Details=" + dataSetList);
     }
 
     @SuppressWarnings("unchecked")
@@ -36,9 +36,9 @@ public class DataSetListsDaoImpl implements DataSetListsDao{
     public List<DataSetListsEntity> listDataSetListsEntity() {
         Session session = this.sessionFactory.getCurrentSession();
         List<DataSetListsEntity> dataSetListsEntityList = session.createQuery("from DataSetListsEntity d order by d.id desc").list();
-        for (DataSetListsEntity dataSetList : dataSetListsEntityList) {
-            System.out.println("DataSetLists List::" + dataSetList);
-        }
+        //for (DataSetListsEntity dataSetList : dataSetListsEntityList) {
+            //System.out.println("DataSetLists List::" + dataSetList);
+        //}
 
         return dataSetListsEntityList;
     }
@@ -47,7 +47,7 @@ public class DataSetListsDaoImpl implements DataSetListsDao{
     public DataSetListsEntity getDataSetListsEntityById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         DataSetListsEntity dataSetList = (DataSetListsEntity) session.load(DataSetListsEntity.class, new Integer(id));
-        System.out.println("DataSetLists loaded successfully, DataSetLists details=" + dataSetList);
+        //System.out.println("DataSetLists loaded successfully, DataSetLists details=" + dataSetList);
         return dataSetList;
     }
 
@@ -58,7 +58,7 @@ public class DataSetListsDaoImpl implements DataSetListsDao{
         if (null != dataSetList) {
             session.delete(dataSetList);
         }
-        System.out.println("DataSetLists deleted successfully, DataSetLists details=" + dataSetList);
+        //System.out.println("DataSetLists deleted successfully, DataSetLists details=" + dataSetList);
     }
     @Override
     public int getDataSetListsEntityMaxId() {
