@@ -22,14 +22,14 @@ public class UsersDaoImpl implements UsersDao{
     public void addUsersEntity(UsersEntity users) {
         Session session = this.sessionFactory.getCurrentSession();
         session.persist(users);
-        System.out.println("Users saved successfully, Users Details=" + users);
+        //System.out.println("Users saved successfully, Users Details=" + users);
     }
 
     @Override
     public void updateUsersEntity(UsersEntity users) {
         Session session = this.sessionFactory.getCurrentSession();
         session.update(users);
-        System.out.println("Users  updated successfully, Users Details=" + users);
+        //System.out.println("Users  updated successfully, Users Details=" + users);
     }
 
     @SuppressWarnings("unchecked")
@@ -37,9 +37,9 @@ public class UsersDaoImpl implements UsersDao{
     public List<UsersEntity> listUsersEntity() {
         Session session = this.sessionFactory.getCurrentSession();
         List<UsersEntity> usersEntityList = session.createQuery("from UsersEntity").list();
-        for (UsersEntity users : usersEntityList) {
-            System.out.println("Users List::" + users);
-        }
+        //for (UsersEntity users : usersEntityList) {
+            //System.out.println("Users List::" + users);
+        //}
 
         return usersEntityList;
     }
@@ -48,7 +48,7 @@ public class UsersDaoImpl implements UsersDao{
     public UsersEntity getUsersEntityById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         UsersEntity users = (UsersEntity) session.load(UsersEntity.class, new Integer(id));
-        System.out.println("Users loaded successfully, Users details=" + users);
+       // System.out.println("Users loaded successfully, Users details=" + users);
         return users;
     }
     @Override
@@ -58,7 +58,7 @@ public class UsersDaoImpl implements UsersDao{
         query.setParameter("userName",userName);
         List<UsersEntity> usersList = query.list();
         UsersEntity users = usersList.get(0); // get the first one
-        System.out.println("Users loaded successfully, Users details=" + users);
+        //System.out.println("Users loaded successfully, Users details=" + users);
         return users;
     }
 
@@ -69,6 +69,6 @@ public class UsersDaoImpl implements UsersDao{
         if (null != users) {
             session.delete(users);
         }
-        System.out.println("Users deleted successfully, Users details=" + users);
+        //System.out.println("Users deleted successfully, Users details=" + users);
     }
 }
