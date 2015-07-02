@@ -53,7 +53,7 @@ path {
                     <div class="large-3 medium-12 small-12 columns end">
                         <input type="submit" value="<spring:message code="drugs.submit"/>" class="tiny button radius"/>
                     </div>
-                    <input type="hidden" id="hasResult" name="hasResult" value="<c:out value="{hasResult}"/>" />
+                    <input type="hidden" id="hasResult" name="hasResult" value="<c:out value="${hasResult}"/>" />
                 </div>
             </form>
         </div>
@@ -87,7 +87,7 @@ path {
     // Set the dimensions of the canvas / graph
     function drawChart(){
         /*var margin = {top: 30, right: 20, bottom: 30, left: 50},*/
-		var margin = {top: 30, right: 40, bottom: 50, left: 40},
+		var margin = {top: 30, right: 600, bottom: 50, left: 80},
                 /*width = 1200 - margin.left - margin.right,*/
 				width = $(window).width() - margin.left - margin.right,
                 /*height = 600 - margin.top - margin.bottom;*/
@@ -124,7 +124,7 @@ path {
         // Get the data
         var data = null;
         <c:if test="${not empty drugResultSet}">
-            data = <c:out value="{drugResultSet}" />;
+            data = ${drugResultSet} ;
         </c:if>
 
         data.forEach(function(d) {
