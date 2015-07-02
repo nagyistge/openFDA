@@ -21,7 +21,9 @@ path {
     <div class="large-10 large-centered medium-12 small-12 columns">
         <br />
         <nav class="breadcrumbs" role="navigation">
-            <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
+            <li role="label"><spring:message code="breadcrumbs.label" /></li>
+            <li role="menuitem"><a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a></li>
+            <li role="menuitem"><a class="" href="<c:url value="/drugs" />"><spring:message code = "drugs.label" /></a></li>
         </nav>
     </div>
 
@@ -30,7 +32,7 @@ path {
         <!-- Page Title section -->
         <div class="large-12 medium-12 small-12 columns">
             <header><h1><b><spring:message code = "drugs.title"/></b><small><spring:message code="drugs.subtitle"/></small></h1></header>
-            <p>${message}</p>
+            <p><c:out value="${message}"/></p>
         </div>
 
         <div class="large-12 medium-12 small-12 columns">
