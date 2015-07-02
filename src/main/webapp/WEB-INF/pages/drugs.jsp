@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<style> /* set the CSS */
+<%--<style> /* set the CSS */
 
 path {
     stroke: steelblue;
@@ -14,7 +14,7 @@ path {
     stroke-width: 1;
     shape-rendering: crispEdges;
 }
-</style>
+</style>--%>
 
 <div class="row">
 	<!-- Breadcrumbs section -->
@@ -91,6 +91,7 @@ path {
             height = 600 - margin.top - margin.bottom;*/
 		var margin = {top: 30, right: 80, bottom: 50, left: 80},
 				width = $(window).width() - margin.left - margin.right,
+                /*height = 600 - margin.top - margin.bottom;*/
 				height = $(window).height() - margin.top - margin.bottom;
 
         // Parse the date / time
@@ -119,8 +120,7 @@ path {
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
                 .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")")
-
+                "translate(" + margin.left + "," + margin.top + ")");
 
         // Get the data
         var data = null;
@@ -152,7 +152,6 @@ path {
         svg.append("g")
                 .attr("class", "y axis")
                 .call(yAxis);
-
     }
 </script>
 
