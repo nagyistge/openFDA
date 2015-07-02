@@ -16,7 +16,7 @@ public class ValidateDate {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        System.out.println(""+isValidDate);
+
         return isValidDate;
     }
     public static boolean compareDate(String fromDate, String toDate){
@@ -27,13 +27,11 @@ public class ValidateDate {
             Date dateFromDate = simpleDateFormatdf.parse(fromDate);//"2009-12-31");
             Date dateToDate = simpleDateFormatdf.parse(toDate);//"2010-01-31");
 
-            System.out.println(simpleDateFormatdf.format(dateFromDate));
-            System.out.println(simpleDateFormatdf.format(dateToDate));
 
             if (dateFromDate.compareTo(dateToDate) <= 0) {
                 isToDateGreaterOrEqual = true;
             }
-            System.out.println(""+isToDateGreaterOrEqual);
+
 
 
         } catch (Exception ex) {
