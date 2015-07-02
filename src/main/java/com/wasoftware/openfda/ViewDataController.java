@@ -99,23 +99,34 @@ public class ViewDataController {
         String originalFromDate = fromDate;
         String originalToDate = toDate;
         if (fromDate.length() > 0 && toDate.length() > 0) {
-            adverseEvent adverseevent = new adverseEvent();
-            fromDate = FormatDate.formatDate(fromDate);
-            toDate = FormatDate.formatDate(toDate);
-            String jsonResult = "";
-            JSONParser jsonParser = new JSONParser();
-            try {
-                jsonResult = adverseevent.getAdverseEventCountByDate(fromDate, toDate);
-                Object object = jsonParser.parse(jsonResult);
-                JSONObject jsonObject = (JSONObject) object;
-                jsonObjectMeta = (JSONObject) jsonObject.get("meta");
-                jsonArrayResult = (JSONArray) jsonObject.get("results");
-                model.addAttribute("ResultSet", jsonArrayResult.toString());
-                model.addAttribute("hasResult", "yes");
-                model.addAttribute("errorMessage", GetMessage.getMessage("viewdataset.datareloaded"));
-            } catch (Exception e) {
-                System.out.println(e.toString());
-                model.addAttribute("errorMessage", GetMessage.getMessage("drugs.nodata"));
+            if (!ValidateDate.validateDate(fromDate)) {
+                errorMessage = GetMessage.getMessage("error.fromdateerror");
+            }
+            if (!ValidateDate.validateDate(toDate) && (errorMessage.length() == 0)) {
+                errorMessage = GetMessage.getMessage("error.todateerror");
+            }
+            if (!ValidateDate.compareDate(fromDate, toDate) && (errorMessage.length() == 0)) {
+                errorMessage = GetMessage.getMessage("error.daterangeerror");
+            }
+            if (errorMessage.length() == 0) { //data validated
+                adverseEvent adverseevent = new adverseEvent();
+                fromDate = FormatDate.formatDate(fromDate);
+                toDate = FormatDate.formatDate(toDate);
+                String jsonResult = "";
+                JSONParser jsonParser = new JSONParser();
+                try {
+                    jsonResult = adverseevent.getAdverseEventCountByDate(fromDate, toDate);
+                    Object object = jsonParser.parse(jsonResult);
+                    JSONObject jsonObject = (JSONObject) object;
+                    jsonObjectMeta = (JSONObject) jsonObject.get("meta");
+                    jsonArrayResult = (JSONArray) jsonObject.get("results");
+                    model.addAttribute("ResultSet", jsonArrayResult.toString());
+                    model.addAttribute("hasResult", "yes");
+                    model.addAttribute("errorMessage", GetMessage.getMessage("viewdataset.datareloaded"));
+                } catch (Exception e) {
+                    System.out.println(e.toString());
+                    model.addAttribute("errorMessage", GetMessage.getMessage("drugs.nodata"));
+                }
             }
         }
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);

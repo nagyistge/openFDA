@@ -33,6 +33,10 @@
                </c:forEach>
            </table>
        </c:if>
+       <c:if test="${empty dataSetListsEntityList}">
+           <spring:message code="drugs.nodata"/>
+       </c:if>
+
 
    </div>
 </div>
