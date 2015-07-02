@@ -85,7 +85,7 @@
 
     var hasResult = document.getElementById("hasResult");
     if (hasResult.value == "yes"){
-        drawChart()
+        drawChart();
         $("#notebox").show();
     }
     // Set the dimensions of the canvas / graph
