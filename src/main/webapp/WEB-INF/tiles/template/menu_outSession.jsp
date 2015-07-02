@@ -24,7 +24,7 @@
   <li class="has-dropdown"><a href="#"><spring:message code="menu.language" /></a>
     <ul class="dropdown">
       <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
-      <li><a href="?language=es"><spring:message code = "language.spanish" /></a></li>
+<%--      <li><a href="?language=es"><spring:message code = "language.spanish" /></a></li>--%>
     </ul>
   </li>
 </ul>
