@@ -70,7 +70,6 @@ public class DrugsController {
         String errorMessage = "";
         originalFromDate = fromDate;
         originalToDate = toDate;
-
         if (fromDate.length() > 0 && toDate.length() > 0) {
             if (!ValidateDate.validateDate(fromDate)) {
                 errorMessage = GetMessage.getMessage("drugs.fromdateerror");
