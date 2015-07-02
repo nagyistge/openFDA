@@ -45,20 +45,14 @@
             </div>
         </form>
     </div>
-    <div class="large-10 large-centered medium-12 small-12 columns">
-        <div id="svghome" ></div>
-        <script src="http://d3js.org/d3.v3.min.js"></script>
-    </div>
+
+    <div id="svghome" ></div>
+
+
 </div>
 
-<div class="row">
-    <div class="large-10 large-centered medium-12 small-12 columns">
-        <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
-            <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
-        </form>
-    </div>
-</div>
 
+<script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
     $(function(){
@@ -68,15 +62,15 @@
 
     var hasResult = document.getElementById("hasResult");
     if (hasResult.value == "yes"){
-        drawChart()
+        drawChart();
     }
     // Set the dimensions of the canvas / graph
     function drawChart(){
         /*var margin = {top: 30, right: 20, bottom: 30, left: 50},*/
+          /*width = 1200 - margin.left - margin.right,*/
+          /*height = 600 - margin.top - margin.bottom;*/
         var margin = {top: 30, right: 20, bottom: 50, left: 80},
-        /*width = 1200 - margin.left - margin.right,*/
                 width = $(window).width() - margin.left - margin.right,
-        /*height = 600 - margin.top - margin.bottom;*/
                 height = $(window).height() - margin.top - margin.bottom;
 
         // Parse the date / time
@@ -110,7 +104,7 @@
         // Get the data
         var data = null;
         <c:if test="${not empty ResultSet}">
-        data = <c:out value="{ResultSet}"/>;
+           data = ${ResultSet};
         </c:if>
 
         data.forEach(function(d) {

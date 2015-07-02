@@ -17,6 +17,7 @@ import com.wasoftware.openfda.model.DataSetsEntity;
 import com.wasoftware.openfda.service.DataSetListsService;
 import com.wasoftware.openfda.service.DataSetsService;
 import org.springframework.web.bind.annotation.PathVariable;
+import static org.apache.commons.lang.StringEscapeUtils.escapeHtml;
 import java.util.List;
 
 
@@ -50,50 +51,53 @@ public class ViewDataController {
     @RequestMapping(value = "/dataSetLists", method = RequestMethod.GET)
     public String dataSetLists(ModelMap model) {
         List<DataSetListsEntity> dataSetListsEntityList = dataSetListsService.listDataSetListsEntity();
-        model.addAttribute("dataSetListsEntityList",dataSetListsEntityList);
+        model.addAttribute("dataSetListsEntityList", dataSetListsEntityList);
         return "dataSetLists";
     }
 
     @RequestMapping(value = "/viewDataSets/{id}", method = RequestMethod.GET)
     public String viewDataSets(ModelMap model,
                                @PathVariable("id") int selectedDateSetListID
-                                ) {
+    ) {
         currentDataSetListID = selectedDateSetListID;
-        DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(selectedDateSetListID );
+        DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(selectedDateSetListID);
         List<DataSetsEntity> dataSetsEntityList = dataSetsService.listDataSetsEntityByDataSetListID(selectedDateSetListID);
         jsonArrayResult = new JSONArray();
-        for(DataSetsEntity dataSetsEntity : dataSetsEntityList){
+        for (DataSetsEntity dataSetsEntity : dataSetsEntityList) {
             if (dataSetsEntity.getKey() != null) {
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.put("time", dataSetsEntity.getKey());
-                jsonObject.put("count", dataSetsEntity.getValue());
+
+                jsonObject.put("time", escapeHtml(dataSetsEntity.getKey()));
+                jsonObject.put("count", escapeHtml(dataSetsEntity.getValue()));
                 jsonArrayResult.add(jsonObject);
             }
         }
-        model.addAttribute("currentDataSetListEntity",dataSetListsEntity);
-        model.addAttribute("ResultSet",jsonArrayResult);
-        model.addAttribute("hasResult","yes");
+
+        model.addAttribute("ResultSet", jsonArrayResult);
+        model.addAttribute("hasResult", "yes");
+        model.addAttribute("currentDataSetListEntity", dataSetListsEntity);
         return "dataSets";
     }
+
     @RequestMapping(value = "/deleteDataSets/{id}", method = RequestMethod.GET)
     public String deleteDataSets(
-                                 @PathVariable("id") int selectedDateSetListID
-                                 ) {
-        try{
+            @PathVariable("id") int selectedDateSetListID
+    ) {
+        try {
             dataSetsService.removeDataSetsEntityByDataSetListID(selectedDateSetListID);
             dataSetListsService.removeDataSetListsEntity(selectedDateSetListID);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
         return "redirect:/dataSetLists";
     }
 
 
-    @RequestMapping(value = "/viewDataSets", params="reloadData", method = RequestMethod.POST)
+    @RequestMapping(value = "/viewDataSets", params = "reloadData", method = RequestMethod.POST)
     public String dataSetsNewGet(ModelMap model,
                                  @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
                                  @RequestParam(value = "toDate", defaultValue = "") String toDate
-                                 ) {
+    ) {
 
         String errorMessage = "";
         String originalFromDate = fromDate;
@@ -132,17 +136,17 @@ public class ViewDataController {
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);
         dataSetListsEntity.setStartDate(originalFromDate);
         dataSetListsEntity.setEndDate(originalToDate);
-        model.addAttribute("currentDataSetListEntity",dataSetListsEntity);
+        model.addAttribute("currentDataSetListEntity", dataSetListsEntity);
         return "dataSets";
     }
 
 
-    @RequestMapping(value = "/viewDataSets", params="overwriteData", method = RequestMethod.POST)
+    @RequestMapping(value = "/viewDataSets", params = "overwriteData", method = RequestMethod.POST)
     public String dataSetsOverwrite(ModelMap model,
                                     @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
                                     @RequestParam(value = "toDate", defaultValue = "") String toDate
-                                    ) {
-        String errorMessage="";
+    ) {
+        String errorMessage = "";
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);
         dataSetListsEntity.setMetadata(jsonObjectMeta.toString());
         dataSetListsEntity.setStartDate(fromDate);
@@ -160,7 +164,7 @@ public class ViewDataController {
             dataSetsService.addDataSetsEntity(dataSetsEntity);
             model.addAttribute("errorMessage", GetMessage.getMessage("dataSet.dataoverwritten"));
         }
-        model.addAttribute("currentDataSetListEntity",dataSetListsEntity);
+        model.addAttribute("currentDataSetListEntity", dataSetListsEntity);
         model.addAttribute("ResultSet", jsonArrayResult.toString());
         model.addAttribute("hasResult", "yes");
         return "dataSets";
