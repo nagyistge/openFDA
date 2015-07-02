@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<style> /* set the CSS */
+<%--<style> /* set the CSS */
 
 path {
     stroke: steelblue;
@@ -14,7 +14,7 @@ path {
     stroke-width: 1;
     shape-rendering: crispEdges;
 }
-</style>
+</style>--%>
 
 <div class="row">
 	<!-- Breadcrumbs section -->
@@ -71,7 +71,6 @@ path {
 	</div>
 </div>
 
-
 <script>
 
 	$(function(){
@@ -124,7 +123,7 @@ path {
         // Get the data
         var data = null;
         <c:if test="${not empty drugResultSet}">
-            data = <c:out value="{drugResultSet}" />;
+            data = ${drugResultSet};
         </c:if>
 
         data.forEach(function(d) {
