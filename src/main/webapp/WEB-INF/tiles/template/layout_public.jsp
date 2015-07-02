@@ -60,11 +60,15 @@
     <div id="content-row" class="large-12 columns">
       <tiles:insertAttribute name="body" />
     </div>
+    <!-- Footer Page -->
+    <div id="footer">
+      <tiles:insertAttribute name="footer" />
+    </div>
   </div>
-  <!-- Footer Page -->
+<%--  <!-- Footer Page -->
   <div id="footer">
     <tiles:insertAttribute name="footer" />
-  </div>
+  </div>--%>
 </div>
 
 

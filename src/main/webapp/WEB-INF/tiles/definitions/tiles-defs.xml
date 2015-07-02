@@ -44,16 +44,10 @@
 		<put-attribute name="body" value="/WEB-INF/pages/drugs.jsp" />
 	</definition>
 
-	<definition name="devices" extends="welcomeTemplate">
-		<put-attribute name="title" value="Devices" />
+	<definition name="mySavedData" extends="welcomeTemplate">
+		<put-attribute name="title" value="My Saved Data" />
 		<put-attribute name="tagline" value="" />
-		<put-attribute name="body" value="/WEB-INF/pages/devices.jsp" />
-	</definition>
-
-	<definition name="foods" extends="welcomeTemplate">
-		<put-attribute name="title" value="Foods" />
-		<put-attribute name="tagline" value="" />
-		<put-attribute name="body" value="/WEB-INF/pages/foods.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/mySavedData.jsp" />
 	</definition>
 
 	<definition name="dataSetLists" extends="welcomeTemplate">
