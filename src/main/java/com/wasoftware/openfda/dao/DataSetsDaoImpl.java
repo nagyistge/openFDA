@@ -16,8 +16,8 @@ import org.springframework.stereotype.Repository;
 public class DataSetsDaoImpl implements DataSetsDao{
     private SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sessionFactoryf) {
-        this.sessionFactory = sessionFactoryf;
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
