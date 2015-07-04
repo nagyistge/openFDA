@@ -5,9 +5,9 @@ package com.wasoftware.openfda;
  */
 
 
-import com.wasoftware.openfda.model.DataSetListsEntity;
+//import com.wasoftware.openfda.model.DataSetListsEntity;
 import com.wasoftware.openfda.service.DataSetListsService;
-import junit.framework.Assert;
+//import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
@@ -118,51 +118,12 @@ public class ViewDataControllerTests {
 
     @Test
     public void testDataSetListsDelete() throws Exception {
-        //Account account = new AccountBuilder("test", "test", "test@gmail.com", Address.FAKE_EMPTY_ADDRESS4TESTS)
-        //        .build();
-        /*mockMvc.perform(post("/j_spring_security_check")
-                .param("j_username", "user1")
-                .param("j_password", "123456"))
-                .andDo(print());*/
-                //.andExpect(status().isMovedTemporarily());
-                //.andExpect(status().isOk());
-                //.andExpect(view().name("welcome"));
-        //RequestBuilder requestBuilder = formLogin().user("username").password("passowrd");
-        /*mockMvc.perform(get("/"))
-                .andExpect(status().isOk())
-                .andExpect(cookie().exists("JSESSIONID"))
-                .andExpect(view().name("login"));*/
-       /* HttpSession session = mockMvc.perform(post("/j_spring_security_check")
-                .param("j_username", "user1").param("j_password", "123456"))
-                .andExpect(status().is(HttpStatus.FOUND.value()))
-                //.andExpect(redirectedUrl("welcome"))
-                .andExpect(view().name("welcome"))
-                .andReturn()
-                .getRequest()
-                .getSession();*/
-        /*mockMvc.perform((post("/drugs").session((MockHttpSession) session))
-                .param("fromDate", "05/01/2014")
-                .param("toDate", "06/30/2014"))
-                .andExpect(status().isOk());*/
-       /* mockMvc.perform(post("/j_spring_security_check")
-                        .param("j_username", "user")
-                        .param("j_password", "123456"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(cookie().exists("JSESSIONID"));*/
-       /* mockMvc.perform(post("/drugs").param("fromDate","05/01/2014")
-                                      .param("toDate", "06/30/2014") )
-                .andExpect(status().isOk())
-                .andExpect(view().name("drugs"));*/
-        /*mockMvc.perform(get("/drugsSaveDrugData").param("inputNote","test"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("drugs"));
         String maxDataSetListID = String.valueOf(dataSetListsService.getDataSetListsEntityMaxId());
-        System.out.println("-----------------"+maxDataSetListID);
+
         String routeParam = "/deleteDataSets/" + maxDataSetListID;
         mockMvc.perform(get(routeParam))
                 .andExpect(status().isOk())
-                .andExpect(view().name("dataSetLists"));*/
+                .andExpect(view().name("dataSetLists"));
     }
 
 
