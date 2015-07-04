@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
 <%--
   Created by IntelliJ IDEA.
   User: ehung
@@ -14,11 +13,10 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-
+    <head>
 
   <!-- CSS -->
- <%-- <link href="<c:url value="/resources/foundation/css/normalize.css" />" rel="stylesheet">
+  <%-- <link href="<c:url value="/resources/foundation/css/normalize.css" />" rel="stylesheet">
   <link href="<c:url value="/resources/foundation/css/slick/style.css" />" rel="stylesheet">
   <link href="<c:url value="/resources/foundation/css/animate.min.css" />" rel="stylesheet">
   <link href="<c:url value="/resources/foundation/css/font-awesome.min.css" />" rel="stylesheet">
@@ -29,7 +27,7 @@
 
   <!--Override CSS-->
   <%--<link href="<c:url value="/resources/css/app.css" />" rel="stylesheet">--%>
-</head>
+    </head>
 
 
   <!--Foundation Requirements-->
@@ -41,23 +39,10 @@
   <script src="<c:url value="/resources/foundation/js/foundation.min.js" />" />--%>
 
   <div id="wrapper" class="container" style="border: #1c1c1c solid 1px; border-radius: 10px;">
-    <div id="header">
-      <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name"><a href="search"><img src="<c:url value="" />" alt="" /></a></li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span><!--menu items--></span></a></li>
-        </ul>
-          <section class="top-bar-section">
-              <%--         <tiles:insertAttribute name="menu" />--%>
-          </section>
-      </nav>
-    </div>
+    <div id="header"></div>
     <div class="row">
       <div id="content-row" class="large-12 columns">
         <tiles:insertAttribute name="body" />
-      </div>
-      <div id="footer">
-   <%--     <tiles:insertAttribute name="footer" />--%>
       </div>
     </div>
   </div>

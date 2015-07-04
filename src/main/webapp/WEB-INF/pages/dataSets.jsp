@@ -1,21 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%--<style> /* set the CSS */
-
-path {
-    stroke: steelblue;
-    stroke-width: 1;
-    fill: none;
-}
-.axis path, .axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-</style>--%>
-
 <div class="row">
 
     <!-- Breadcrumbs section -->
@@ -81,10 +66,7 @@ path {
     }
     // Set the dimensions of the canvas / graph
     function drawChart(){
-        /*var margin = {top: 30, right: 20, bottom: 30, left: 50},*/
-          /*width = 1200 - margin.left - margin.right,*/
-          /*height = 600 - margin.top - margin.bottom;*/
-        var margin = {top: 30, right: 20, bottom: 50, left: 80},
+        var margin = {top: 100, right: 80, bottom: 100, left: 80},
                 width = $(window).width() - margin.left - margin.right,
                 height = $(window).height() - margin.top - margin.bottom;
 
