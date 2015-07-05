@@ -1,31 +1,20 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<style> /* set the CSS */
-
-path {
-    stroke: steelblue;
-    stroke-width: 1;
-    fill: none;
-}
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-</style>
-
 <div class="row">
+
     <!-- Breadcrumbs section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <br />
         <nav class="breadcrumbs" role="navigation">
-            <a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a>
+            <li role="label"><spring:message code="breadcrumbs.label" /></li>
+            <li><a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a></li>
+            <li><a class="" href="<c:url value="/dataSetLists"/>"><spring:message code = "dataSetList.title"/></a></li>
+            <li><a class="current" href=""><spring:message code = "dataSet.title"/></a></li>
         </nav>
     </div>
-    <!-- Body section -->
+
+    <!-- Content section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <header><h1><b><spring:message code = "dataSet.title"/></b></h1></header>
         <h4><spring:message code = "dataSet.datatype"/>${currentDataSetListEntity.dataSetType}</h4>
@@ -56,20 +45,14 @@ path {
             </div>
         </form>
     </div>
-    <div class="large-10 large-centered medium-12 small-12 columns">
-        <div id="svghome" ></div>
-        <script src="http://d3js.org/d3.v3.min.js"></script>
-    </div>
+
+    <div id="svghome" ></div>
+
+
 </div>
 
-<div class="row">
-    <div class="large-10 large-centered medium-12 small-12 columns">
-        <form accept-charset="UTF-8" name="form1" method="get" action="<c:url value="/drugsSaveDrugData"/>" id="form2">
-            <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
-        </form>
-    </div>
-</div>
 
+<script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
     $(function(){
@@ -79,15 +62,12 @@ path {
 
     var hasResult = document.getElementById("hasResult");
     if (hasResult.value == "yes"){
-        drawChart()
+        drawChart();
     }
     // Set the dimensions of the canvas / graph
     function drawChart(){
-        /*var margin = {top: 30, right: 20, bottom: 30, left: 50},*/
-        var margin = {top: 30, right: 20, bottom: 50, left: 80},
-        /*width = 1200 - margin.left - margin.right,*/
+        var margin = {top: 100, right: 80, bottom: 100, left: 80},
                 width = $(window).width() - margin.left - margin.right,
-        /*height = 600 - margin.top - margin.bottom;*/
                 height = $(window).height() - margin.top - margin.bottom;
 
         // Parse the date / time
@@ -121,7 +101,7 @@ path {
         // Get the data
         var data = null;
         <c:if test="${not empty ResultSet}">
-        data = <c:out value="{ResultSet}"/>;
+           data = ${ResultSet};
         </c:if>
 
         data.forEach(function(d) {

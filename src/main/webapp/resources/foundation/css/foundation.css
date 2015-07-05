@@ -905,8 +905,7 @@ select {
     right: 91.66667%;
     left: auto; }
 
-  .column,
-  .columns {
+  .column, .columns {
     position: relative;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
