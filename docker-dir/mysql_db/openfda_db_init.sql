@@ -55,7 +55,10 @@ CREATE TABLE IF NOT EXISTS `Users` (
 -- Dumping data for table openfda_test.Users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
 INSERT INTO `Users` (`id`, `username`, `password`) VALUES
-	(1, 'user1', '123456');
+        (1, 'user1', '123456');
+INSERT INTO `Users` (`id`, `username`, `password`) VALUES
+        (2, 'guest', 'guest1234');
+
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
