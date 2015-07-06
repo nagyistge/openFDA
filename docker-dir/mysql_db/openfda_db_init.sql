@@ -33,6 +33,8 @@ CREATE TABLE IF NOT EXISTS `DataSetLists` (
   CONSTRAINT `FKDataSetLis818927` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
+alter table DataSetLists ADD COLUMN dateCreated DATETIME DEFAULT CURRENT_TIMESTAMP;
+
 -- Dumping structure for table openfda_test.DataSets
 CREATE TABLE IF NOT EXISTS `DataSets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
