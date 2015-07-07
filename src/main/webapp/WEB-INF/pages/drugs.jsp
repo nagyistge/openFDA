@@ -8,7 +8,7 @@
         <nav class="breadcrumbs" role="navigation">
             <li role="label"><spring:message code="breadcrumbs.label" /></li>
             <li role="menuitem"><a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a></li>
-            <li role="menuitem"><a class="" href="<c:url value="/drugs" />"><spring:message code = "drugs.label" /></a></li>
+            <li role="menuitem"><a class="unavailable" href="<c:url value="/drugs" />"><spring:message code = "drugs.label" /></a></li>
         </nav>
     </div>
 
@@ -17,7 +17,7 @@
         <!-- Page Title section -->
         <div class="large-12 medium-12 small-12 columns">
             <header><h1><b><spring:message code = "drugs.title"/></b><small><spring:message code="drugs.subtitle"/></small></h1></header>
-            <p><c:out value="${errorMessage}"/></p>
+            <p style="color:red;"><c:out value="${errorMessage}"/></p>
         </div>
       
         <div class="large-12 medium-12 small-12 columns">
@@ -25,20 +25,20 @@
                 <div class="row">
                     <div class="large-3 medium-12 small-12 columns">
                         <div class="row collapse prefix-radius">
-                            <div class="large-2 medium-2 small-2 columns">
-                                <span class="prefix"><spring:message code="drugs.datefrom"/></span>
+                            <div class="large-6 medium-12 small-12 columns">
+                                <span class="prefix"><spring:message code="drugs.datefrom"/><large style="color:red;">*</large></span>
                             </div>
-                            <div class="large-2 medium-2 small-2 columns end">
+                            <div class="large-6 medium-12 small-12 columns end">
                                 <input type="text" value="<c:out value="${fromDate}"/>" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" required/>
                             </div>
                         </div>
                     </div>
                     <div class="large-3 medium-12 small-12 columns">
                         <div class="row collapse prefix-radius">
-                            <div class="large-2 medium-2 small-2 columns">
-                                <span class="prefix"><spring:message code="drugs.dateto"/></span>
+                            <div class="large-6 medium-12 small-12 columns">
+                                <span class="prefix"><spring:message code="drugs.dateto"/><large style="color:red;">*</large></span>
                             </div>
-                            <div class="large-2 medium-2 small-2 columns end">
+                            <div class="large-6 medium-12 small-12 columns end">
                                 <input type="text" value="<c:out value="${toDate}"/>" data-date-format="mm/dd/yyyy" id="toDate" name="toDate" required/>
                             </div>
                         </div>
@@ -57,15 +57,15 @@
                 <div class="row">
                     <div class="large-6 medium-12 small-12 columns">
                         <div class="row collapse prefix-radius">
-                            <div class="large-2 medium-2 small-2 columns">
+                            <div class="large-2 medium-12 small-12 columns">
                                 <span class="prefix"><spring:message code="drugs.notelabel"/></span>
                             </div>
-                            <div class="large-6 medium-2 small-2 columns end">
+                            <div class="large-6 medium-12 small-12 columns end">
                                 <input type="text" id="inputNote" name="inputNote" value="<c:out value="${inputNote}"/>" placeholder="<spring:message code="drugs.noteplacehoder"/>"/>
                             </div>
                         </div>
                     </div>
-                    <div class="large-3 medium-2 small-2 columns end">
+                    <div class="large-3 medium-12 small-12 columns end">
                         <input type="submit" value="<spring:message code="drugs.savedrugdatabutton"/>" class="tiny button radius"/>
                     </div>
                 </div>
@@ -151,6 +151,14 @@
         svg.append("g")
                 .attr("class", "y axis")
                 .call(yAxis);
+
+        //Create Y-axis label
+        svg.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 20 - margin.left)
+                .attr("x", 0 - (height / 2))
+                .style("text-anchor", "middle")
+                .text("Number of Drug")
     }
 </script>
 
