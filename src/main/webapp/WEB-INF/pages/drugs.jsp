@@ -1,5 +1,7 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script src="<c:url value="/theme/js/foundation/foundation.topbar.js" />" ></script>
+<script src="<c:url value="/lib/foundation.datepicker.js" />" ></script>
 
 <div class="row">
 	<!-- Breadcrumbs section -->
@@ -82,8 +84,8 @@
 <script>
 
 	$(function(){
-		$("#fromDate").fdatepicker();
-		$("#toDate").fdatepicker();
+		$('#fromDate').fdatepicker();
+		$('#toDate').fdatepicker();
 	});
 
     var hasResult = document.getElementById("hasResult");
