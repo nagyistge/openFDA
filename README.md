@@ -36,6 +36,7 @@ http://openfda.wasoftware.com
 Our secure & agile DevOps methodology and automated tools allow us to release proritize features early, frequently, iteratively, and with high quality standard that satisfies user requirements.
 
 #Compliance to US Digital Services Playbook
+[link to Google!](http://google.com)
 <table>
 <tr>
 <td>a. assigned one leader, gave that person authority and responsibility, and held that person accountable for the quality of the prototype submitted</td>
