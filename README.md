@@ -1,4 +1,3 @@
-#Prototype URL
 http://openfda.wasoftware.com
 
 #TECHNICAL APPROACH
