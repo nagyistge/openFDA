@@ -148,7 +148,7 @@ public class ViewDataController {
     ) {
         String errorMessage = "";
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);
-        dataSetListsEntity.setMetadata(jsonObjectMeta.toString());
+
         dataSetListsEntity.setStartDate(fromDate);
         dataSetListsEntity.setEndDate(toDate);
         dataSetListsService.updateDataSetListsEntity(dataSetListsEntity);
