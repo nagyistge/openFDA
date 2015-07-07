@@ -38,7 +38,7 @@
             <li class="divider"></li>
 
             <!-- Language Button with dropdown -->
-            <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
+            <li class="has-dropdown"><a href="#"><spring:message code="menu.language" /></a>
                 <ul class="dropdown">
                     <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
                 </ul>
@@ -62,9 +62,9 @@
         </nav>
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list">
-                <li class="has-submenu"><a href=""><spring:message code="menu.item.openfda" /></a>
+                <li class="has-submenu"><a href="#"><spring:message code="menu.item.openfda" /></a>
                     <ul class="left-submenu">
-                        <li class="back"><a href=""><spring:message code = "menu.back.button" /></a></li>
+                        <li class="back"><a href="#"><spring:message code = "menu.back.button" /></a></li>
                         <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
                     </ul>
                 </li>
@@ -78,7 +78,7 @@
                 <!-- Language Button -->
                 <li class="has-submenu"><a href="#"><spring:message code="menu.language" /></a>
                     <ul class="right-submenu">
-                        <li class="back"><a href=""><spring:message code = "menu.back.button" /></a></li>
+                        <li class="back"><a href="#"><spring:message code = "menu.back.button" /></a></li>
                         <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
                     </ul>
                 </li>

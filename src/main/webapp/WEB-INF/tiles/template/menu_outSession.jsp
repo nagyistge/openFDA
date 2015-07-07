@@ -24,7 +24,7 @@
       <li><a href="/"><spring:message code="menu.item.login" /></a></li>
       <li class="divider"></li>
       <!-- Language Button -->
-      <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
+      <li class="has-dropdown"><a href="#"><spring:message code="menu.language" /></a>
         <ul class="dropdown">
           <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
         </ul>
@@ -54,7 +54,7 @@
           <!-- Language Button -->
           <li class="has-submenu"><a href="#"><spring:message code="menu.language" /></a>
             <ul class="right-submenu">
-              <li class="back"><a href=""><spring:message code = "menu.back.button" /></a></li>
+              <li class="back"><a href="#"><spring:message code = "menu.back.button" /></a></li>
               <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
             </ul>
           </li>
@@ -63,7 +63,7 @@
 
     <section class="main-section"></section>
 
-    <a class="exit-off-canvas" href=""></a>
+    <a class="exit-off-canvas" href="#"></a>
     </div>
   </div>
 </div>
