@@ -1,6 +1,5 @@
+#Prototype URL
 http://openfda.wasoftware.com
-
-#GitHub URL
 
 #TECHNICAL APPROACH
 ##Problem Statement
@@ -36,90 +35,10 @@ http://openfda.wasoftware.com
 Our secure & agile DevOps methodology and automated tools allow us to release proritize features early, frequently, iteratively, and with high quality standard that satisfies user requirements.
 
 #Compliance to US Digital Services Playbook
-<table>
-<tr>
-<td>a. assigned one leader, gave that person authority and responsibility, and held that person accountable for the quality of the prototype submitted</td>
-<td>
-1. The file "Team Member Profile.xls" shows the role of our team members. David Lam has the role of product manager and SCRUM master. 
-2. David makes sure that the team follows different quality checklists below: 
-a. Functional Testing Guideline as shown in the file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/Functional%20Testing%20with%20GUI%20for%20QA.pdf">"Functional Testing with GUI for QA.pdf"</a>
-b. Security guideline as shown in the file <a href="http://www.w3schools.com">OWASP_SCP_Quick_Reference_Guide_vs.pdf</a>
-c. Coding style guideline as shown in the file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/Java%20Code%20Review%20Checklist(1).docx">"Java Code Review Checklist.docx"</a>
-d. Usability as shown from the file "SiteUsabilityEvaluationForm by Robin Judd.pdf"
-e. Application security scanning as shown in the file <a href="http://www.w3schools.com">"OpenFda Security Dynamic Scanning Report.pdf"</a>
-f. High level requirements specification as proved by the file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/OpenFDA%20Prototype%20Requirement%20Report(1).pdf">"OpenFDA Prototype Requirement Report.pdf"</a>
-g. Design  documentation as shown in the file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/OpenFDA%20Prototype%20Design%20Document(2).docx">"OpenFDA Prototype Design Document.docx"</a>
-Make sure requirements met, QA guidelines, security guideline, on schedule, coordinate between members, coding style guideline, testing and build process automation 
-h. The file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/OpenFDA%20Threat%20Modeling%20Report(1).pdf">"OpenFDA Threat Modeling Report.pdf"</a> shows our threat modeling analysis
-i. The file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/Static%20security%20scanning%20report.pdf">"Static security scanning report.pdf"</a> shows the source code security scanning result
-j. The file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/checkstyle-result.xml">checkstyle-result.xml</a> shows the result of running static code analysis CheckStyle
-k. The file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/pmd.xml">pmd.xml</a> shows the result of running static code analysis PMD</td>
-</tr>
+Please refer to Attachement E Approach Criteria Evidence Template Mod 5.xlsx with reference to evidence provided in the respository.
 
-<tr>
-<td>b. assembled a multidisciplinary and collaborative team that includes at a minimum of two of the labor categories limited to the Development Pool labor categories to develop the prototype as quoted in Attachment C
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>c. used at least five modern and open-source technologies, regardless of architectural layer (frontend, backend, etc.)
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>d. deployed the prototype on an Infrastructure as a Service (IaaS) or Platform as a Service (PaaS) provider, and indicated which provider they used
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>e. wrote unit tests for their code
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>f. set up or used a continuous integration system to automate the running of tests and continuously deployed their code to their IaaS or PaaS provider
-</td>
-<td><a href="http://www.w3schools.com">Visit W3Schools.com!</a></td>
-</tr>
-
-<tr>
-<td>g. set up or used configuration management
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>h. set up or used continuous monitoring
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>i. deploy their software in a container (i.e., utilized operating-system-level virtualization)
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>j. used an iterative approach, where feedback informed subsequent work or versions of the prototype
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>k. provided sufficient documentation to install and run their prototype on another machine
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>l. prototype and underlying platforms used to create and run the prototype are openly licensed and free of charge
-</td>
-<td></td>
-</tr>
-
-</table>
+#Documentation
+* [Deployment Guide](https://github.com/washingtonsoftware/openFDA/blob/master/documents/Deployment_guide.docx)
+* [Design Document](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Prototype%20Design%20Document.docx)
+* [Requirement Document](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Prototype%20Requirement%20Report.pdf)
+* [Threat Modeling Report](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Threat%20Modeling%20Report.pdf)
