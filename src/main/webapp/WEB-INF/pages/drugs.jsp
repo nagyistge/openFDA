@@ -164,6 +164,13 @@
                 .attr("x", 0 - (height / 2))
                 .style("text-anchor", "middle")
                 .text("Number of Adverse Events")
+
+        //Create Chart Title
+        svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", 0)
+                .style("text-anchor", "middle")
+                .text("Frequency of Adverse Drug Event vs Time Graph")
     }
 </script>
 
