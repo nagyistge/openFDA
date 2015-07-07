@@ -36,11 +36,24 @@ http://openfda.wasoftware.com
 Our secure & agile DevOps methodology and automated tools allow us to release proritize features early, frequently, iteratively, and with high quality standard that satisfies user requirements.
 
 #Compliance to US Digital Services Playbook
-[link to Google!](http://google.com)
 <table>
 <tr>
 <td>a. assigned one leader, gave that person authority and responsibility, and held that person accountable for the quality of the prototype submitted</td>
-<td></td>
+<td>
+1. The file "Team Member Profile.xls" shows the role of our team members. David Lam has the role of product manager and SCRUM master. 
+2. David makes sure that the team follows different quality checklists below: 
+a. Functional Testing Guideline as shown in the file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/Functional%20Testing%20with%20GUI%20for%20QA.pdf">"Functional Testing with GUI for QA.pdf"</a>
+b. Security guideline as shown in the file <a href="http://www.w3schools.com">OWASP_SCP_Quick_Reference_Guide_vs.pdf</a>
+c. Coding style guideline as shown in the file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/Java%20Code%20Review%20Checklist(1).docx">"Java Code Review Checklist.docx"</a>
+d. Usability as shown from the file "SiteUsabilityEvaluationForm by Robin Judd.pdf"
+e. Application security scanning as shown in the file <a href="http://www.w3schools.com">"OpenFda Security Dynamic Scanning Report.pdf"</a>
+f. High level requirements specification as proved by the file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/OpenFDA%20Prototype%20Requirement%20Report(1).pdf">"OpenFDA Prototype Requirement Report.pdf"</a>
+g. Design  documentation as shown in the file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/OpenFDA%20Prototype%20Design%20Document(2).docx">"OpenFDA Prototype Design Document.docx"</a>
+Make sure requirements met, QA guidelines, security guideline, on schedule, coordinate between members, coding style guideline, testing and build process automation 
+h. The file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/OpenFDA%20Threat%20Modeling%20Report(1).pdf">"OpenFDA Threat Modeling Report.pdf"</a> shows our threat modeling analysis
+i. The file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/Static%20security%20scanning%20report.pdf">"Static security scanning report.pdf"</a> shows the source code security scanning result
+j. The file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/checkstyle-result.xml">checkstyle-result.xml</a> shows the result of running static code analysis CheckStyle
+k. The file <a href="https://github.com/washingtonsoftware/openFDA/blob/master/evidences/pmd.xml">pmd.xml</a> shows the result of running static code analysis PMD</td>
 </tr>
 
 <tr>
