@@ -39,7 +39,7 @@
     <div class="inner-wrap">
       <nav class="tab-bar">
         <section class="tab-bar-section">
-          <h1 class="title">Menu</h1>
+          <h1 class="title"><spring:message code = "menu.menu.label" /></h1>
         </section>
         <section class="right-small">
           <a class="right-off-canvas-toggle menu-icon">
@@ -54,7 +54,7 @@
           <!-- Language Button -->
           <li class="has-submenu"><a href="#"><spring:message code="menu.language" /></a>
             <ul class="right-submenu">
-              <li class="back"><a href="">Back</a></li>
+              <li class="back"><a href=""><spring:message code = "menu.back.button" /></a></li>
               <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
             </ul>
           </li>

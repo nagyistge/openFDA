@@ -17,7 +17,7 @@
         <!-- Page Title section -->
         <div class="large-12 medium-12 small-12 columns">
             <header><h1><b><spring:message code = "drugs.title"/></b><small><spring:message code="drugs.subtitle"/></small></h1></header>
-            <p><c:out value="${errorMessage}"/></p>
+            <p style="color:red;"><c:out value="${errorMessage}"/></p>
         </div>
       
         <div class="large-12 medium-12 small-12 columns">
@@ -26,7 +26,7 @@
                     <div class="large-3 medium-12 small-12 columns">
                         <div class="row collapse prefix-radius">
                             <div class="large-6 medium-12 small-12 columns">
-                                <span class="prefix"><spring:message code="drugs.datefrom"/></span>
+                                <span class="prefix"><spring:message code="drugs.datefrom"/><large style="color:red;">*</large></span>
                             </div>
                             <div class="large-6 medium-12 small-12 columns end">
                                 <input type="text" value="<c:out value="${fromDate}"/>" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" required/>
@@ -36,7 +36,7 @@
                     <div class="large-3 medium-12 small-12 columns">
                         <div class="row collapse prefix-radius">
                             <div class="large-6 medium-12 small-12 columns">
-                                <span class="prefix"><spring:message code="drugs.dateto"/></span>
+                                <span class="prefix"><spring:message code="drugs.dateto"/><large style="color:red;">*</large></span>
                             </div>
                             <div class="large-6 medium-12 small-12 columns end">
                                 <input type="text" value="<c:out value="${toDate}"/>" data-date-format="mm/dd/yyyy" id="toDate" name="toDate" required/>

@@ -19,7 +19,7 @@
         <header><h1><b><spring:message code = "dataSet.title"/></b></h1></header>
         <h4><spring:message code = "dataSet.datatype"/>${currentDataSetListEntity.dataSetType}</h4>
         <h4><spring:message code = "dataSet.id"/>${currentDataSetListEntity.id}</h4>
-        <p><c:out value="${errorMessage}" /></p>
+        <p style="color:red;"><c:out value="${errorMessage}" /></p>
     </div>
 
     <div class="large-10 large-centered medium-12 small-12 columns">

@@ -54,7 +54,7 @@
                 <a class="left-off-canvas-toggle menu-icon"><span></span></a>
             </section>
             <section class="middle tab-bar-section">
-                <h1 class="title">Menu</h1>
+                <h1 class="title"><spring:message code = "menu.menu.label" /></h1>
             </section>
             <section class="right-small">
                 <a class="right-off-canvas-toggle menu-icon"><span></span></a>
@@ -64,7 +64,7 @@
             <ul class="off-canvas-list">
                 <li class="has-submenu"><a href=""><spring:message code="menu.item.openfda" /></a>
                     <ul class="left-submenu">
-                        <li class="back"><a href="">Back</a></li>
+                        <li class="back"><a href=""><spring:message code = "menu.back.button" /></a></li>
                         <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
                     </ul>
                 </li>
@@ -78,7 +78,7 @@
                 <!-- Language Button -->
                 <li class="has-submenu"><a href="#"><spring:message code="menu.language" /></a>
                     <ul class="right-submenu">
-                        <li class="back"><a href="">Back</a></li>
+                        <li class="back"><a href=""><spring:message code = "menu.back.button" /></a></li>
                         <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
                     </ul>
                 </li>
@@ -87,70 +87,3 @@
         <a class="exit-off-canvas" href="#"></a>
     </div>
 </div>
-
-<!-- left menu shows for small screen only -->
-<%--<nav class="tab-bar show-for-small">
-    <section class="left-small">
-        <li class="left-off-canvas-toggle menu-icon" aria-expanded="false">
-            <aside class="left-off-canvas-menu">
-                <ul class="off-canvas-list">
-                    <li><a href="<c:url value="/welcome" />"><spring:message code="menu.item.home" /></a></li>
-                    <li class="has-dropdown"><a href=""><spring:message code="menu.item.openfda" /></a></li>
-                        <ul class="dropdown">
-                            <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
-                        </ul>
-                    <li><a href="<c:url value="/dataSetLists"/>"><spring:message code="menu.item.mySavedData" /></a></li>
-                </ul>
-            </aside>
-        </li>
-    </section>
-    <section class="right-small">
-        <li class="right-off-canvas-menu" aria-expended="false">
-            <aside class="right-off-canvas--toggle menu-icon" aria-expanded="false">
-                <ul class="off-canvas-list">
-                    <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
-                    <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
-                        <ul class="dropdown">
-                            <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </aside>
-        </li>
-    </section>
-</nav>
-
-<a class="exit-off-canvas" href="#"></a>--%>
-
-<%--<!-- Right Nav. Section -->
-<nav class="top-bar hide-for-small" data-topbar role="navigation">
-    <section class="top-bar-section">
-        <ul class="right">
-          <!-- Login/Logout Button -->
-          <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
-          <li class="divider"></li>
-
-          <!-- Language Button with dropdown -->
-          <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
-                  <ul class="dropdown">
-                      <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
-                  </ul>
-          </li>
-        </ul>
-    </section>
-</nav>
-<!-- right menu shows for small screen only -->
-<nav class="tab-bar show-for-small">
-    <a class="right-off-canvas-toggle menu-icon">
-        <aside class="right-off-canvas-menu">
-            <ul class="off-canvas-list">
-                <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
-                <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
-                    <ul class="dropdown">
-                        <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </aside>
-    </a>
-</nav>--%>
