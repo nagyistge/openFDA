@@ -15,7 +15,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><tiles:insertAttribute name="title" /></title>
-
+  <link href="<c:url value="/img/favicon.ico" />" type="image/x-icon" rel="shortcut icon">
   <!-- CSS -->
   <link href="<c:url value="/theme/css/normalize.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/slick/style.css" />" rel="stylesheet">
