@@ -69,8 +69,7 @@ Our secure & agile DevOps methodology and automated tools allow us to release pr
 <tr>
 <td>f. set up or used a continuous integration system to automate the running of tests and continuously deployed their code to their IaaS or PaaS provider
 </td>
-<td>http://github.com - automatic!
-[GitHub](http://github.com, "Title")</td>
+<td>[link to Google!](http://google.com)</td>
 </tr>
 
 <tr>
