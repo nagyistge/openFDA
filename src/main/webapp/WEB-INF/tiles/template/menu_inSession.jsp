@@ -23,7 +23,7 @@
             <li><a href="<c:url value="/welcome" />"><spring:message code="menu.item.home" /></a></li>
             <li class="divider"></li>
             <!-- OpenFDA Data Button -->
-            <li class="has-dropdown"><label><spring:message code="menu.item.openfda" /></label>
+            <li class="has-dropdown"><a href="#"><spring:message code="menu.item.openfda" /></a>
                 <ul class="dropdown">
                     <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
                 </ul>

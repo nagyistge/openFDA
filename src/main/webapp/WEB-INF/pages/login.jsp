@@ -13,7 +13,7 @@
         <h1><img src="<c:url value="/img/WSI_Logo.png"/>" alt="Washington Software Logo" ></h1>
         <div class="panel">
             <form name="loginForm" action="<c:url value="j_spring_security_check" />" method="POST">
-                <header><h3><b><spring:message code="login.header" /></b></h3></header>
+                <header><h3><b><spring:message code="login.header" /></b><br /><small style="color:#eb8f00"><spring:message code = "login.demo.accountINFO" /></small></h3></header>
                 <label><spring:message code = "login.label.username" /></label>
                 <input type="text" name="j_username" value="" placeholder="<spring:message code = "login.placeholder.username" />" required />
                 <label><spring:message code = "login.label.password" /></label>

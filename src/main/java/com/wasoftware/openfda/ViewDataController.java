@@ -33,7 +33,6 @@ public class ViewDataController {
     private DataSetsService dataSetsService;
     private int currentDataSetListID;
 
-
     @Autowired(required = true)
     @Qualifier(value = "dataSetListsService")
     public void setDataSetListsService(DataSetListsService dataSetListsService) {
@@ -106,7 +105,8 @@ public class ViewDataController {
                                  @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
                                  @RequestParam(value = "toDate", defaultValue = "") String toDate
     ) {
-
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
         String errorMessage = "";
         String originalFromDate = fromDate;
         String originalToDate = toDate;
@@ -145,6 +145,7 @@ public class ViewDataController {
         dataSetListsEntity.setStartDate(originalFromDate);
         dataSetListsEntity.setEndDate(originalToDate);
         model.addAttribute("currentDataSetListEntity", dataSetListsEntity);
+        model.addAttribute("currentLoggedUsername", currentUsername);
         return "dataSets";
     }
 
@@ -154,7 +155,8 @@ public class ViewDataController {
                                     @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
                                     @RequestParam(value = "toDate", defaultValue = "") String toDate
     ) {
-
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
         String errorMessage = "";
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);
         dataSetListsEntity.setMetadata(jsonObjectMeta.toString());
@@ -176,6 +178,7 @@ public class ViewDataController {
         model.addAttribute("currentDataSetListEntity", dataSetListsEntity);
         model.addAttribute("ResultSet", jsonArrayResult.toString());
         model.addAttribute("hasResult", "yes");
+        model.addAttribute("currentLoggedUsername", currentUsername);
         return "dataSets";
     }
 

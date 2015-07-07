@@ -58,6 +58,9 @@ public class DrugsController {
 
     @RequestMapping(value = "/drugs", method = RequestMethod.GET)
     public String drugData(ModelMap model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
+        model.addAttribute("currentLoggedUsername", currentUsername);
         return "drugs";
     }
 
@@ -113,6 +116,8 @@ public class DrugsController {
     public String saveDrugData(ModelMap model,
                                @RequestParam(value = "inputNote", defaultValue = "") String inputNote
     ) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
         try {
             DataSetListsEntity dataSetListsEntity = new DataSetListsEntity();
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -146,6 +151,7 @@ public class DrugsController {
             model.addAttribute("errorMessage", GetMessage.getMessage("errors.system"));
         }
         model.addAttribute("inputNote", inputNote);
+        model.addAttribute("currentLoggedUsername", currentUsername);
         return "drugs";
     }
 

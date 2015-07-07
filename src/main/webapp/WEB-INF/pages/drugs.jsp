@@ -5,7 +5,7 @@
 	<!-- Breadcrumbs section -->
     <div class="large-10 large-centered medium-12 small-12 columns">
         <div class="right">
-            <label>Logged in as: ${currentUsername}</label>
+            <label>Logged in as: ${currentLoggedUsername}</label>
         </div>
         <br />
         <nav class="breadcrumbs" role="navigation">
@@ -161,7 +161,7 @@
                 .attr("y", 20 - margin.left)
                 .attr("x", 0 - (height / 2))
                 .style("text-anchor", "middle")
-                .text("Number of Drug")
+                .text("Number of Adverse Events")
     }
 </script>
 
