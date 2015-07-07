@@ -25,8 +25,12 @@
   <link href="<c:url value="/theme/css/foundation.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/style.css" />" rel="stylesheet">
   <link href="<c:url value="/theme/css/style-responsive.css" />" rel="stylesheet">
-  <%--<link href="<c:url value="/css/jquery-ui.css" />" rel="stylesheet">--%>
   <link href="<c:url value="/css/foundation.datepicker.css" />" rel="stylesheet">
+  <script src="<c:url value="/theme/js/foundation/foundation.topbar.js" />" ></script>
+  <script src="<c:url value="/theme/js/vendor/jquery.js" />" ></script>
+  <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
+  <script src="<c:url value="/theme/js/foundation/foundation.offcanvas.js" />" ></script>
+
   <!--Override CSS-->
   <link href="<c:url value="/css/app.css" />" rel="stylesheet">
 </head>
@@ -39,7 +43,6 @@
   <script src="<c:url value="/theme/js/vendor/jquery.cookie.js" />" ></script>
   <script src="<c:url value="/theme/js/vendor/placeholder.js" />" ></script>
   <script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
-  <%--<script src="<c:url value="/lib/jquery-ui.js" />" ></script>--%>
   <script src="<c:url value="/lib/foundation.datepicker.js" />" ></script>
   <script src="<c:url value="/theme/js/foundation/foundation.tab.js" />" ></script>
 
@@ -48,7 +51,7 @@
     <div id="header">
 
       <!-- top bar section -->
-      <nav class="top-bar" data-topbar role="navigation">
+<%--      <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
             <a href="search" data-toggle="tooltip" title="Home"></a>
@@ -57,19 +60,26 @@
             <a href="#"><span>Menu Items</span></a>
           </li>
         </ul>
-        <section class="top-bar-section">
+        <section class="top-bar-section">--%>
           <tiles:insertAttribute name="menu" />
-        </section>
-      </nav>
+<%--        </section>
+    </nav>--%>
     </div>
 
     <div class="row">
-      <div id="content-row" class="large-12 columns">
-        <tiles:insertAttribute name="body" />
+      <div class="large-12 medium-12 small-12 columns">
+        <div id="content-row">
+          <tiles:insertAttribute name="body" />
+        </div>
       </div>
     </div>
-    <div id="footer">
-      <tiles:insertAttribute name="footer" />
+  </div>
+  <div class="row">
+    <div class="large-12 medium-12 small-12 columns">
+      <!-- Footer Page -->
+      <div id="footer">
+        <tiles:insertAttribute name="footer" />
+      </div>
     </div>
   </div>
 

@@ -301,11 +301,10 @@ footer {
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 #content-row {
-	padding-bottom: 40px;
+	padding-bottom: 100px;
 }
 .row {
-	max-width: 100rem;
-	min-width: 727px;
+	max-width: 100%;
 	margin: 0 auto;
 	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
@@ -346,6 +345,24 @@ html, body {
 	padding: 0;
 	height: 100%;
 	background: #ffffff;
+}
+.page {
+	height: 100%;
+}
+.offcanvas-overlap aside {
+	-ms-transform: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-o-transform: none;
+	transform: none;
+	z-index: 1003;
+}
+.off-canvas-wrap, .inner-wrap {
+	min-height: 18vh;
+}
+.off-canvas-wrap {
+	/*height: 10vh;*/
+	overflow-y: hidden;
 }
 hr {
 	border: solid #d7dfc0;
@@ -571,4 +588,34 @@ path {
 	stroke: grey;
 	stroke-width: 1;
 	shape-rendering: crispEdges;
+}
+ul.off-canvas-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul.off-canvas-list li label {
+	background: #ffffff;
+	border-bottom: none;
+	border-top: 1px solid #5e5e5e;
+	color: #008cba;
+	display: block;
+	font-size: 0.75rem;
+	font-weight: bold;
+	margin: 0;
+	padding: 0.3rem 0.9375rem;
+	text-transform: uppercase;
+}
+ul.off-canvas-list li a {
+	border-bottom: 1px solid #262626;
+	color: rgba(255, 255, 255, 0.7);
+	display: block;
+	padding: 0.66667rem;
+	transition: background 300ms ease;
+}
+ul.off-canvas-list li a:hover {
+	background: #242424;
+}
+ul.off-canvas-list li a:active {
+	background: #242424;
 }

@@ -10,7 +10,7 @@
             <li role="label"><spring:message code="breadcrumbs.label" /></li>
             <li><a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a></li>
             <li><a class="" href="<c:url value="/dataSetLists"/>"><spring:message code = "dataSetList.title"/></a></li>
-            <li><a class="current" href=""><spring:message code = "dataSet.title"/></a></li>
+            <li><a class="unavailable"><spring:message code = "dataSet.title"/></a></li>
         </nav>
     </div>
 

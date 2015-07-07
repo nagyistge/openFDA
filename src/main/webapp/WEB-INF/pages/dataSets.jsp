@@ -10,7 +10,7 @@
             <li role="label"><spring:message code="breadcrumbs.label" /></li>
             <li><a class="" href="<c:url value="/welcome"/>"><spring:message code = "welcome.label" /></a></li>
             <li><a class="" href="<c:url value="/dataSetLists"/>"><spring:message code = "dataSetList.title"/></a></li>
-            <li><a class="current" href=""><spring:message code = "dataSet.title"/></a></li>
+            <li><a class="unavailable"><spring:message code = "dataSet.title"/></a></li>
         </nav>
     </div>
 
@@ -27,14 +27,14 @@
             <div class="row">
                 <div class="large-3 medium-12 small-12 columns">
                     <div class="row collapse prefix-radius">
-                        <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
-                        <div class="large-2 medium-2 small-2 columns end"><input type="text" value="<c:out value="${currentDataSetListEntity.startDate}"/>" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" /></div>
+                        <div class="large-6 medium-12 small-12 columns"><span class="prefix"><spring:message code="drugs.datefrom"/></span></div>
+                        <div class="large-6 medium-12 small-12 columns end"><input type="text" value="<c:out value="${currentDataSetListEntity.startDate}"/>" data-date-format="mm/dd/yyyy" id="fromDate" name="fromDate" /></div>
                     </div>
                 </div>
                 <div class="large-3 medium-12 small-12 columns">
                     <div class="row collapse prefix-radius">
-                        <div class="large-2 medium-2 small-2 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
-                        <div class="large-2 medium-2 small-2 columns end"><input type="text" value="<c:out value="${currentDataSetListEntity.endDate}"/>" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
+                        <div class="large-6 medium-12 small-12 columns"><span class="prefix"><spring:message code="drugs.dateto"/></span></div>
+                        <div class="large-6 medium-12 small-12 columns end"><input type="text" value="<c:out value="${currentDataSetListEntity.endDate}"/>" data-date-format="mm/dd/yyyy" id="toDate" name="toDate"/></div>
                     </div>
                 </div>
                 <div class="large-3 medium-12 small-12 columns end">
@@ -128,6 +128,13 @@
         svg.append("g")
                 .attr("class", "y axis")
                 .call(yAxis);
+
+        //Create Y-axis label
+        svg.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 20 - margin.left)
+                .attr("x", 0 - (height / 2))
+                .style("text-anchor", "middle")
+                .text("Number of Drug")
     }
 </script>
-

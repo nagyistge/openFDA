@@ -11,38 +11,146 @@
 <script src="<c:url value="/theme/js/foundation/foundation.js" />" ></script>
 <script src="<c:url value="/theme/js/foundation/foundation.topbar.js" />" ></script>
 <script src="<c:url value="/theme/js/foundation/foundation.tab.js" />" ></script>
+<script src="<c:url value="/theme/js/vendor/jquery.js" />" ></script>
+<script src="<c:url value="/theme/js/foundation.min.js" />" ></script>
+<script src="<c:url value="/theme/js/foundation/foundation.offcanvas.js" />" ></script>
 
 <!-- Left Nav. Section -->
-<ul class="left">
-
-    <!-- Home Button -->
-    <li><a href="<c:url value="/welcome" />"><spring:message code="menu.item.home" /></a></li>
-    <li class="divider"></li>
-
-    <!-- OpenFDA Data Button -->
-    <li class="has-dropdown"><a href=""><spring:message code="menu.item.openfda" /></a>
-        <ul class="dropdown">
-            <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
+<nav class="top-bar hide-for-small" data-topbar role="navigation">
+    <section class="top-bar-section">
+        <ul class="left">
+            <!-- Home Button -->
+            <li><a href="<c:url value="/welcome" />"><spring:message code="menu.item.home" /></a></li>
+            <li class="divider"></li>
+            <!-- OpenFDA Data Button -->
+            <li class="has-dropdown"><a href=""><spring:message code="menu.item.openfda" /></a>
+                <ul class="dropdown">
+                    <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <!-- My Data Button -->
+            <li><a href="<c:url value="/dataSetLists"/>"><spring:message code="menu.item.mySavedData" /></a></li>
         </ul>
-    </li>
-    <li class="divider"></li>
+        <ul class="right">
+            <!-- Login/Logout Button -->
+            <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
+            <li class="divider"></li>
 
-    <!-- My Data Button -->
-    <li><a href="<c:url value="/dataSetLists"/>"><spring:message code="menu.item.mySavedData" /></a></li>
-</ul>
+            <!-- Language Button with dropdown -->
+            <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
+                <ul class="dropdown">
+                    <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</nav>
 
-<!-- Right Nav. Section -->
-<ul class="right">
+<div class="off-canvas-wrap show-for-small" data-offcanvas>
+    <div class="inner-wrap">
+        <nav class="tab-bar">
+            <section class="left-small">
+                <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+            </section>
+            <section class="middle tab-bar-section">
+                <h1 class="title">Menu</h1>
+            </section>
+            <section class="right-small">
+                <a class="right-off-canvas-toggle menu-icon"><span></span></a>
+            </section>
+        </nav>
+        <aside class="left-off-canvas-menu">
+            <ul class="off-canvas-list">
+                <li class="has-submenu"><a href=""><spring:message code="menu.item.openfda" /></a>
+                    <ul class="left-submenu">
+                        <li class="back"><a href="">Back</a></li>
+                        <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
+                    </ul>
+                </li>
+                <li><a href="<c:url value="/dataSetLists"/>"><spring:message code="menu.item.mySavedData" /></a></li>
+            </ul>
+        </aside>
 
-  <!-- Login/Logout Button -->
-  <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
-  <li class="divider"></li>
+        <aside class="right-off-canvas-menu">
+            <ul class="off-canvas-list">
+                <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
+                <!-- Language Button -->
+                <li class="has-submenu"><a href="#"><spring:message code="menu.language" /></a>
+                    <ul class="right-submenu">
+                        <li class="back"><a href="">Back</a></li>
+                        <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <a class="exit-off-canvas" href="#"></a>
+    </div>
+</div>
 
-  <!-- Language Button with dropdown -->
-  <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
-          <ul class="dropdown">
-              <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
-<%--              <li><a href="?language=es"><spring:message code = "language.spanish" /></a></li>--%>
-          </ul>
-  </li>
-</ul>
+<!-- left menu shows for small screen only -->
+<%--<nav class="tab-bar show-for-small">
+    <section class="left-small">
+        <li class="left-off-canvas-toggle menu-icon" aria-expanded="false">
+            <aside class="left-off-canvas-menu">
+                <ul class="off-canvas-list">
+                    <li><a href="<c:url value="/welcome" />"><spring:message code="menu.item.home" /></a></li>
+                    <li class="has-dropdown"><a href=""><spring:message code="menu.item.openfda" /></a></li>
+                        <ul class="dropdown">
+                            <li><a href="<c:url value="/drugs"/>"><spring:message code="menu.datasets.drugs" /></a></li>
+                        </ul>
+                    <li><a href="<c:url value="/dataSetLists"/>"><spring:message code="menu.item.mySavedData" /></a></li>
+                </ul>
+            </aside>
+        </li>
+    </section>
+    <section class="right-small">
+        <li class="right-off-canvas-menu" aria-expended="false">
+            <aside class="right-off-canvas--toggle menu-icon" aria-expanded="false">
+                <ul class="off-canvas-list">
+                    <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
+                    <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
+                        <ul class="dropdown">
+                            <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+        </li>
+    </section>
+</nav>
+
+<a class="exit-off-canvas" href="#"></a>--%>
+
+<%--<!-- Right Nav. Section -->
+<nav class="top-bar hide-for-small" data-topbar role="navigation">
+    <section class="top-bar-section">
+        <ul class="right">
+          <!-- Login/Logout Button -->
+          <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
+          <li class="divider"></li>
+
+          <!-- Language Button with dropdown -->
+          <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
+                  <ul class="dropdown">
+                      <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
+                  </ul>
+          </li>
+        </ul>
+    </section>
+</nav>
+<!-- right menu shows for small screen only -->
+<nav class="tab-bar show-for-small">
+    <a class="right-off-canvas-toggle menu-icon">
+        <aside class="right-off-canvas-menu">
+            <ul class="off-canvas-list">
+                <li><a href="<c:url value="j_spring_security_logout"/>"><spring:message code="menu.item.logout" /></a></li>
+                <li class="has-dropdown"><a href=""><spring:message code="menu.language" /></a>
+                    <ul class="dropdown">
+                        <li><a href="?language=en"><spring:message code = "language.english" /></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+    </a>
+</nav>--%>
