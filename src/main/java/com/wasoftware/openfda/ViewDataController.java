@@ -149,6 +149,31 @@ public class ViewDataController {
         return "dataSets";
     }
 
+    @RequestMapping(value = "/viewDataSets",method = RequestMethod.GET)
+    public String dataSetsOverwrite(ModelMap model)
+    {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
+        DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);
+        List<DataSetsEntity> dataSetsEntityList = dataSetsService.listDataSetsEntityByDataSetListID(currentDataSetListID);
+        jsonArrayResult = new JSONArray();
+        for (DataSetsEntity dataSetsEntity : dataSetsEntityList) {
+            if (dataSetsEntity.getKey() != null) {
+                JSONObject jsonObject = new JSONObject();
+
+                jsonObject.put("time", escapeHtml(dataSetsEntity.getKey()));
+                jsonObject.put("count", escapeHtml(dataSetsEntity.getValue()));
+                jsonArrayResult.add(jsonObject);
+            }
+        }
+
+        model.addAttribute("ResultSet", jsonArrayResult);
+        model.addAttribute("hasResult", "yes");
+        model.addAttribute("currentDataSetListEntity", dataSetListsEntity);
+        model.addAttribute("currentLoggedUsername", currentUsername);
+        return "dataSets";
+    }
+
 
     @RequestMapping(value = "/viewDataSets", params = "overwriteData", method = RequestMethod.POST)
     public String dataSetsOverwrite(ModelMap model,
