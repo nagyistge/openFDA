@@ -24,13 +24,13 @@ http://openfda.wasoftware.com
   6. Sprint5 (Day12-Day13)- Modify Data, work items from feedback
 
 ##Discussion
-*PM is the leader accountable for the quality. 
-*Our team has diverse skill sets - system/network/security administration, front-end and back end development, project managemnet, QA, and agile development. They learn new technology quickly.
-*Maven is used for configuration management.  
-*We use the following open source technology - Linux, Apache/Tomcat, Zurb's Foundation 5, Java/JSP/JavaScript, MySQL, JUnit, and Jenkins. Jenkins is our continuous integration system that pulls source code from Github, run static code analysis tools (e.g. CheckStyle, PMD, FindBugs, Jacoco), automate our tests, build runtime using a mavin plugin, and deploy runtime to our Docker containers in an Amazon EC2 image. 
-*Users provide feedback through face-to-face meeting, testing, and usability evaluation.  
-*User stories and tasks are prioritized based on risks and mandatory RFQ requirements. Highest priorities and risk work items are scheduled first. New technology are considered high risk. Docker containers are new to our team and we schedule related tasks in Sprint 1.   
-*Our security tasks include threat modeling, security user stories, security code review, security static code analysis, security dynamic code analysis, and security monitoring tools.
+* PM is the leader accountable for the quality. 
+* Our team has diverse skill sets - system/network/security administration, front-end and back end development, project managemnet, QA, and agile development. They learn new technology quickly.
+* Maven is used for configuration management.  
+* We use the following open source technology - Linux, Apache/Tomcat, Zurb's Foundation 5, Java/JSP/JavaScript, MySQL, JUnit, and Jenkins. Jenkins is our continuous integration system that pulls source code from Github, run static code analysis tools (e.g. CheckStyle, PMD, FindBugs, Jacoco), automate our tests, build runtime using a mavin plugin, and deploy runtime to our Docker containers in an Amazon EC2 image. 
+* Users provide feedback through face-to-face meeting, testing, and usability evaluation.  
+* User stories and tasks are prioritized based on risks and mandatory RFQ requirements. Highest priorities and risk work items are scheduled first. New technology are considered high risk. Docker containers are new to our team and we schedule related tasks in Sprint 1.   
+* Our security tasks include threat modeling, security user stories, security code review, security static code analysis, security dynamic code analysis, and security monitoring tools.
 
 ##Conclusion
 Our secure & agile DevOps methodology and automated tools allow us to release proritize features early, frequently, iteratively, and with high quality standard that satisfies user requirements.
