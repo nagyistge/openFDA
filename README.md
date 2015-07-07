@@ -1,6 +1,5 @@
+#Prototype URL
 http://openfda.wasoftware.com
-
-#GitHub URL
 
 #TECHNICAL APPROACH
 ##Problem Statement
