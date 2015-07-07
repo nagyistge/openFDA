@@ -37,3 +37,9 @@ Our secure & agile DevOps methodology and automated tools allow us to release pr
 
 #Compliance to US Digital Services Playbook
 Please refer to Attachement E Approach Criteria Evidence Template Mod 5.xlsx with reference to evidence provided in the respository.
+
+#Documentation
+[Deployment Guide](https://github.com/washingtonsoftware/openFDA/blob/master/documents/Deployment_guide.docx)
+[Design Document](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Prototype%20Design%20Document.docx)
+[Requirement Document](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Prototype%20Requirement%20Report.pdf)
+[Threat Modeling Report](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Threat%20Modeling%20Report.pdf)
