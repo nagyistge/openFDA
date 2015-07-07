@@ -2,6 +2,8 @@ package com.wasoftware.openfda;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,8 +52,11 @@ public class ViewDataController {
 
     @RequestMapping(value = "/dataSetLists", method = RequestMethod.GET)
     public String dataSetLists(ModelMap model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
         List<DataSetListsEntity> dataSetListsEntityList = dataSetListsService.listDataSetListsEntity();
         model.addAttribute("dataSetListsEntityList", dataSetListsEntityList);
+        model.addAttribute("currentLoggedUsername", currentUsername);
         return "dataSetLists";
     }
 
@@ -59,6 +64,8 @@ public class ViewDataController {
     public String viewDataSets(ModelMap model,
                                @PathVariable("id") int selectedDateSetListID
     ) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
         currentDataSetListID = selectedDateSetListID;
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(selectedDateSetListID);
         List<DataSetsEntity> dataSetsEntityList = dataSetsService.listDataSetsEntityByDataSetListID(selectedDateSetListID);
@@ -76,6 +83,7 @@ public class ViewDataController {
         model.addAttribute("ResultSet", jsonArrayResult);
         model.addAttribute("hasResult", "yes");
         model.addAttribute("currentDataSetListEntity", dataSetListsEntity);
+        model.addAttribute("currentLoggedUsername", currentUsername);
         return "dataSets";
     }
 
@@ -146,6 +154,7 @@ public class ViewDataController {
                                     @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
                                     @RequestParam(value = "toDate", defaultValue = "") String toDate
     ) {
+
         String errorMessage = "";
         DataSetListsEntity dataSetListsEntity = dataSetListsService.getDataSetListsEntityById(currentDataSetListID);
         dataSetListsEntity.setMetadata(jsonObjectMeta.toString());

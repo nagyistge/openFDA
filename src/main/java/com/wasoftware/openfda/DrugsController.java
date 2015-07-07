@@ -66,7 +66,8 @@ public class DrugsController {
                               @RequestParam(value = "fromDate", defaultValue = "") String fromDate,
                               @RequestParam(value = "toDate", defaultValue = "") String toDate
     ) {
-
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
         String errorMessage = "";
         originalFromDate = fromDate;
         originalToDate = toDate;
@@ -104,6 +105,7 @@ public class DrugsController {
         model.addAttribute("fromDate", originalFromDate);
         model.addAttribute("toDate", originalToDate);
         model.addAttribute("errorMessage", errorMessage);
+        model.addAttribute("currentLoggedUsername", currentUsername);
         return "drugs";
     }
 

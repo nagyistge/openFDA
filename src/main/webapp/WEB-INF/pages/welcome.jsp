@@ -3,6 +3,9 @@
 
 <div class="row">
 	<div class="large-10 large-centered medium-12 small-12 columns">
+		<div class="right">
+			<label>Logged in as: ${currentLoggedUsername}</label>
+		</div>
 		<br />
 		<nav class="breadcrumbs" role="navigation">
 			<li role="label"><spring:message code="breadcrumbs.label" /></li>
