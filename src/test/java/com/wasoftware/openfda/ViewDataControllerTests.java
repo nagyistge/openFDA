@@ -81,7 +81,11 @@ public class ViewDataControllerTests {
     }
     @Test
     public void testDataSetsViewReloadOverwrite() throws Exception {
-        mockMvc.perform(get("/viewDataSets/18"))
+
+        String maxDataSetListID = String.valueOf(dataSetListsService.getDataSetListsEntityMaxId());
+        String routeParam = "/viewDataSets/" + maxDataSetListID;
+
+        mockMvc.perform(get(routeParam))
                 .andExpect(status().isOk())
                 .andExpect(view().name("dataSets"));
     }
@@ -89,7 +93,11 @@ public class ViewDataControllerTests {
 
     @Test
     public void testDataSetReload() throws Exception {
-        mockMvc.perform(get("/viewDataSets/18"))
+
+        String maxDataSetListID = String.valueOf(dataSetListsService.getDataSetListsEntityMaxId());
+        String routeParam = "/viewDataSets/" + maxDataSetListID;
+
+        mockMvc.perform(get(routeParam))
                 .andExpect(status().isOk())
                 .andExpect(view().name("dataSets"));
         mockMvc.perform(post("/viewDataSets").param("reloadData","")
@@ -102,16 +110,22 @@ public class ViewDataControllerTests {
 
     @Test
     public void testDataSetOverwrite() throws Exception {
-        mockMvc.perform(get("/viewDataSets/18"))
+
+        String maxDataSetListID = String.valueOf(dataSetListsService.getDataSetListsEntityMaxId());
+        String routeParam = "/viewDataSets/" + maxDataSetListID;
+
+        mockMvc.perform(get(routeParam))
                 .andExpect(status().isOk())
                 .andExpect(view().name("dataSets"));
-        mockMvc.perform(post("/viewDataSets").param("reloadData","")
+        mockMvc.perform(post("/viewDataSets").param("reloadData","Reload Data")
                         .param("fromDate","05/01/2014")
                         .param("toDate","06/01/2014")
         )
                 .andExpect(status().isOk())
                 .andExpect(view().name("dataSets"));
-        mockMvc.perform(post("/viewDataSets").param("overwriteData",""))
+        mockMvc.perform(post("/viewDataSets").param("overwriteData","Overwrite Data Set")
+                .param("fromDate", "05/01/2014")
+                .param("toDate", "06/01/2014"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("dataSets"));
     }
@@ -122,8 +136,9 @@ public class ViewDataControllerTests {
 
         String routeParam = "/deleteDataSets/" + maxDataSetListID;
         mockMvc.perform(get(routeParam))
-                .andExpect(status().isOk())
-                .andExpect(view().name("dataSetLists"));
+                .andExpect(status().is(302));
+
+
     }
 
 
