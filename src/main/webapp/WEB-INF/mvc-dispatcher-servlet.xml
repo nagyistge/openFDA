@@ -78,8 +78,8 @@
  <!--   <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
                 destroy-method="close">
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <beans:property name="url" value="jdbc:mysql://54.175.244.73:3306/openfda_test" />
-        <beans:property name="username" value="root" />
+        <beans:property name="url" value="jdbc:mysql://openfda_db:3306/openfda_test" />
+        <beans:property name="username" value="openfda_web" />
         <beans:property name="password" value="welcome123" />
     </beans:bean>-->
 
