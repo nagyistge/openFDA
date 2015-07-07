@@ -13,32 +13,32 @@ http://openfda.wasoftware.com
 
 ##Activities
 1. Setup a team with Product Manager (PM) (leader),  Technical Architect (TA), Front-end Developer(FD) (JavaScript, CSS, Foundation 5), Backend Developer(BD) (Java, JSP), DevOp Engineer (DevOp1) familiar with web infrastructure and Amazon Cloud Services (Linux, Security Specialist), DevOp Engineer (Jenkins, maven)(DevOp2) familiar with builds, and appointed two (2) end users.
-2. Product Planning - PM and users analyzed the Agile Delivery Services (ADS I) RFQ and entered the functional, non-functional, and security user stories and requirements into our Team Concert agile development tools.
+2. Product Planning - PM and users analyzed the RFQ and entered the functional, non-functional, and security user stories and requirements into our Team Concert agile development tools.
 3. Below is the goal of each sprint:
-  1. Release Planning (Day1) - Setup Team, define sprint iteration dates
-  2. Sprint1 (Day2-Day4)- Threat Modeling, Setup(Amazon EC2, docker container, GitHub, Jenkins), User Login, Setup GUI template
-  3. Sprint2 (Day5-Day6) - Login (Continued), Search & Display Data Visually, Rest API,  Configure Build (Jenkins), Configure CheckStyle (Jenkins), Setup Cacti monitoring tool
-  4. Sprint3 (Day7-Day8) - Search & Display Data (Continued), Save Data, Configure Deployment(Jenkins), Scan EC2 with OpenVAS security tool
+  1. Release Planning (Day1)- Setup Team, define sprint iteration dates
+  2. Sprint1 (Day2-Day4)- Threat Modeling, Setup (Amazon EC2, docker container, GitHub, Jenkins), User Login, Setup GUI template
+  3. Sprint2 (Day5-Day6)- Login (Continued), Search & Display Data Visually, Rest API, Configure Build (Jenkins), Configure CheckStyle (Jenkins), Setup Cacti monitoring tool
+  4. Sprint3 (Day7-Day8)- Search & Display Data (Continued), Save Data, Configure Deployment(Jenkins), Scan EC2 with OpenVAS security tool
   5. Sprint4 (Day9-Day11)- Save Data (Continued), Configure PMD/Checkstyle, Docker Deployment (Jenkins)
   6. Sprint5 (Day12-Day13)- Modify Data, work items from feedback
 
 ##Discussion
 * PM is the leader accountable for the quality. 
-* Our team has diverse skill sets - system/network/security administration, front-end and back end development, project managemnet, QA, and agile development. They learn new technology quickly.
+* Our team has diverse skill sets - system/network/security administration, front-end and back end development, project management, QA, and agile development. They learn new technology quickly.
 * Maven is used for configuration management.  
-* We use the following open source technology - Linux, Apache/Tomcat, Zurb's Foundation 5, Java/JSP/JavaScript, MySQL, JUnit, and Jenkins. Jenkins is our continuous integration system that pulls source code from Github, run static code analysis tools (e.g. CheckStyle, PMD, FindBugs, Jacoco), automate our tests, build runtime using a mavin plugin, and deploy runtime to our Docker containers in an Amazon EC2 image. 
+* We use the following open source technology - Linux, Apache/Tomcat, Zurb's Foundation 5, Java/JSP/JavaScript, MySQL, JUnit, and Jenkins. Jenkins is our continuous integration system that pulls source code from Github, run static code analysis tools (e.g. CheckStyle, PMD), automate our tests, build runtime using mavin, and deploy runtime to our Docker containers in an Amazon EC2 image. 
 * Users provide feedback through face-to-face meeting, testing, and usability evaluation.  
 * User stories and tasks are prioritized based on risks and mandatory RFQ requirements. Highest priorities and risk work items are scheduled first. New technology are considered high risk. Docker containers are new to our team and we schedule related tasks in Sprint 1.   
 * Our security tasks include threat modeling, security user stories, security code review, security static code analysis, security dynamic code analysis, and security monitoring tools.
 
 ##Conclusion
-Our secure & agile DevOps methodology and automated tools allow us to release proritize features early, frequently, iteratively, and with high quality standard that satisfies user requirements.
+Our secure & agile DevOps methodology and automated tools allow us to release prioritized features early, frequently, iteratively, and with high quality standard that satisfies user requirements.
 
 #Compliance to US Digital Services Playbook
-Please refer to Attachement E Approach Criteria Evidence Template Mod 5.xlsx with reference to evidence provided in the respository.
+Refer to Attachment E with references to evidence.
 
 #Documentation
 * [Deployment Guide](https://github.com/washingtonsoftware/openFDA/blob/master/documents/Deployment_guide.docx)
 * [Design Document](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Prototype%20Design%20Document.docx)
-* [Requirement Document](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Prototype%20Requirement%20Report.pdf)
-* [Threat Modeling Report](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Threat%20Modeling%20Report.pdf)
+* [Requirements Document](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Prototype%20Requirement%20Report.pdf)
+* [Threat Modeling](https://github.com/washingtonsoftware/openFDA/blob/master/documents/OpenFDA%20Threat%20Modeling%20Report.pdf)
